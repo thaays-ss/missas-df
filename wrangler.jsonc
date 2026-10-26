@@ -1,0 +1,6 @@
+// Cloudflare: publica só a pasta public/ (o site). O resto do repositório não vai pro ar.
+{
+  "name": "missas-df",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public" }
+}

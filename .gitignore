@@ -1,0 +1,5 @@
+# a planilha baixada tem nomes de pessoas: nunca vai pro repositório
+*.xlsx
+__pycache__/
+.venv/
+node_modules/

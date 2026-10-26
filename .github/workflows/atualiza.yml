@@ -1,0 +1,43 @@
+name: Atualiza horários
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # de hora em hora (minuto 17, horário UTC)
+  workflow_dispatch:        # botão "Run workflow" para rodar na hora
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualiza
+  cancel-in-progress: false
+
+jobs:
+  atualiza:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - run: pip install -r pipeline/requirements.txt
+
+      - name: Lê a planilha e gera o site
+        run: python pipeline/atualiza.py
+
+      - name: Publica se algo mudou
+        run: |
+          git config user.name "robo-missas"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados public
+          if git diff --cached --quiet; then
+            echo "Nada mudou."
+          else
+            git commit -m "Atualiza horários pela planilha ($(TZ=America/Sao_Paulo date '+%d/%m %H:%M'))"
+            git push
+          fi

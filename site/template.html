@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onde tem missa? · DF</title>
+<meta name="description" content="Horários de missa, confissão e adoração no Distrito Federal, reunidos do site da Arquidiocese de Brasília e de uma planilha colaborativa.">
+<link rel="icon" href="data:image/png;base64,/*ICON*/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Cinzel:wght@500;600&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*LEAFLETCSS*/</style>
+<style>
+:root{--bg:#F8F8F5;--band:#EFF4F7;--blue:#084D6E;--ink:#0B2F42;--ink2:#3C4558;--mute:#5B6476;--faint:#7D8597;--line:#DCE1E8;--line2:#E8ECF1;--bd:#C3CCD8;--missa:#084D6E;--conf:#5E3A87;--ador:#A67C1A;--gold:#C9A24A}
+*{box-sizing:border-box}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{color:#063A53;text-decoration:underline}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.cinzel{font-family:'Cinzel',Georgia,serif;letter-spacing:.14em;text-transform:uppercase}
+.wrap{max-width:1280px;margin:0 auto;background:var(--bg)}
+/* header */
+header.top{position:sticky;top:0;z-index:1000;background:var(--blue);color:#fff}
+.topin{max-width:1280px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 36px}
+.brand{display:flex;align-items:center;gap:14px;color:#fff}.brand:hover{text-decoration:none;color:#fff}
+.brand img{height:40px;width:auto;display:block}
+.brand .nm{display:flex;flex-direction:column;gap:1px}
+.brand b{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:600;line-height:1;white-space:nowrap}
+.brand small{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;color:#B9D3E0;white-space:nowrap}
+nav{display:flex;gap:30px;height:100%;align-items:stretch}
+nav button{all:unset;cursor:pointer;display:flex;align-items:center;font-size:15px;color:#C9DCE6;white-space:nowrap;border-bottom:3px solid transparent;padding-top:3px}
+nav button:hover{color:#fff}
+nav button.on{color:#fff;font-weight:600;border-color:#fff}
+nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.page{display:none}.page.on{display:block}
+/* band agora */
+.band{background:var(--band);border-bottom:1px solid var(--line)}
+.bandin{padding:30px 36px 28px;display:flex;flex-direction:column;gap:20px;max-width:980px}
+.dateL{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.14em;color:var(--blue)}
+.dedL{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;line-height:1.1}
+.lit{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2)}
+.lit i{width:12px;height:12px;border-radius:50%;border:2px solid #fff;flex:none}
+.search{height:56px;background:#fff;border:1.5px solid var(--ink);border-radius:10px;display:flex;align-items:center;padding:0 20px;gap:14px}
+.search input{all:unset;flex:1;font-size:18px;color:var(--ink);min-width:0}.search input::placeholder{color:var(--faint)}
+.ring{width:16px;height:16px;border:2px solid var(--ink);border-radius:50%;flex:none}
+.lbl{font-size:13px;font-weight:600;color:var(--ink2)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card{all:unset;cursor:pointer;height:84px;border-radius:12px;padding:0 20px;display:flex;flex-direction:column;justify-content:center;gap:4px;background:#fff;border:1.5px solid var(--bd);color:var(--ink);box-sizing:border-box}
+.card:hover{border-color:var(--blue)}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.card .nm{display:flex;align-items:center;gap:9px;font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:700;line-height:1}
+.card .nm i{width:9px;height:9px;border-radius:50%}
+.card .sb{font-size:13px;color:var(--mute)}
+.card.on{background:var(--blue);border-color:var(--blue);color:#fff}.card.on .nm i{background:#fff!important}.card.on .sb{color:#E2ECF1}
+.sels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sel{position:relative;display:block}
+.sel select{appearance:none;-webkit-appearance:none;width:100%;height:48px;background:#fff;border:1px solid var(--bd);border-radius:8px;padding:0 36px 0 16px;font:500 15px 'Libre Franklin',sans-serif;color:var(--ink);cursor:pointer}
+.sel select:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.sel::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--faint);pointer-events:none}
+/* grade agora */
+.grid3{display:grid;grid-template-columns:500px minmax(0,1fr) 330px}
+.col{border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}.col:last-child{border-right:0}
+.h3row{padding:22px 24px 10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600}
+.small{font-size:13px;color:var(--mute)}
+.item{display:grid;grid-template-columns:56px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:12px 24px;border-top:1px solid var(--line2)}
+.item .t{display:flex;flex-direction:column;gap:3px}.item .t b{font-size:17px;font-variant-numeric:tabular-nums}.item .t i{width:22px;height:3px;border-radius:2px}
+.item .n{display:flex;flex-direction:column;gap:2px;min-width:0}.item .n b{font-size:14px;font-weight:600}.item .n span{font-size:12px;color:var(--mute)}
+.ell{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.em{font-size:12px;font-weight:600;padding:4px 9px;border-radius:99px;border:1px solid var(--bd);background:#fff;color:var(--ink);white-space:nowrap}
+.em.hot{background:var(--ink);color:#fff;border-color:var(--ink)}.em.past{color:#9DBBCB;border-color:var(--line2)}.em.none{visibility:hidden}
+.rota{font-size:13px;font-weight:600;white-space:nowrap}
+.more{all:unset;cursor:pointer;padding:14px 24px 18px;background:var(--bg);font-size:14px;font-weight:600;color:var(--blue);border-top:1px solid var(--line2)}
+.more:hover{text-decoration:underline}
+.empty{padding:18px 24px;color:var(--mute);font-size:14px;border-top:1px solid var(--line2);line-height:1.5}
+.grid3>.col.fit{position:relative}
+.fitin{position:absolute;inset:0;display:flex;flex-direction:column}
+.scroll{flex:1;overflow-y:auto;min-height:0;scrollbar-width:thin}
+.map{flex:1;background:#E3E8EE}
+.dark{margin:22px 22px 0;background:var(--ink);color:#F3F5F9;border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:4px}
+.dark .kicker{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.dark .big{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;line-height:1.1}
+.dark .tx{font-size:14px;line-height:1.4;color:#CFDFE7}
+.dark ul{list-style:none;margin:8px 0 0;padding:10px 0 0;border-top:1px solid rgba(207,223,231,.18);display:flex;flex-direction:column;gap:6px;font-size:13px;color:#CFDFE7}
+.dark li{display:flex;gap:10px;min-width:0}.dark li b{color:#fff;font-variant-numeric:tabular-nums;min-width:40px;flex:none}
+.box{padding:22px;display:flex;flex-direction:column;gap:6px}
+.heat{display:grid;grid-template-columns:72px repeat(3,minmax(0,1fr));gap:3px}
+.heat .hd{font-size:11px;font-weight:600;color:var(--mute);text-align:center}
+.heat .d{font-size:13px;display:flex;align-items:center}
+.heat .c{height:28px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:12px;font-weight:600}
+.ded{margin:0 22px 22px;padding:16px;border-radius:10px;background:#F5EEDC;display:flex;flex-direction:column;gap:3px}
+.ded .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.14em;color:#7A5A12;text-transform:uppercase}
+.ded .tx{font-size:14px;line-height:1.45;color:var(--ink)}
+footer{padding:16px 36px 22px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);line-height:1.6}
+footer b{color:var(--ink);font-weight:600}
+/* confissão */
+.chead{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:48px;padding:32px 36px 8px;align-items:end}
+.chead h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:36px;line-height:1.1;margin:0}
+.chead p{font-size:16px;line-height:1.5;color:var(--ink2);margin:10px 0 0;max-width:560px}
+.bars7{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:end;height:130px}
+.bars7 button{all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;justify-content:flex-end;height:100%}
+.bars7 button:focus-visible{outline:2px solid var(--conf);outline-offset:2px}
+.bars7 .v{font-size:13px;font-weight:600}.bars7 .b{width:100%;border-radius:4px 4px 0 0}
+.lab7{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:6px}.lab7 span{font-size:13px;text-align:center}
+.cbody{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:24px;padding:24px 36px}
+.tbl{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden;align-self:start}
+.tr{display:grid;grid-template-columns:72px 72px minmax(0,1fr) 170px 100px 70px;gap:12px;padding:0 18px;min-height:44px;align-items:center;border-bottom:1px solid var(--line2);font-size:14px}
+.tr.th{font-size:12px;font-weight:600;color:var(--mute);letter-spacing:.03em;text-transform:uppercase;background:#F2F4F7;min-height:40px;border-bottom:1px solid var(--line)}
+.tag{font-size:12px;padding:3px 8px;border-radius:99px;justify-self:start;white-space:nowrap}
+.note{font-size:14px;line-height:1.5;color:var(--ink2);background:#EFE9F4;padding:14px 16px;border-radius:8px}
+.note b{color:var(--conf);font-weight:600}
+.cside{display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:88px}
+.cmap{height:460px;border:1px solid var(--line);border-radius:8px;background:#E3E8EE}
+/* números */
+.kpis{padding:32px 36px 0;display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.kpi{display:flex;flex-direction:column;gap:4px;padding:0 0 26px 28px;border-left:1px solid var(--line)}.kpi:first-child{border-left:0;padding-left:0}
+.kpi b{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;line-height:1}.kpi span{font-size:14px;color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.two:last-of-type{border-bottom:0}
+.cell{padding:26px 36px 28px;display:flex;flex-direction:column;gap:6px;min-width:0}.two .cell:first-child{border-right:1px solid var(--line)}
+.sub{font-size:14px;color:var(--mute);margin-bottom:12px}
+.vbars{display:grid;gap:6px;align-items:end;height:200px}
+.vbars>div{display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-width:0}
+.vbars .v{font-size:11px;text-align:center;margin-bottom:4px;color:var(--ink2)}
+.vlabs{display:grid;gap:6px;margin-top:6px}.vlabs span{font-size:12px;text-align:center;color:var(--mute)}
+.hb{display:grid;grid-template-columns:140px minmax(0,1fr) 44px;gap:12px;align-items:center;height:26px;font-size:13px}
+.hb .tr0{height:14px;background:#E9EDF2;border-radius:2px}.hb .tr0 div{height:100%;border-radius:2px}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--ink2);margin-top:10px;flex-wrap:wrap}.legend span{display:flex;align-items:center;gap:6px}.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.care{display:flex;flex-direction:column;gap:2px;padding-bottom:10px;border-bottom:1px solid var(--line2)}.care b{font-size:14px;font-weight:600}.care span{font-size:13px;line-height:1.5;color:var(--ink2)}
+.leaflet-container{font-family:'Libre Franklin',sans-serif}
+.pin{width:12px;height:12px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 3px rgba(11,47,66,.45)}
+.pin.soon{width:18px;height:18px;border:3px solid #fff;box-shadow:0 0 0 2px var(--ink),0 2px 6px rgba(11,47,66,.5)}
+.offline{position:absolute;left:12px;right:12px;bottom:28px;z-index:500;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px;color:var(--ink2);box-shadow:0 2px 8px rgba(11,47,66,.12)}
+@media (max-width:1100px){
+ .grid3{grid-template-columns:1fr 1fr}.grid3 .col:nth-child(2){order:3;grid-column:1/-1;border-right:0;border-top:1px solid var(--line)} .grid3 .col:nth-child(2){height:420px}
+ .chead,.cbody{grid-template-columns:1fr}.cside{position:static}.cmap{height:360px}
+}
+@media (max-width:760px){
+ html{scroll-padding-top:110px}
+ .topin{padding:12px 16px 0;height:auto;flex-direction:column;align-items:flex-start;gap:6px}
+ .brand img{height:32px}.brand b{font-size:23px}
+ nav{height:44px;gap:22px;overflow-x:auto;width:100%;scrollbar-width:none}
+ .bandin{padding:22px 16px;gap:16px}.dedL{font-size:27px}
+ .search{height:52px;padding:0 16px}.search input{font-size:16px}
+ .cards{grid-template-columns:1fr;gap:8px}
+ .card{height:auto;padding:12px 16px;flex-direction:row;align-items:center;justify-content:space-between}
+ .card .nm{font-size:22px}.card .sb{font-size:12px;text-align:right}
+ .sels{grid-template-columns:1fr 1fr;gap:8px}.sels .sel:last-child{grid-column:1/-1}
+ .grid3{grid-template-columns:1fr}.grid3 .col:nth-child(2){order:0;border-top:0}.col{border-right:0;border-bottom:1px solid var(--line)}
+ .item{grid-template-columns:52px minmax(0,1fr) auto;padding:12px 16px}.item .rota{grid-column:2/-1}
+ .h3row{padding:18px 16px 8px}.more,.empty{padding-left:16px;padding-right:16px}
+ .grid3>.col.fit{position:static}.fitin{position:static}.scroll{max-height:480px}.grid3 .col:nth-child(2) .fitin{position:absolute}.grid3 .col:nth-child(2){position:relative;height:340px}.dark,.ded{margin-left:16px;margin-right:16px}.box{padding:18px 16px}
+ .chead{padding:24px 16px 8px;gap:24px}.chead h2{font-size:28px}.cbody{padding:16px}
+ .tr{grid-template-columns:56px minmax(0,1fr) auto;gap:8px;padding:8px 12px}.tr .xs{display:none}
+ .kpis{grid-template-columns:repeat(2,1fr);padding:24px 16px 0;gap:0}.kpi{padding:0 0 20px 16px}.kpi:nth-child(odd){border-left:0;padding-left:0}.kpi b{font-size:34px}
+ .two{grid-template-columns:1fr}.two .cell:first-child{border-right:0;border-bottom:1px solid var(--line)}.cell{padding:22px 16px}
+ .hb{grid-template-columns:110px minmax(0,1fr) 40px}footer{padding:16px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="topin">
+  <a class="brand" href="#agora" data-go="agora"><img src="data:image/png;base64,/*ICON*/" alt=""><span class="nm"><b>Onde tem missa?</b><small>DISTRITO FEDERAL</small></span></a>
+  <nav>
+    <button data-p="agora" class="on">Agora</button>
+    <button data-p="conf">Confissão à noite</button>
+    <button data-p="num">Números da base</button>
+  </nav>
+ </div>
+</header>
+
+<main class="wrap">
+<!-- AGORA -->
+<section class="page on" id="pg-agora">
+  <div class="band"><div class="bandin">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span class="dateL" id="nowLine"></span>
+      <span class="dedL" id="dedHoje"></span>
+      <span class="lit" id="lit"></span>
+    </div>
+    <label class="search"><span class="ring"></span><input id="q" placeholder="Buscar igreja, bairro ou região" autocomplete="off" aria-label="Buscar igreja, bairro ou região"></label>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span class="lbl">O que você procura?</span>
+      <div class="cards" id="cards">
+        <button class="card on" data-t="0"><span class="nm"><i style="background:var(--missa)"></i>Missa</span><span class="sb"></span></button>
+        <button class="card" data-t="1"><span class="nm"><i style="background:var(--conf)"></i>Confissão</span><span class="sb"></span></button>
+        <button class="card" data-t="2"><span class="nm"><i style="background:var(--ador)"></i>Adoração</span><span class="sb"></span></button>
+      </div>
+      <div class="sels">
+        <label class="sel"><select id="dia" aria-label="Dia"></select></label>
+        <label class="sel"><select id="hora" aria-label="Horário"></select></label>
+        <label class="sel"><select id="reg" aria-label="Região"><option value="">Todas as regiões</option></select></label>
+      </div>
+    </div>
+  </div></div>
+  <div class="grid3">
+    <div class="col fit"><div class="fitin">
+      <div class="h3row"><span class="h3" id="listTitle">Começando em breve</span><span class="small" id="listSub">próxima hora</span></div>
+      <div class="scroll" id="listScroll"><div id="soon"></div><div id="allToday" hidden></div></div>
+      <button class="more" id="moreBtn"></button>
+    </div></div>
+    <div class="col fit"><div class="fitin"><div class="map" id="map1"></div></div></div>
+    <div class="col">
+      <div class="dark" id="late"></div>
+      <div class="box">
+        <span class="h3" style="font-size:18px" id="heatTitle"></span>
+        <span class="small" style="margin-bottom:8px" id="heatSub"></span>
+        <div class="heat" id="heat1"></div>
+      </div>
+      <div class="ded" id="ded"></div>
+    </div>
+  </div>
+  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair. Fontes: site da Arquidiocese de Brasília e planilha colaborativa de um grupo de católicos. <span id="gerado"></span></footer>
+</section>
+
+<!-- CONFISSÃO -->
+<section class="page" id="pg-conf">
+  <div class="chead">
+    <div><h2>Onde me confessar depois do trabalho</h2><p>Confissões que começam a partir das 18h. A coluna “até” mostra quando o atendimento termina, quando a paróquia informa. Toque num dia para filtrar.</p></div>
+    <div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:10px">Igrejas com confissão à noite, por dia</div>
+      <div class="bars7" id="cbars"></div>
+      <div class="lab7" id="clabs"></div>
+    </div>
+  </div>
+  <div class="cbody">
+    <div class="tbl" id="ctbl"></div>
+    <div class="cside">
+      <div class="cmap" id="map2"></div>
+      <div class="note"><b>“aprox.”</b> quer dizer horário relativo, como “após a missa das 19h”. Muitas paróquias também atendem por agendamento; isso aparece só no texto da paróquia.</div>
+    </div>
+  </div>
+  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair.</footer>
+</section>
+
+<!-- NÚMEROS -->
+<section class="page" id="pg-num">
+  <div class="kpis" id="kpis"></div>
+  <div class="two">
+    <div class="cell"><span class="h3" id="t_dia"></span><span class="sub" id="s_dia"></span><div class="vbars" id="vdia" style="grid-template-columns:repeat(7,1fr);gap:14px"></div><div class="vlabs" id="ldia" style="grid-template-columns:repeat(7,1fr);gap:14px"></div>
+      <div class="legend"><span><i style="background:var(--missa)"></i>Missa</span><span><i style="background:var(--conf)"></i>Confissão</span><span><i style="background:var(--ador)"></i>Adoração</span></div></div>
+    <div class="cell"><span class="h3" id="t_hora"></span><span class="sub" id="s_hora"></span><div class="vbars" id="vhora"></div><div class="vlabs" id="lhora"></div></div>
+  </div>
+  <div class="two">
+    <div class="cell"><span class="h3">Missas por semana, por região</span><span class="sub" id="s_reg"></span><div id="hreg"></div></div>
+    <div class="cell"><span class="h3">Confissão some nas pontas da semana</span><span class="sub">Igrejas com confissão, por dia e período</span><div class="heat" id="heat2" style="grid-template-columns:90px repeat(3,minmax(0,1fr));gap:4px"></div></div>
+  </div>
+  <div class="two">
+    <div class="cell" style="gap:18px">
+      <div style="display:flex;flex-direction:column;gap:10px"><span class="h3">De onde vem cada horário</span><div id="fonteBar" style="display:flex;height:22px;border-radius:3px;overflow:hidden"></div><div id="fonteLeg" style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink2)"></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:14px;font-weight:600">Ano da última atualização na fonte</span><div id="anos"></div></div>
+    </div>
+    <div class="cell" style="gap:12px"><span class="h3">Cuidados ao ler os números</span><div id="cuid" style="display:flex;flex-direction:column;gap:12px"></div></div>
+  </div>
+  <footer>Projeto de <a href="https://thaays-ss.github.io/">Thays Soares</a> · dados públicos da Arquidiocese de Brasília e de voluntários · código e base em <a href="https://github.com/thaays-ss/missas-df">github.com/thaays-ss/missas-df</a></footer>
+</section>
+</main>
+
+<script>/*LEAFLETJS*/</script>
+<script>
+const DATA = /*DATA*/;
+const TIPOS=DATA.tipos, PLURAL=['Missas','Confissões','Adorações'], COR=['#084D6E','#5E3A87','#A67C1A'];
+const DIAS=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+const DIAS_C=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+const DIA_LOW=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+const DIA_CURTO=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+const MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const DED=['O Dia do Senhor, dia da Ressurreição','Dedicada às Almas do Purgatório e ao Espírito Santo','Dedicada aos Santos Anjos e a São José','Dedicada a São José e aos Santos Apóstolos','Dedicada à Santíssima Eucaristia e ao Sacerdócio','Dedicada à Paixão de Cristo e ao Sagrado Coração de Jesus','Dedicado à Santíssima Virgem Maria'];
+const PER=['de manhã','à tarde','à noite'];
+const fmt=n=>n.toLocaleString('pt-BR');
+const norm=s=>(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const naDia=i=>(i===0||i===6?'no ':'na ')+DIA_CURTO[i];
+const $=id=>document.getElementById(id);
+
+// linhas: [pid,tipo,wd,inicio,fim,hora,aprox,atual,fonte,local]
+const R=DATA.rows.map(r=>{const p=DATA.par[r[0]]; return {pid:r[0],tipo:r[1],wd:r[2],ini:r[3],fim:r[4],h:r[5],aprox:r[6],atual:r[7],fonte:r[8],local:r[9],nome:p[0],bairro:p[1],reg:p[2],lat:p[3],lng:p[4],rota:p[5],busca:norm(p[0]+' '+p[1]+' '+p[2])}});
+const periodo=h=>h<12?0:h<18?1:2;
+const mins=r=>Math.round(r.h*60);
+
+function agoraSP(){const s=new Date().toLocaleString('en-US',{timeZone:'America/Sao_Paulo'});const d=new Date(s);return {d,wd:d.getDay(),min:d.getHours()*60+d.getMinutes()}}
+function mesAno(a){if(!a)return '—';const [y,m]=a.split('-');return MESES[+m-1].slice(0,3)+' '+y}
+function tom(a){return (a||'').startsWith('2026')?['#DDEDE6','#2F6B57']:['#E9EDF2','#5B6476']}
+function emTxt(m){if(m<=0)return 'agora';if(m<60)return 'em '+m+' min';const h=Math.floor(m/60),r=m%60;return 'em '+h+'h'+(r?String(r).padStart(2,'0'):'')}
+
+// ---------- tempo litúrgico (aproximação pelo calendário romano; não considera solenidades isoladas)
+function pascoa(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(y,mo-1,da)}
+const addD=(d,n)=>new Date(d.getFullYear(),d.getMonth(),d.getDate()+n);
+function tempoLit(now){
+ const d=new Date(now.getFullYear(),now.getMonth(),now.getDate()),y=d.getFullYear();
+ const P=pascoa(y),cinzas=addD(P,-46),pent=addD(P,49);
+ const n25=new Date(y,11,25),adv1=addD(n25,-(n25.getDay()||7)-21); // 4 domingos antes do Natal
+ // Epifania no Brasil: domingo entre 2 e 8 de jan; Batismo: domingo seguinte (ou segunda, se Epifania cair em 7/8)
+ const j2=new Date(y,0,2),epi=addD(j2,(7-j2.getDay())%7),bat=epi.getDate()>=7?addD(epi,1):addD(epi,7);
+ const C={verde:['Tempo Comum','verde','#2F7A4F'],roxo:['','roxa','#5E3A87'],branco:['','branca','#FFFFFF'],verm:['','vermelha','#A3262A']};
+ const out=(nome,c)=>({nome,cor:C[c][1],hex:C[c][2]});
+ if(d<=bat)return out('Tempo do Natal','branco');
+ if(d>=cinzas&&d<addD(P,-3))return out(d>=addD(P,-7)?'Semana Santa':'Quaresma',d.getTime()===addD(P,-7).getTime()?'verm':'roxo');
+ if(d.getTime()===addD(P,-2).getTime())return out('Sexta-feira da Paixão','verm');
+ if(d>=addD(P,-3)&&d<P)return out('Tríduo Pascal','branco');
+ if(d.getTime()===pent.getTime())return out('Pentecostes','verm');
+ if(d>=P&&d<pent)return out('Tempo Pascal','branco');
+ if(d>=adv1&&d<n25)return out('Advento','roxo');
+ if(d>=n25)return out('Tempo do Natal','branco');
+ return out('Tempo Comum','verde');
+}
+
+// ---------- estado
+const st={tipo:0,q:'',reg:'',dia:'',hora:'agora',all:false,confDia:null};
+const regs=[...new Set(R.map(r=>r.reg).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt'));
+const selReg=$('reg');regs.forEach(r=>selReg.insertAdjacentHTML('beforeend',`<option>${esc(r)}</option>`));
+let lastWd=-1;
+function montaSelects(wd){
+ if(wd!==lastWd){
+  const op=[`<option value="">Hoje · ${DIA_CURTO[wd]}</option>`,`<option value="${(wd+1)%7}">Amanhã · ${DIA_CURTO[(wd+1)%7]}</option>`];
+  for(let k=2;k<7;k++){const i=(wd+k)%7;op.push(`<option value="${i}">${DIAS[i]}</option>`)}
+  $('dia').innerHTML=op.join('');
+  if(st.dia!==''&&+st.dia===wd)st.dia='';
+  $('dia').value=st.dia;lastWd=wd;
+ }
+ const hoje=st.dia==='';
+ if(!hoje&&st.hora==='agora')st.hora='todo';
+ $('hora').innerHTML=(hoje?'<option value="agora">A partir de agora</option>':'')+'<option value="todo">O dia todo</option><option value="0">Manhã · até 12h</option><option value="1">Tarde · 12h às 18h</option><option value="2">Noite · depois das 18h</option>';
+ $('hora').value=st.hora;
+}
+
+// ---------- mapas
+const tiles=()=>L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',maxZoom:19});
+let map1,layer1,map2,layer2;
+function mkMap(id){const m=L.map(id,{scrollWheelZoom:false,zoomControl:true}).setView([-15.80,-47.93],11);tiles().addTo(m);return m}
+function pin(cor,soon){return L.divIcon({className:'',html:`<div class="pin${soon?' soon':''}" style="background:${cor}"></div>`,iconSize:soon?[16,16]:[12,12]})}
+function drawPins(m,layer,rows,soonSet){if(layer)layer.remove();const g=L.layerGroup();const by={};
+ rows.forEach(r=>{if(r.lat==null)return;(by[r.pid]=by[r.pid]||[]).push(r)});
+ const pts=[];Object.values(by).forEach(list=>{const r=list[0];const s=soonSet&&list.some(x=>soonSet.has(x));pts.push([r.lat,r.lng]);
+  L.marker([r.lat,r.lng],{icon:pin(COR[r.tipo],s),zIndexOffset:s?1000:0}).bindPopup(`<b>${esc(r.nome)}</b><br>${esc(r.bairro)}<br>${list.map(x=>x.ini+(x.fim?'–'+x.fim:'')).join(' · ')}<br><a href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a>`).addTo(g)});
+ g.addTo(m);m.invalidateSize();if(pts.length)m.fitBounds(pts,{padding:[36,36],maxZoom:14});return g}
+
+// ---------- página Agora
+function filtra(tipo,dia,min,hoje){const q=norm(st.q);
+ return R.filter(r=>r.tipo===tipo&&r.wd===dia&&(!st.reg||r.reg===st.reg)&&(!q||r.busca.includes(q))&&
+  (st.hora==='agora'?(!hoje||mins(r)>=min):st.hora==='todo'?true:periodo(r.h)===+st.hora)).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome))}
+function itemHTML(r,m,hoje){let cls='none',txt='—';
+ if(hoje){const dif=mins(r)-m;cls=dif<0?'past':dif<=15?'hot':'';txt=dif<0?'já começou':emTxt(dif)}
+ const sub=TIPOS[r.tipo]+(r.fim?' até '+r.fim:'')+(r.aprox?' (aprox.)':'')+' · '+(r.bairro||r.reg);
+ return `<div class="item"><span class="t"><b>${r.ini}</b><i style="background:${COR[r.tipo]}"></i></span><span class="n"><b class="ell">${esc(r.nome)}</b><span class="ell">${esc(sub)}</span></span><span class="em ${cls}">${txt}</span><a class="rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
+function renderAgora(){
+ const {d,wd,min}=agoraSP();
+ montaSelects(wd);
+ const hoje=st.dia==='', dia=hoje?wd:+st.dia;
+ const hh=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+ $('nowLine').textContent=`${DIA_LOW[wd]}, ${d.getDate()} de ${MESES[d.getMonth()]} · ${hh}`.toUpperCase();
+ $('dedHoje').textContent=DED[wd];
+ const tl=tempoLit(d);$('lit').innerHTML=`<i style="background:${tl.hex};box-shadow:0 0 0 1px ${tl.hex==='#FFFFFF'?'#9DBBCB':tl.hex}"></i>${tl.nome} · cor litúrgica ${tl.cor}`;
+ // cards
+ const quando=hoje?(st.hora==='agora'?'hoje, a partir de agora':st.hora==='todo'?'hoje':'hoje '+PER[+st.hora]):naDia(dia)+(st.hora==='todo'?'':' '+PER[+st.hora]);
+ document.querySelectorAll('#cards .card').forEach(c=>{const t=+c.dataset.t;c.classList.toggle('on',t===st.tipo);c.setAttribute('aria-pressed',t===st.tipo);
+  c.querySelector('.sb').textContent=t===2?'Diante do Santíssimo':`${fmt(filtra(t,dia,min,hoje).length)} ${quando}`});
+ const tn=TIPOS[st.tipo].toLowerCase();
+ const lista=filtra(st.tipo,dia,min,hoje);
+ const doDia=R.filter(r=>r.tipo===st.tipo&&r.wd===dia&&(!st.reg||r.reg===st.reg)&&(!st.q||r.busca.includes(norm(st.q)))).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome));
+ const ondeTxt=(st.reg?' em '+esc(st.reg):'')+(st.q?' para “'+esc(st.q)+'”':'');
+ let html,mapRows,soonSet=null,extra;
+ if(hoje&&st.hora==='agora'){
+  $('listTitle').textContent='Começando em breve';$('listSub').textContent='próxima hora';
+  const soon=lista.filter(r=>mins(r)-min<=60);soonSet=new Set(soon);
+  html=soon.map(r=>itemHTML(r,min,true)).join('');
+  if(!soon.length)html=lista.length?`<div class="empty">Nada de ${tn} começando na próxima hora. Os próximos de hoje:</div>`+lista.slice(0,5).map(r=>itemHTML(r,min,true)).join(''):`<div class="empty">Não encontramos mais ${tn} hoje${ondeTxt}. Escolha amanhã no filtro de dia ou mude a busca.</div>`;
+  extra=doDia;mapRows=doDia.filter(r=>mins(r)>=min-30);if(!mapRows.length)mapRows=doDia;
+ }else{
+  $('listTitle').textContent=hoje?'Hoje':DIAS[dia];
+  $('listSub').textContent=(st.hora==='todo'?'o dia todo':PER[+st.hora])+' · '+fmt(lista.length)+' horários';
+  html=lista.length?lista.slice(0,8).map(r=>itemHTML(r,min,hoje)).join(''):`<div class="empty">Nenhum horário de ${tn} ${naDia(dia)}${st.hora==='todo'?'':' '+PER[+st.hora]}${ondeTxt}.</div>`;
+  extra=lista.length>8?lista:[];mapRows=lista;
+ }
+ $('soon').innerHTML=html;
+ const mb=$('moreBtn');mb.hidden=!extra.length;
+ mb.textContent=st.all?'Esconder a lista completa':(hoje&&st.hora==='agora'?`Ver todos os ${fmt(extra.length)} horários de hoje →`:`Ver todos os ${fmt(extra.length)} →`);
+ const at=$('allToday');at.hidden=!st.all||!extra.length;if(!at.hidden)at.innerHTML=extra.map(r=>itemHTML(r,min,hoje)).join('');
+ // ainda dá tempo / último do dia
+ const late=$('late');
+ const rest=hoje?doDia.filter(r=>mins(r)>=min):doDia;
+ const kick=hoje?'Ainda dá tempo':'Último horário · '+DIAS[dia];
+ if(rest.length){const lastRows=[...rest].sort((a,b)=>b.h-a.h).slice(0,5);
+  late.innerHTML=`<span class="kicker">${kick}</span><span class="big">${rest[rest.length-1].ini}</span><span class="tx">${hoje?'Último horário de '+tn+' hoje':'Último horário de '+tn+' '+naDia(dia)}${st.reg?' em '+esc(st.reg):''}. Os mais tarde:</span><ul>${lastRows.map(r=>`<li><b>${r.ini}</b><span class="ell">${esc(r.nome)} · ${esc(r.reg)}</span></li>`).join('')}</ul>`}
+ else late.innerHTML=`<span class="kicker">${kick}</span><span class="big">—</span><span class="tx">${hoje?'Por hoje acabou. Amanhã tem de novo.':'Nada encontrado com esses filtros.'}</span>`;
+ // heatmap região
+ const base=R.filter(r=>r.tipo===st.tipo&&(!st.reg||r.reg===st.reg));
+ $('heatTitle').textContent=(st.reg||'DF inteiro')+' na semana';
+ $('heatSub').textContent=PLURAL[st.tipo]+' por dia e período';
+ const M=Array.from({length:7},()=>[0,0,0]);base.forEach(r=>M[r.wd][periodo(r.h)]++);const mx=Math.max(1,...M.flat());
+ const ord=[1,2,3,4,5,6,0];
+ $('heat1').innerHTML='<span></span><span class="hd">Manhã</span><span class="hd">Tarde</span><span class="hd">Noite</span>'+ord.map(i=>`<span class="d" style="color:${i===dia?'var(--blue)':'var(--ink2)'};font-weight:${i===dia?700:400}">${DIAS[i]}</span>`+M[i].map(v=>{const t=v/mx;return `<span class="c" style="background:oklch(${(96-t*50).toFixed(1)}% ${(0.02+t*0.11).toFixed(3)} 235);color:${t>.5?'#fff':'#08344B'}">${v||''}</span>`}).join('')).join('');
+ // amanhã
+ const am=(wd+1)%7;
+ $('ded').innerHTML=`<span class="k">Amanhã, ${DIA_LOW[am]}</span><span class="tx">${DED[am]}.</span>`;
+ // mapa
+ if(window.L){if(!map1)map1=mkMap('map1');layer1=drawPins(map1,layer1,mapRows,soonSet)}
+}
+
+// ---------- Confissão à noite
+function renderConf(){
+ const noite=R.filter(r=>r.tipo===1&&r.h>=18);const {wd}=agoraSP();
+ const ord=[1,2,3,4,5,6,0];const cnt=ord.map(i=>new Set(noite.filter(r=>r.wd===i).map(r=>r.pid)).size);const mx=Math.max(...cnt);
+ const ativo=st.confDia;
+ $('cbars').innerHTML=ord.map((i,k)=>{const on=ativo===null?i===wd:ativo===i;return `<button data-d="${i}" title="${DIAS[i]}" aria-pressed="${on}"><span class="v" style="color:${on?'var(--conf)':'var(--ink2)'}">${cnt[k]}</span><span class="b" style="height:${Math.round(cnt[k]/mx*96)}px;background:${on?'#5E3A87':'#D9CFE6'}"></span></button>`}).join('');
+ $('clabs').innerHTML=ord.map(i=>{const on=ativo===null?i===wd:ativo===i;return `<span style="color:${on?'var(--conf)':'var(--ink2)'};font-weight:${on?700:400}">${DIAS_C[i]}</span>`}).join('');
+ document.querySelectorAll('#cbars button').forEach(b=>b.onclick=()=>{const d=+b.dataset.d;st.confDia=st.confDia===d?null:d;renderConf()});
+ const dia=ativo===null?wd:ativo;
+ const rows=noite.filter(r=>r.wd===dia).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome));
+ $('ctbl').innerHTML=`<div class="tr th"><span>Início</span><span>Até</span><span>Paróquia · ${DIAS[dia]}</span><span class="xs">Bairro</span><span class="xs">Atualizado</span><span class="xs"></span></div>`+
+  (rows.length?rows.map(r=>{const [bg,fg]=tom(r.atual);const fim=r.aprox?'aprox.':r.fim||'—';return `<div class="tr"><b style="font-size:15px;font-variant-numeric:tabular-nums">${r.ini}</b><span style="font-variant-numeric:tabular-nums;color:${fim==='—'?'#9DBBCB':fim==='aprox.'?'#5E3A87':'#0B2F42'}">${fim}</span><span style="display:flex;flex-direction:column;min-width:0"><b class="ell" style="font-weight:600">${esc(r.nome)}</b></span><span class="xs ell" style="color:var(--ink2)">${esc(r.bairro)}</span><span class="xs tag" style="background:${bg};color:${fg}">${mesAno(r.atual)}</span><a class="xs rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Rota →</a></div>`}).join(''):'<div class="empty">Nenhuma confissão à noite neste dia na base.</div>');
+ if(window.L){if(!map2)map2=mkMap('map2');layer2=drawPins(map2,layer2,rows)}
+}
+
+// ---------- Números
+function renderNum(){
+ const P=new Set(R.map(r=>r.pid)).size, T=[0,1,2].map(t=>R.filter(r=>r.tipo===t).length);
+ $('kpis').innerHTML=[[fmt(R.length),'horários por semana','var(--ink)'],[fmt(P),'igrejas com horário','var(--ink)'],[fmt(T[0]),'missas','var(--missa)'],[fmt(T[1]),'confissões','var(--conf)'],[regs.length,'regiões','var(--ink)']].map(([v,l,c])=>`<div class="kpi"><b style="color:${c}">${v}</b><span>${l}</span></div>`).join('');
+ const ord=[1,2,3,4,5,6,0];const byD=ord.map(i=>[0,1,2].map(t=>R.filter(r=>r.wd===i&&r.tipo===t).length));const tot=byD.map(a=>a[0]+a[1]+a[2]);const mx=Math.max(...tot);
+ const dom=tot[6],seg=tot[0];
+ $('t_dia').textContent=`Domingo concentra ${Math.round(dom/R.length*100)}% da semana`;
+ $('s_dia').textContent=`Horários por dia · ${fmt(dom)} no domingo, ${fmt(seg)} na segunda`;
+ $('vdia').innerHTML=byD.map((a,k)=>`<div><span class="v" style="font-weight:600;font-size:12px">${fmt(tot[k])}</span>${[2,1,0].map(t=>a[t]?`<div style="height:${Math.max(2,Math.round(a[t]/mx*170))}px;background:${COR[t]};${t===2?'border-radius:3px 3px 0 0':''}"></div>`:'').join('')}</div>`).join('');
+ $('ldia').innerHTML=ord.map(i=>`<span>${DIAS_C[i]}</span>`).join('');
+ const hs={};R.filter(r=>r.tipo===0).forEach(r=>{const h=Math.floor(r.h);hs[h]=(hs[h]||0)+1});const hk=[];for(let h=5;h<=21;h++)hk.push(h);const hm=Math.max(...hk.map(h=>hs[h]||0));const top=hk.reduce((a,b)=>(hs[b]||0)>(hs[a]||0)?b:a);
+ $('t_hora').textContent=`Nos dias úteis, a missa é às ${top}h`;
+ $('s_hora').textContent=`Missas por hora de início · ${fmt(hs[top])} começam entre ${top}h e ${top+1}h`;
+ ['vhora','lhora'].forEach(id=>$(id).style.gridTemplateColumns=`repeat(${hk.length},1fr)`);
+ $('vhora').innerHTML=hk.map(h=>{const v=hs[h]||0;return `<div><span class="v">${v||''}</span><div style="height:${v?Math.max(2,Math.round(v/hm*170)):0}px;background:${h===top?'#084D6E':'#9FC0D1'};border-radius:2px 2px 0 0"></div></div>`}).join('');
+ $('lhora').innerHTML=hk.map(h=>`<span>${h}</span>`).join('');
+ const rg={};R.filter(r=>r.tipo===0).forEach(r=>rg[r.reg]=(rg[r.reg]||0)+1);const rl=Object.entries(rg).sort((a,b)=>b[1]-a[1]);const r12=rl.slice(0,12),rmax=r12[0][1],menor=rl[rl.length-1];
+ $('s_reg').textContent=`12 maiores de ${rl.length} regiões · ${menor[0]}, a menor, tem ${menor[1]}`;
+ $('hreg').innerHTML=r12.map(([n,v])=>`<div class="hb"><span class="ell" style="color:var(--ink2)">${esc(n)}</span><div class="tr0"><div style="width:${Math.round(v/rmax*100)}%;background:#084D6E"></div></div><b style="text-align:right;font-variant-numeric:tabular-nums">${v}</b></div>`).join('');
+ const cf=R.filter(r=>r.tipo===1);const H=ord.map(i=>[0,1,2].map(p=>new Set(cf.filter(r=>r.wd===i&&periodo(r.h)===p).map(r=>r.pid)).size));const hx=Math.max(...H.flat());
+ $('heat2').innerHTML='<span></span><span class="hd" style="font-size:12px">Manhã</span><span class="hd" style="font-size:12px">Tarde</span><span class="hd" style="font-size:12px">Noite</span>'+H.map((row,k)=>`<span class="d" style="color:var(--ink2)">${DIAS[ord[k]]}</span>`+row.map(v=>{const t=v/hx;return `<span class="c" style="height:34px;font-size:13px;border-radius:4px;background:oklch(${(96-t*58).toFixed(1)}% ${(0.02+t*0.13).toFixed(3)} 305);color:${t>.45?'#fff':'#3B2A55'}">${v}</span>`}).join('')).join('');
+ const fc=DATA.fontes.map((_,i)=>R.filter(r=>r.fonte===i).length);const fOrd=[1,0,2],fCor={1:'#0B2F42',0:'#A67C1A',2:'#9DBBCB'},fNome={1:'página da paróquia no site da Arquidiocese',0:'planilha do grupo de WhatsApp',2:'tabela Horários de Missas, 2023'};
+ $('fonteBar').innerHTML=fOrd.map(i=>`<div style="width:${(fc[i]/R.length*100).toFixed(1)}%;background:${fCor[i]}"></div>`).join('');
+ $('fonteLeg').innerHTML=fOrd.map(i=>`<span style="display:flex;align-items:center;gap:8px"><i style="width:10px;height:10px;background:${fCor[i]};border-radius:2px;display:inline-block"></i><b style="font-weight:600">${Math.round(fc[i]/R.length*100)||'<1'}%</b> ${fNome[i]}</span>`).join('');
+ const ano=a=>{const y=+(a||'0').slice(0,4);return y<2020?'sem data válida':y<=2023?'2021 a 2023':String(y)};const an={};R.forEach(r=>{const k=ano(r.atual);an[k]=(an[k]||0)+1});const aL=[['2026','#2F6B57'],['2025','#5E9784'],['2021 a 2023','#9DBBCB'],['sem data válida','#084D6E']].filter(([k])=>an[k]);const am=Math.max(...aL.map(([k])=>an[k]));
+ $('anos').innerHTML=aL.map(([k,c])=>`<div class="hb" style="grid-template-columns:110px minmax(0,1fr) 50px"><span style="color:var(--ink2)">${k}</span><div class="tr0" style="height:12px"><div style="width:${Math.max(1,Math.round(an[k]/am*100))}%;background:${c}"></div></div><b style="text-align:right">${fmt(an[k])}</b></div>`).join('');
+ const nAd=new Set(R.filter(r=>r.tipo===2).map(r=>r.pid)).size,semH=DATA.nParoquias-P;
+ $('cuid').innerHTML=[['Contar linhas ≠ contar igrejas','Uma igreja com missa às 7h e às 19h vira duas linhas. Para “quantas igrejas”, a conta é de paróquias distintas.'],['Missas mensais ficaram de fora','“1ª sexta do mês” e parecidos aparecem só no texto original da paróquia.'],['Adoração é parcial',`Só ${nAd} igrejas têm adoração na base: ela só entra quando aparece junto dos horários de missa. Não dá para comparar regiões por adoração.`],['Sem horário não é sem missa',`${semH} igrejas do cadastro ficaram sem nenhum horário estruturado, porque o texto do site estava vazio ou solto demais.`],['Região agrupada à mão','A partir do bairro informado no site. Não é o limite oficial das Regiões Administrativas.']].map(([t,d])=>`<div class="care"><b>${t}</b><span>${d}</span></div>`).join('');
+}
+
+// ---------- eventos
+function vaiPara(p){document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.p===p));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id==='pg-'+p));
+ try{if(p==='conf')renderConf();if(p==='num')renderNum()}catch(e){console.error(e)}
+ setTimeout(()=>{map1&&map1.invalidateSize();if(p==='conf'&&map2){map2.invalidateSize();renderConf()}},60);
+ try{history.replaceState(null,'','#'+p)}catch(e){} try{window.scrollTo(0,0)}catch(e){}}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>vaiPara(b.dataset.p));
+document.querySelector('.brand').onclick=e=>{e.preventDefault();vaiPara('agora')};
+document.querySelectorAll('#cards .card').forEach(c=>c.onclick=()=>{st.tipo=+c.dataset.t;st.all=false;renderAgora()});
+$('q').oninput=e=>{st.q=e.target.value;renderAgora()};
+selReg.onchange=e=>{st.reg=e.target.value;renderAgora()};
+$('dia').onchange=e=>{st.dia=e.target.value;st.hora=st.dia===''?'agora':(st.hora==='agora'?'todo':st.hora);st.all=false;renderAgora()};
+$('hora').onchange=e=>{st.hora=e.target.value;st.all=false;renderAgora()};
+$('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(!st.all)$('listScroll').scrollTop=0};
+(()=>{const g=String(DATA.gerado||'');const m=g.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}:\d{2}))?/);$('gerado').textContent=m?`Base atualizada em ${m[3]}/${m[2]}/${m[1]}${m[4]?' às '+m[4]:''}.`:''})();
+renderAgora();renderNum();
+let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num'].includes(h0))vaiPara(h0);
+setInterval(()=>{if($('pg-agora').classList.contains('on'))renderAgora()},60000);
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+P
+Paróquia Divino Espírito Santo|EQ 32/34 Conj. T|Guará II
+Paróquia Imaculada Conceição|EQNM 38/40 M Norte AE 1|Taguatinga
+Paróquia Maria Imaculada|EQ 15/17 Lote “C” S/N|Guará II
+Paróquia Nossa Senhora da Assunção|Av. Parque Águas Claras Lt. 865|Águas Claras
+Paróquia Nossa Senhora da Conceição|E 02 lote 8 - Setor Central|Gama
+Paróquia Nossa Senhora da Medalha Milagrosa|QN 11 cj. 3 Lts. 1-6|Riacho Fundo II
+Paróquia Nossa Senhora da Providência|EQ 205/206 AE 01 - Avenida dos Alagados|Santa Maria
+Santuário Nossa Senhora de Fátima|SGAS 906/D lts. 10/11|Asa Sul
+Paróquia Nossa Senhora de Fátima||Taguatinga
+Paróquia Nossa Senhora do Rosário de Fátima||Sobradinho
+Paróquia Sagrado Coração de Jesus e São José||Ceilândia
+Paróquia Santa Mãe de Deus|CL 215 AE “G”|Santa Maria
+Paróquia Santo Afonso|Qd. 07 AE – Bairro São José|
+Paróquia Santa Teresinha|SHCES Q. 801 Lt. 2|Cruzeiro Novo
+Santuário Nossa Senhora do Perpétuo Socorro|Praça Central Setor C 7 - A.E|Taguatinga
+Santuário São Francisco de Assis|SGAN W5 Norte 915 Mód. A/B|Asa Norte
+Paróquia São Domingos Sávio|QS 2 lote D|Riacho Fundo I
+Paróquia São José|QR 402 A. E. N° 01|Santa Maria
+Paróquia São João Batista|Praça 1 Bl. B - Setor Sul|Gama
+Paróquia São João Bosco|3ª Av. Pça. Pe. Roque Md. 3|Núcleo Bandeirante
+Paróquia São José Operário|QNQ 05 AE Lote D|Ceilândia
+Paróquia Nossa Senhora das Graças da Medalha Milagrosa|SGAN 908 MÓDULO B|Asa Norte
+Paróquia Bom Jesus dos Aflitos|QS 10 lote 01 A. E|Águas Claras
+Paróquia Cristo Redentor|EQNL 6/8 AE Lote 2 A.E|Taguatinga
+Paróquia Cristo Redentor|Quadra 202, conjunto 17, AE 01|São Sebastião
+Paróquia Nossa Senhora Aparecida|CR 87 lote. 03 - Vale do Amanhecer|Planaltina
+Nossa Senhora Aparecida|Rua 48 Lote 450|São Sebastião
+Paróquia Nossa Senhora da Esperança|EQN 307/308 Área Especial 01|Asa Norte
+Paróquia Nossa Senhora de Lourdes|Rua 01 Mod. 01 AE 01 Cond. Privê|Ceilândia
+Paróquia Santíssima Trindade|EQ 42/44 A.E. 3|Guará II
+Paróquia Santa Rita de Cássia|Santa Rita de Cássia|
+Santuário Arquidiocesano Menino Jesus|EQ. 2/4 AE 5 – Setor Norte|Brazlândia
+Paróquia São José Operário|SHVP, Rua 08 AE Chácara 312 lote 1 - S/N|Vicente Pires
+Paróquia São Paulo Apóstolo|QE 07 Lote F - A. E.|Guará I
+Paróquia São Vicente de Paulo|QSE EQ 11/13 AE 01 Vila Dimas – Sul|Taguatinga
+Paróquia Verbo Divino|SGAN 609 Módulo C L2 Norte|Asa Norte
+Paróquia Bom Jesus dos Migrantes|Q. 04 AE 02|Sobradinho
+Paróquia Cristo Rei|EQNP 24/28 Módulo AB/ AE|Ceilândia
+Divino Espírito Santo|Qd. 11 Cj. F Lotes 3/4 – Arapoangas|Planaltina
+Paróquia Imaculado Coração de Maria|QNC 12 AE Lote 01|Taguatinga
+Paróquia Maria Auxiliadora|SHA AE nº 01 Lote 02|Arniqueira
+Paróquia Nossa Senhora Aparecida|Área Especial 1 Praça 1, Setor Oeste|Gama
+Paróquia Nossa Senhora Auxiliadora|Col.Agrícola Samambaia R.1 Ch.97 Lt.1/A|Vicente Pires
+Paróquia Nossa Senhora da Glória|EQNM 03/05 mód. A - AE|Ceilândia
+Paróquia Nossa Senhora da Natividade|EQNM 21/23 Mód.|Ceilândia
+Paróquia Nossa Senhora da Paz|QNO 18 Cj. A Lotes 01 e 12|Ceilândia
+Paróquia Nossa Senhora da Saúde|W3 Norte 702 lt. A|Asa Norte
+Paróquia Nossa Senhora das Dores|Q. 03 – Bl. H A.E. 08|Cruzeiro Velho
+Paróquia Nossa Senhora das Vitórias|Col. Agrícola Vicente Pires – Centro Comunitário AE 01 lt. 05|Vicente Pires
+Paróquia Nossa Senhora de Fátima|AE, 45 Granja do Torto, Vila Wesnia Roriz|Granja do Torto
+Paróquia Nossa Senhora de Lourdes|QNG AE 25/27|Taguatinga
+Paróquia Nossa Senhora de Nazaré|Estância 2, Módulo C Lote 1|Planaltina
+Paróquia Nossa Senhora do Carmo|QSF 5/7 AE 2|Taguatinga
+Paróquia Nossa Senhora do Lago|SHIN QI 3 AE lt. A - Telefones 61 33684605 - 982839887 (whatsapp)|Lago Norte
+Paróquia Nossa Senhora do Perpétuo Socorro|SHIS E/Q QL 6/8 conj. A|Lago Sul
+Paróquia Nossa Senhora do Rosário|SHIS QI 26 Lote H A.E.|Lago Sul
+Paróquia Nossa Senhora do Rosário de Pompéia|Rua da Igreja, Acampamento DFL AE lt. 6|Vila Planalto
+Paróquia Nossa Senhora Mãe da Divina Providência|EQNP 14/18 AE Mód. A/C - Setor P Sul|Ceilândia
+Paróquia Nossa Senhora Mãe dos Migrantes|Núcleo Rural Lago Oeste – DF 001, Cha. 68|Sobradinho II
+Paróquia Sagrada Família Taguatinga Norte|AE 5 A Setor G Norte|Taguatinga
+Paróquia Santa Luzia|Estância Planaltina - Módulo A - Lotes 253/254|Planaltina
+Paróquia Santa Maria dos Pobres|Praça Central nº14|Paranoá
+Paróquia Santa Rita de Cássia|L2 Sul Qd. 609 - B - Lts. 65/66|Asa Sul
+Paróquia Santo Inácio de Loyola|QN 311 conj. 5 lotes1/2|
+Paróquia Santuário Dom Bosco|SEPS 702 Bl. B s/n°|Asa Sul
+Paróquia Santa Teresinha|QNJ 19 AE 11|Taguatinga
+Paróquia Santo Antônio|QNM 29 Mód K - Sul|Ceilândia
+Paróquia Santo Cura D’Ars|SGAS 914 - B Móds. 65/66|Asa Sul
+Paróquia São João Paulo II|Quadra 107 Rua das Aroeiras Lote 03|Águas Claras
+Paróquia São José|EQ 36/37 lote B - Vila São José|Brazlândia
+Paróquia São Francisco de Assis - Tororó|Rodovia Diogo Machado, DF 140 Km 4,5 Setor Habitacional Tororó|Tororó
+Paróquia São Francisco de Assis I|EQNM 07/09 A.E. Mód. A - Sul|Ceilândia
+Paróquia São José Operário|L2 Norte 604 - Mód. D|Asa Norte
+Paróquia São Francisco de Assis II|QNO 20 conj. A lote 15 – Exp. do Setor O|Ceilândia
+Paróquia São Gabriel Arcanjo|Q. 201 AE s/n lt. 19|Recanto das Emas
+Paróquia São José|CND - AE no. 01|Taguatinga Norte
+Paróquia São João Batista|QNF A.E. 24|Taguatinga
+Paróquia São José Esposo de Maria|AR 5 A.E. 02|Sobradinho II
+Paróquia São Miguel Arcanjo|QN 7 AE 12 CEP: 71805-740|Riacho Fundo I
+Paróquia São Paulo|: INCRA 08 A.E. 16 Lt. 02- Núcleo Rural Alexandre Gusmão|Brazlândia
+Paróquia São Judas Tadeu|W5 Sul 908 lotes 24/25|
+Paróquia São Pedro|QSD AE 25 Setor D Sul|Taguatinga
+Paróquia São Judas Tadeu|EQNL 9/11 - Lt. 02|Taguatinga
+Paróquia São Pedro Apóstolo|EQNP 12/16 AE E, F, G, H - Setor|Ceilândia
+Paróquia São Luís Orione|Quadra 378, conjunto Q Av. São Luia Orione, A.E. 01|Itapoã
+Paróquia São Pedro e São Paulo|EQNM 34/36 AE Mód. B Setor M Norte|Taguatinga
+Paróquia São Pio de Pietrelcina|EQRSW 1/2 lt. 1 – Sudoeste|Sudoeste
+Paróquia São Sebastião|EQNL 21/23 - Mód. 02|Taguatinga
+Paróquia São Sebastião|Praça Padre Antônio Mavigaglia, A.E. S/N Setor Tradicional|Planaltina
+Paróquia São Vicente de Paulo|Pç São Vicente – EQ 16/17 – Vila Vicentina|Planaltina
+Paróquia Senhor Bom Jesus|EQNO 11/13 Setor O|Ceilândia
+Paróquia Santo Antônio|SGAS 911|Asa Sul
+Catedral Nossa Senhora Aparecida|Esplanada dos Ministérios - Lote 12|Esplanada dos Ministérios
+Paróquia Sagrado Coração de Jesus e Nossa Senhora das Mercês|Avenida L2 Sul, SGAS 615, Bloco D, Brasília - DF, 70200-750|L2 Sul
+Paróquia Divino Espírito Santo|SGAN W5 Norte Q. 905 Módulo “A|
+Paróquia Mãe da Divina Misericórdia|EQN 214/215 Lote A|
+Paróquia Nossa Senhora de Guadalupe|EQS 311/312|Asa Sul
+Paróquia Sagrada Família|SMPW Q. 27 trecho 01 AE 04|Park Way
+Paróquia São Mateus|QMS 14 Lote 3/5 Cond. Mini-Chácaras – Setor de Mansões|Sobradinho II
+Paróquia Bom Jesus|Av. L2 Sul Q. 601 Mód. 3/ 4|Asa Sul
+Santuário Nossa Senhora do Carmo|SGAS 913 Conj. A - Avenida W3 Sul|Asa Sul
+Paróquia Pai Nosso|SHIN QL 13 AE D|Lago Norte
+Paróquia Santa Cruz e Santa Edwiges|W5 Sul - SGAS 905 lote 1|Asa Sul
+Paróquia São Camilo de Lellis|EQS 303/304 – Lote A|Asa Sul
+Paróquia São Sebastião|Q.1 AE s/n. - Praça São Sebastião|Brazlândia
+Quase Paróquia São João Paulo II|Jardins Mangueiral|Jardins Mangueiral
+Paróquia Nossa Senhora da Esperança|SHVP Rua 08 Chácara 225 lote 3|Vicente Pires
+Paróquia Nossa Senhora de Nazaré|SHIS QI 01 conj. 1 lt. A|Lago Sul
+Paróquia São Marcos e São Lucas|EQNP 09/13 Mód. E, F, G, H - P Norte|Ceilândia
+Santuário do Santíssimo Sacramento|L2 Sul 606 - Lts. 41/42|Asa Sul
+Paróquia São Pedro de Alcântara|SHIS AE QI 07 lt. C|Lago Sul
+Paróquia São Francisco Francisco|SHAQ Recanto das Emas, DF 280 Km 03 ( Ao lado do Cond. Res. São Francisco)|Recanto das Emas
+Paróquia Nossa Senhora da Assunção|EQNP 32/36 AE Mód. A|Ceilândia
+R
+Dom,0,07h00;Dom,1,07h00;Dom,2,07h00;Dom,3,07h00;Dom,4,07h00;Dom,5,07h00;Dom,6,07h00;Dom,7,07h00;Dom,8,07h00;Dom,9,07h00;Dom,10,07h00;Dom,11,07h00;Dom,12,07h00;Dom,13,07h00;Dom,14,07h00;Dom,15,07h00;Dom,16,07h00;Dom,17,07h00;Dom,18,07h00;Dom,19,07h00;Dom,20,07h00;Dom,21,07h00;Dom,22,07h30;Dom,23,07h30;Dom,24,07h30;Dom,25,07h30;Dom,26,07h30;Dom,27,07h30;Dom,28,07h30;Dom,29,07h30;Dom,30,07h30;Dom,31,07h30;Dom,32,07h30;Dom,33,07h30;Dom,34,07h30;Dom,35,07h30;Dom,36,08h00;Dom,37,08h00;Dom,38,08h00;Dom,39,08h00;Dom,40,08h00;Dom,41,08h00;Dom,42,08h00;Dom,43,08h00;Dom,44,08h00;Dom,45,08h00;Dom,46,08h00;Dom,47,08h00;Dom,48,08h00;Dom,7,08h00;Dom,49,08h00;Dom,50,08h00;Dom,51,08h00;Dom,52,08h00;Dom,53,08h00;Dom,54,08h00;Dom,55,08h00;Dom,56,08h00;Dom,57,08h00;Dom,58,08h00;Dom,59,08h00;Dom,60,08h00;Dom,61,08h00;Dom,62,08h00;Dom,63,08h00;Dom,64,08h00;Dom,65,08h00;Dom,65,08h00;Dom,15,08h00;Dom,66,08h00;Dom,67,08h00;Dom,67,08h00;Dom,68,08h00;Dom,69,08h00;Dom,70,08h00;Dom,71,08h00;Dom,72,08h00;Dom,73,08h00;Dom,74,08h00;Dom,75,08h00;Dom,76,08h00;Dom,77,08h00;Dom,78,08h00;Dom,79,08h00;Dom,80,08h00;Dom,81,08h00;Dom,82,08h00;Dom,83,08h00;Dom,84,08h00;Dom,84,08h00;Dom,84,08h00;Dom,85,08h00;Dom,86,08h00;Dom,87,08h00;Dom,88,08h00;Dom,89,08h00;Dom,90,08h00;Dom,91,08h00;Dom,92,08h00;Dom,93,08h00;Dom,94,08h30;Dom,95,08h30;Dom,96,08h30;Dom,97,08h30;Dom,98,08h30;Dom,99,09h00;Dom,22,09h00;Dom,0,09h00;Dom,1,09h00;Dom,2,09h00;Dom,3,09h00;Dom,7,09h00;Dom,8,09h00;Dom,100,09h00;Dom,9,09h00;Dom,101,09h00;Dom,10,09h00;Dom,102,09h00;Dom,11,09h00;Dom,13,09h00;Dom,14,09h00;Dom,103,09h00;Dom,104,09h00;Dom,105,09h00;Dom,23,09h30;Dom,27,09h30;Dom,106,09h30;Dom,45,09h30;Dom,46,09h30;Dom,28,09h30;Dom,107,09h30;Dom,15,09h30;Dom,32,09h30;Dom,19,09h30;Dom,37,10h00;Dom,108,10h00;Dom,41,10h00;Dom,4,10h00;Dom,5,10h00;Dom,48,10h00;Dom,7,10h00;Dom,50,10h00;Dom,51,10h00;Dom,52,10h00;Dom,54,10h00;Dom,55,10h00;Dom,57,10h00;Dom,59,10h00;Dom,61,10h00;Dom,29,10h00;Dom,30,10h00;Dom,65,10h00;Dom,109,10h00;Dom,31,10h00;Dom,66,10h00;Dom,69,10h00;Dom,17,10h00;Dom,74,10h00;Dom,18,10h00;Dom,76,10h00;Dom,20,10h00;Dom,77,10h00;Dom,78,10h00;Dom,79,10h00;Dom,33,10h00;Dom,82,10h00;Dom,83,10h00;Dom,84,10h00;Dom,84,10h00;Dom,110,10h00;Dom,98,10h00;Dom,85,10h00;Dom,86,10h00;Dom,34,10h00;Dom,90,10h00;Dom,35,10h00;Dom,91,10h00;Dom,21,10h00;Dom,93,10h00;Dom,36,10h30;Dom,39,10h30;Dom,96,10h30;Dom,11,10h30;Dom,67,10h30;Dom,68,10h30;Dom,80,10h30;Dom,92,10h30;Dom,0,11h00;Dom,95,11h00;Dom,3,11h00;Dom,43,11h00;Dom,46,11h00;Dom,47,11h00;Dom,7,11h00;Dom,49,11h00;Dom,8,11h00;Dom,100,11h00;Dom,53,11h00;Dom,60,11h00;Dom,62,11h00;Dom,13,11h00;Dom,64,11h00;Dom,14,11h00;Dom,15,11h00;Dom,103,11h00;Dom,16,11h00;Dom,72,11h00;Dom,75,11h00;Dom,87,11h00;Dom,59,11h30;Dom,99,12h00;Dom,2,12h00;Dom,42,12h00;Dom,54,12h00;Dom,59,12h00;Dom,110,12h00;Dom,86,12h00;Dom,88,12h00;Dom,91,12h00;Dom,93,12h00;Dom,15,12h15;Dom,3,12h30;Dom,96,12h30;Dom,15,15h00;Dom,3,16h00;Dom,5,16h00;Dom,12,16h00;Dom,108,17h00;Dom,1,17h00;Dom,46,17h00;Dom,48,17h00;Dom,8,17h00;Dom,52,17h00;Dom,54,17h00;Dom,9,17h00;Dom,60,17h00;Dom,11,17h00;Dom,30,17h00;Dom,31,17h00;Dom,15,17h00;Dom,103,17h00;Dom,74,17h00;Dom,77,17h00;Dom,33,17h00;Dom,86,17h00;Dom,88,17h00;Dom,35,17h00;Dom,93,17h00;Dom,22,17h30;Dom,0,17h30;Dom,95,18h00;Dom,2,18h00;Dom,42,18h00;Dom,3,18h00;Dom,7,18h00;Dom,101,18h00;Dom,59,18h00;Dom,61,18h00;Dom,62,18h00;Dom,12,18h00;Dom,13,18h00;Dom,64,18h00;Dom,67,18h00;Dom,17,18h00;Dom,20,18h00;Dom,91,18h00;Dom,105,18h00;Dom,92,18h00;Dom,45,18h30;Dom,7,18h30;Dom,96,18h30;Dom,58,18h30;Dom,102,18h30;Dom,80,18h30;Dom,110,18h30;Dom,99,19h00;Dom,37,19h00;Dom,94,19h00;Dom,108,19h00;Dom,1,19h00;Dom,39,19h00;Dom,41,19h00;Dom,25,19h00;Dom,4,19h00;Dom,27,19h00;Dom,106,19h00;Dom,43,19h00;Dom,43,19h00;Dom,5,19h00;Dom,44,19h00;Dom,6,19h00;Dom,46,19h00;Dom,47,19h00;Dom,49,19h00;Dom,8,19h00;Dom,50,19h00;Dom,28,19h00;Dom,51,19h00;Dom,100,19h00;Dom,53,19h00;Dom,54,19h00;Dom,55,19h00;Dom,9,19h00;Dom,56,19h00;Dom,57,19h00;Dom,97,19h00;Dom,10,19h00;Dom,60,19h00;Dom,11,19h00;Dom,29,19h00;Dom,63,19h00;Dom,109,19h00;Dom,31,19h00;Dom,15,19h00;Dom,66,19h00;Dom,103,19h00;Dom,68,19h00;Dom,69,19h00;Dom,16,19h00;Dom,70,19h00;Dom,71,19h00;Dom,72,19h00;Dom,73,19h00;Dom,32,19h00;Dom,74,19h00;Dom,75,19h00;Dom,76,19h00;Dom,79,19h00;Dom,33,19h00;Dom,81,19h00;Dom,82,19h00;Dom,83,19h00;Dom,84,19h00;Dom,98,19h00;Dom,85,19h00;Dom,86,19h00;Dom,104,19h00;Dom,87,19h00;Dom,88,19h00;Dom,89,19h00;Dom,34,19h00;Dom,35,19h00;Dom,21,19h00;Dom,93,19h00;Dom,22,19h30;Dom,23,19h30;Dom,24,19h30;Dom,0,19h30;Dom,38,19h30;Dom,40,19h30;Dom,26,19h30;Dom,45,19h30;Dom,48,19h30;Dom,107,19h30;Dom,59,19h30;Dom,102,19h30;Dom,64,19h30;Dom,18,19h30;Dom,77,19h30;Dom,78,19h30;Dom,90,19h30;Dom,36,20h00;Dom,2,20h00;Dom,3,20h00;Dom,59,20h00;Dom,12,20h00;Dom,30,20h00;Dom,13,20h00;Dom,17,20h00;Dom,110,20h00;Dom,91,20h00;Dom,105,20h00;Dom,96,20h30;Dom,103,20h30;Dom,86,20h30;Dom,54,21h00;Dom,15,21h30;Seg,2,06h30;Seg,72,06h30;Seg,19,06h30;Seg,35,06h30;Seg,94,07h00;Seg,108,07h00;Seg,42,07h00;Seg,8,07h00;Seg,13,07h00;Seg,64,07h00;Seg,14,07h00;Seg,15,07h00;Seg,18,07h00;Seg,33,07h00;Seg,93,07h00;Seg,96,07h30;Seg,109,07h30;Seg,31,07h30;Seg,103,07h30;Seg,111,08h00;Seg,54,08h00;Seg,67,08h00;Seg,110,08h00;Seg,46,12h15;Seg,15,12h15;Seg,67,12h15;Seg,95,18h00;Seg,64,18h00;Seg,46,18h30;Seg,7,18h30;Seg,100,18h30;Seg,80,18h30;Seg,110,18h30;Seg,37,19h00;Seg,0,19h00;Seg,108,19h00;Seg,2,19h00;Seg,112,19h00;Seg,27,19h00;Seg,43,19h00;Seg,8,19h00;Seg,96,19h00;Seg,54,19h00;Seg,55,19h00;Seg,13,19h00;Seg,109,19h00;Seg,15,19h00;Seg,103,19h00;Seg,75,19h00;Seg,19,19h00;Seg,83,19h00;Seg,35,19h00;Seg,91,19h00;Seg,93,19h00;Seg,86,19h15;Seg,1,19h30;Seg,3,19h30;Seg,106,19h30;Seg,5,19h30;Seg,28,19h30;Seg,52,19h30;Seg,73,19h30;Seg,85,19h30;Seg,90,19h30;Ter,95,06h30;Ter,2,06h30;Ter,7,06h30;Ter,9,06h30;Ter,72,06h30;Ter,19,06h30;Ter,88,06h30;Ter,35,06h30;Ter,0,07h00;Ter,94,07h00;Ter,108,07h00;Ter,3,07h00;Ter,4,07h00;Ter,47,07h00;Ter,8,07h00;Ter,13,07h00;Ter,64,07h00;Ter,14,07h00;Ter,15,07h00;Ter,18,07h00;Ter,33,07h00;Ter,93,07h00;Ter,96,07h30;Ter,101,07h30;Ter,109,07h30;Ter,103,07h30;Ter,54,08h00;Ter,65,08h00;Ter,67,08h00;Ter,110,08h00;Ter,91,08h00;Ter,59,12h00;Ter,46,12h15;Ter,96,12h15;Ter,15,12h15;Ter,67,12h15;Ter,91,12h15;Ter,92,12h15;Ter,91,15h15;Ter,95,18h00;Ter,64,18h00;Ter,14,18h00;Ter,33,18h00;Ter,45,18h30;Ter,46,18h30;Ter,7,18h30;Ter,7,18h30;Ter,100,18h30;Ter,62,18h30;Ter,18,18h30;Ter,80,18h30;Ter,110,18h30;Ter,21,18h30;Ter,99,19h00;Ter,36,19h00;Ter,37,19h00;Ter,0,19h00;Ter,108,19h00;Ter,2,19h00;Ter,41,19h00;Ter,112,19h00;Ter,4,19h00;Ter,27,19h00;Ter,43,19h00;Ter,47,19h00;Ter,8,19h00;Ter,96,19h00;Ter,51,19h00;Ter,53,19h00;Ter,54,19h00;Ter,55,19h00;Ter,56,19h00;Ter,57,19h00;Ter,102,19h00;Ter,60,19h00;Ter,61,19h00;Ter,13,19h00;Ter,63,19h00;Ter,109,19h00;Ter,15,19h00;Ter,66,19h00;Ter,103,19h00;Ter,68,19h00;Ter,72,19h00;Ter,74,19h00;Ter,75,19h00;Ter,19,19h00;Ter,79,19h00;Ter,81,19h00;Ter,83,19h00;Ter,88,19h00;Ter,89,19h00;Ter,35,19h00;Ter,91,19h00;Ter,93,19h00;Ter,86,19h15;Ter,22,19h30;Ter,23,19h30;Ter,24,19h30;Ter,1,19h30;Ter,39,19h30;Ter,40,19h30;Ter,25,19h30;Ter,26,19h30;Ter,42,19h30;Ter,3,19h30;Ter,3,19h30;Ter,106,19h30;Ter,5,19h30;Ter,44,19h30;Ter,6,19h30;Ter,48,19h30;Ter,49,19h30;Ter,50,19h30;Ter,28,19h30;Ter,107,19h30;Ter,52,19h30;Ter,9,19h30;Ter,59,19h30;Ter,10,19h30;Ter,11,19h30;Ter,31,19h30;Ter,69,19h30;Ter,17,19h30;Ter,73,19h30;Ter,32,19h30;Ter,76,19h30;Ter,20,19h30;Ter,77,19h30;Ter,78,19h30;Ter,82,19h30;Ter,84,19h30;Ter,98,19h30;Ter,85,19h30;Ter,104,19h30;Ter,87,19h30;Ter,34,19h30;Ter,90,19h30;Ter,59,20h00;Ter,30,20h00;Ter,105,20h00;Qua,95,06h30;Qua,2,06h30;Qua,7,06h30;Qua,9,06h30;Qua,72,06h30;Qua,19,06h30;Qua,88,06h30;Qua,35,06h30;Qua,0,07h00;Qua,94,07h00;Qua,108,07h00;Qua,26,07h00;Qua,3,07h00;Qua,47,07h00;Qua,8,07h00;Qua,13,07h00;Qua,64,07h00;Qua,14,07h00;Qua,15,07h00;Qua,18,07h00;Qua,33,07h00;Qua,93,07h00;Qua,23,07h30;Qua,96,07h30;Qua,101,07h30;Qua,109,07h30;Qua,103,07h30;Qua,17,07h30;Qua,111,08h00;Qua,37,08h00;Qua,54,08h00;Qua,65,08h00;Qua,67,08h00;Qua,110,08h00;Qua,59,12h00;Qua,46,12h15;Qua,96,12h15;Qua,15,12h15;Qua,67,12h15;Qua,91,12h15;Qua,92,12h15;Qua,42,15h00;Qua,54,17h00;Qua,95,18h00;Qua,59,18h00;Qua,64,18h00;Qua,14,18h00;Qua,33,18h00;Qua,89,18h00;Qua,45,18h30;Qua,46,18h30;Qua,7,18h30;Qua,7,18h30;Qua,100,18h30;Qua,62,18h30;Qua,18,18h30;Qua,80,18h30;Qua,110,18h30;Qua,21,18h30;Qua,99,19h00;Qua,0,19h00;Qua,108,19h00;Qua,2,19h00;Qua,41,19h00;Qua,112,19h00;Qua,27,19h00;Qua,43,19h00;Qua,47,19h00;Qua,8,19h00;Qua,96,19h00;Qua,51,19h00;Qua,53,19h00;Qua,54,19h00;Qua,55,19h00;Qua,56,19h00;Qua,57,19h00;Qua,102,19h00;Qua,61,19h00;Qua,13,19h00;Qua,63,19h00;Qua,109,19h00;Qua,15,19h00;Qua,66,19h00;Qua,103,19h00;Qua,68,19h00;Qua,72,19h00;Qua,74,19h00;Qua,75,19h00;Qua,19,19h00;Qua,79,19h00;Qua,81,19h00;Qua,83,19h00;Qua,35,19h00;Qua,91,19h00;Qua,93,19h00;Qua,86,19h15;Qua,36,19h30;Qua,24,19h30;Qua,38,19h30;Qua,1,19h30;Qua,39,19h30;Qua,25,19h30;Qua,26,19h30;Qua,3,19h30;Qua,3,19h30;Qua,5,19h30;Qua,44,19h30;Qua,48,19h30;Qua,49,19h30;Qua,50,19h30;Qua,28,19h30;Qua,107,19h30;Qua,52,19h30;Qua,9,19h30;Qua,97,19h30;Qua,10,19h30;Qua,11,19h30;Qua,29,19h30;Qua,31,19h30;Qua,71,19h30;Qua,73,19h30;Qua,32,19h30;Qua,76,19h30;Qua,20,19h30;Qua,77,19h30;Qua,78,19h30;Qua,82,19h30;Qua,84,19h30;Qua,85,19h30;Qua,104,19h30;Qua,87,19h30;Qua,34,19h30;Qua,90,19h30;Qua,30,20h00;Qua,105,20h00;Qui,95,06h30;Qui,2,06h30;Qui,7,06h30;Qui,9,06h30;Qui,72,06h30;Qui,19,06h30;Qui,88,06h30;Qui,35,06h30;Qui,0,07h00;Qui,94,07h00;Qui,108,07h00;Qui,42,07h00;Qui,3,07h00;Qui,4,07h00;Qui,5,07h00;Qui,8,07h00;Qui,60,07h00;Qui,13,07h00;Qui,64,07h00;Qui,14,07h00;Qui,15,07h00;Qui,18,07h00;Qui,33,07h00;Qui,93,07h00;Qui,96,07h30;Qui,101,07h30;Qui,109,07h30;Qui,31,07h30;Qui,103,07h30;Qui,54,08h00;Qui,65,08h00;Qui,67,08h00;Qui,110,08h00;Qui,59,12h00;Qui,46,12h15;Qui,96,12h15;Qui,15,12h15;Qui,67,12h15;Qui,92,12h15;Qui,102,15h00;Qui,54,17h00;Qui,95,18h00;Qui,64,18h00;Qui,14,18h00;Qui,33,18h00;Qui,45,18h30;Qui,46,18h30;Qui,7,18h30;Qui,7,18h30;Qui,100,18h30;Qui,62,18h30;Qui,18,18h30;Qui,80,18h30;Qui,110,18h30;Qui,21,18h30;Qui,99,19h00;Qui,37,19h00;Qui,0,19h00;Qui,108,19h00;Qui,39,19h00;Qui,2,19h00;Qui,41,19h00;Qui,112,19h00;Qui,4,19h00;Qui,27,19h00;Qui,43,19h00;Qui,47,19h00;Qui,8,19h00;Qui,96,19h00;Qui,51,19h00;Qui,53,19h00;Qui,54,19h00;Qui,55,19h00;Qui,56,19h00;Qui,57,19h00;Qui,102,19h00;Qui,60,19h00;Qui,61,19h00;Qui,13,19h00;Qui,63,19h00;Qui,109,19h00;Qui,15,19h00;Qui,66,19h00;Qui,103,19h00;Qui,68,19h00;Qui,72,19h00;Qui,74,19h00;Qui,75,19h00;Qui,19,19h00;Qui,79,19h00;Qui,81,19h00;Qui,83,19h00;Qui,84,19h00;Qui,89,19h00;Qui,35,19h00;Qui,93,19h00;Qui,86,19h15;Qui,22,19h30;Qui,36,19h30;Qui,23,19h30;Qui,24,19h30;Qui,38,19h30;Qui,94,19h30;Qui,1,19h30;Qui,40,19h30;Qui,25,19h30;Qui,26,19h30;Qui,42,19h30;Qui,3,19h30;Qui,3,19h30;Qui,106,19h30;Qui,5,19h30;Qui,44,19h30;Qui,6,19h30;Qui,48,19h30;Qui,49,19h30;Qui,50,19h30;Qui,28,19h30;Qui,107,19h30;Qui,52,19h30;Qui,9,19h30;Qui,59,19h30;Qui,97,19h30;Qui,10,19h30;Qui,11,19h30;Qui,29,19h30;Qui,69,19h30;Qui,17,19h30;Qui,71,19h30;Qui,73,19h30;Qui,32,19h30;Qui,76,19h30;Qui,20,19h30;Qui,77,19h30;Qui,78,19h30;Qui,82,19h30;Qui,98,19h30;Qui,85,19h30;Qui,104,19h30;Qui,87,19h30;Qui,34,19h30;Qui,90,19h30;Qui,28,20h00;Qui,59,20h00;Qui,30,20h00;Qui,105,20h00;Sex,95,06h30;Sex,2,06h30;Sex,7,06h30;Sex,9,06h30;Sex,72,06h30;Sex,19,06h30;Sex,88,06h30;Sex,35,06h30;Sex,0,07h00;Sex,94,07h00;Sex,108,07h00;Sex,3,07h00;Sex,4,07h00;Sex,45,07h00;Sex,47,07h00;Sex,8,07h00;Sex,13,07h00;Sex,64,07h00;Sex,14,07h00;Sex,15,07h00;Sex,18,07h00;Sex,33,07h00;Sex,93,07h00;Sex,96,07h30;Sex,101,07h30;Sex,109,07h30;Sex,31,07h30;Sex,103,07h30;Sex,111,08h00;Sex,54,08h00;Sex,65,08h00;Sex,67,08h00;Sex,110,08h00;Sex,59,12h00;Sex,46,12h15;Sex,96,12h15;Sex,15,12h15;Sex,67,12h15;Sex,91,12h15;Sex,92,12h15;Sex,93,15h00;Sex,95,18h00;Sex,64,18h00;Sex,14,18h00;Sex,33,18h00;Sex,46,18h30;Sex,7,18h30;Sex,7,18h30;Sex,100,18h30;Sex,62,18h30;Sex,18,18h30;Sex,80,18h30;Sex,110,18h30;Sex,21,18h30;Sex,99,19h00;Sex,37,19h00;Sex,0,19h00;Sex,108,19h00;Sex,2,19h00;Sex,41,19h00;Sex,112,19h00;Sex,4,19h00;Sex,27,19h00;Sex,43,19h00;Sex,47,19h00;Sex,8,19h00;Sex,96,19h00;Sex,51,19h00;Sex,53,19h00;Sex,54,19h00;Sex,55,19h00;Sex,56,19h00;Sex,57,19h00;Sex,102,19h00;Sex,60,19h00;Sex,61,19h00;Sex,13,19h00;Sex,63,19h00;Sex,109,19h00;Sex,15,19h00;Sex,66,19h00;Sex,103,19h00;Sex,68,19h00;Sex,72,19h00;Sex,74,19h00;Sex,75,19h00;Sex,19,19h00;Sex,79,19h00;Sex,81,19h00;Sex,83,19h00;Sex,89,19h00;Sex,35,19h00;Sex,91,19h00;Sex,93,19h00;Sex,86,19h15;Sex,22,19h30;Sex,36,19h30;Sex,23,19h30;Sex,24,19h30;Sex,38,19h30;Sex,1,19h30;Sex,39,19h30;Sex,25,19h30;Sex,26,19h30;Sex,42,19h30;Sex,3,19h30;Sex,3,19h30;Sex,106,19h30;Sex,5,19h30;Sex,44,19h30;Sex,49,19h30;Sex,50,19h30;Sex,28,19h30;Sex,52,19h30;Sex,9,19h30;Sex,59,19h30;Sex,97,19h30;Sex,10,19h30;Sex,11,19h30;Sex,29,19h30;Sex,69,19h30;Sex,17,19h30;Sex,71,19h30;Sex,73,19h30;Sex,32,19h30;Sex,76,19h30;Sex,20,19h30;Sex,77,19h30;Sex,78,19h30;Sex,82,19h30;Sex,85,19h30;Sex,104,19h30;Sex,87,19h30;Sex,34,19h30;Sex,90,19h30;Sex,45,20h00;Sex,59,20h00;Sex,30,20h00;Sex,105,20h00;Sab,7,06h30;Sab,19,06h30;Sab,88,06h30;Sab,108,07h00;Sab,2,07h00;Sab,4,07h00;Sab,48,07h00;Sab,8,07h00;Sab,13,07h00;Sab,14,07h00;Sab,15,07h00;Sab,18,07h00;Sab,76,07h00;Sab,33,07h00;Sab,21,07h00;Sab,96,07h30;Sab,109,07h30;Sab,31,07h30;Sab,103,07h30;Sab,83,07h30;Sab,37,08h00;Sab,1,08h00;Sab,95,08h00;Sab,3,08h00;Sab,112,08h00;Sab,43,08h00;Sab,47,08h00;Sab,49,08h00;Sab,100,08h00;Sab,52,08h00;Sab,54,08h00;Sab,65,08h00;Sab,72,08h00;Sab,110,08h00;Sab,85,08h00;Sab,35,08h00;Sab,105,08h00;Sab,67,08h30;Sab,44,09h00;Sab,59,12h00;Sab,46,12h15;Sab,96,12h15;Sab,15,12h15;Sab,108,17h00;Sab,45,17h00;Sab,46,17h00;Sab,7,17h00;Sab,28,17h00;Sab,51,17h00;Sab,103,17h00;Sab,73,17h00;Sab,75,17h00;Sab,33,17h00;Sab,90,17h00;Sab,92,17h00;Sab,93,17h00;Sab,99,18h00;Sab,94,18h00;Sab,95,18h00;Sab,2,18h00;Sab,41,18h00;Sab,26,18h00;Sab,42,18h00;Sab,112,18h00;Sab,106,18h00;Sab,48,18h00;Sab,50,18h00;Sab,100,18h00;Sab,53,18h00;Sab,54,18h00;Sab,101,18h00;Sab,59,18h00;Sab,61,18h00;Sab,62,18h00;Sab,29,18h00;Sab,64,18h00;Sab,31,18h00;Sab,15,18h00;Sab,72,18h00;Sab,32,18h00;Sab,81,18h00;Sab,98,18h00;Sab,87,18h00;Sab,34,18h00;Sab,35,18h00;Sab,5,18h30;Sab,7,18h30;Sab,96,18h30;Sab,28,18h30;Sab,107,18h30;Sab,102,18h30;Sab,67,18h30;Sab,18,18h30;Sab,80,18h30;Sab,110,18h30;Sab,86,18h30;Sab,22,19h00;Sab,36,19h00;Sab,0,19h00;Sab,38,19h00;Sab,39,19h00;Sab,3,19h00;Sab,4,19h00;Sab,27,19h00;Sab,43,19h00;Sab,44,19h00;Sab,47,19h00;Sab,49,19h00;Sab,8,19h00;Sab,51,19h00;Sab,55,19h00;Sab,56,19h00;Sab,57,19h00;Sab,60,19h00;Sab,11,19h00;Sab,30,19h00;Sab,13,19h00;Sab,63,19h00;Sab,109,19h00;Sab,66,19h00;Sab,103,19h00;Sab,68,19h00;Sab,74,19h00;Sab,75,19h00;Sab,76,19h00;Sab,19,19h00;Sab,82,19h00;Sab,84,19h00;Sab,84,19h00;Sab,84,19h00;Sab,85,19h00;Sab,104,19h00;Sab,89,19h00;Sab,91,19h00;Sab,105,19h00;Sab,21,19h00;Sab,93,19h00;Sab,40,19h30;Sab,25,19h30;Sab,52,19h30;Sab,9,19h30;Sab,17,19h30;Sab,71,19h30;Sab,73,19h30;Sab,20,19h30;Sab,77,19h30;Sab,78,19h30

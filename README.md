@@ -21,9 +21,9 @@ Horários de **missa, confissão e adoração** no Distrito Federal, num site s�
 
 É um único `index.html`, sem servidor. "Agora" é calculado no navegador, no fuso de Brasília. O mapa usa Leaflet com o OpenStreetMap (grátis, sem chave).
 
-## Próximos passos
+## Como os dados são atualizados
 
-- [ ] Robô (GitHub Actions) que lê a planilha dos fiéis, limpa os horários e atualiza o site sozinho
+- [ ] Robô agente realiza leitura a planilha dos fiéis, limpa os horários e atualiza o site sozinho
 
 ---
 

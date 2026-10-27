@@ -1,4 +1,5 @@
 {
+ "Capela Militar São Paulo Apóstolo (PMDF) | Setor Policial Sul | Setor Policial Sul, dentro da PMDF, Brasília - DF": null,
  "Capela Santa Paulina | Guará II": [
   -15.851362,
   -47.974069
@@ -8,6 +9,11 @@
   -15.798313,
   -47.805713
  ],
+ "Catedral Militar Rainha da Paz | Eixo Monumental | Via Canteiro Central do Eixo Monumental, Rua G, SMU, Brasília - DF": [
+  -15.780807,
+  -47.924166
+ ],
+ "Comunidade Católica Shalom (507 Sul) | Asa Sul | SHCS CRS 507, Bloco 23, Asa Sul, Brasília - DF, 70351-510": null,
  "Comunidade Católica Shalom (508 sul) | Asa Sul": null,
  "Comunidade Fidelidade da Cruz | Taguatinga": null,
  "Lar dos Velhinhos | Taguatinga": [
@@ -19,6 +25,10 @@
   -15.974562,
   -48.0439
  ],
+ "Nossa Senhora Aparecida | Gama | Avenida Contorno, Vila Roriz, Setor Oeste, Região Geográfica Imediata do Distrito Federal, Região Centro-Oeste": [
+  -15.974562,
+  -48.0439
+ ],
  "Nossa Senhora da Conceição | Samambaia": [
   -15.863461,
   -48.074517
@@ -27,11 +37,29 @@
   -15.817339,
   -48.104577
  ],
+ "Paróquia Bem-Aventurada Virgem Maria de Guadalupe | Ceilândia | Ceilândia": [
+  -15.817339,
+  -48.104577
+ ],
+ "Paróquia Militar Divino Espírito Santo (CBMDF) | SAIS | SAIS Área Especial 3, Complexo da Academia de Bombeiros Militar, Asa Sul, Brasília - DF, 70602-200": null,
+ "Paróquia Militar Oratório do Soldado | Setor Militar Urbano | Av. Duque de Caxias, SMU, Brasília - DF, 70630-100": [
+  -15.760691,
+  -47.922726
+ ],
+ "Paróquia Militar São Miguel Arcanjo e Santo Expedito | Asa Norte | EQN 303/304, Asa Norte, Brasília - DF, 70735-400": [
+  -15.747144,
+  -47.882724
+ ],
  "Paróquia São Sebastião | São Sebastião": [
   -15.814537,
   -48.092109
  ],
+ "Paróquia São Sebastião | São Sebastião | Quadra 12 número 14 - Morro da Cruz - São Sebastião - DF – CEP: 71693-500": [
+  -15.814537,
+  -48.092109
+ ],
  "Santos Anjos da Guarda | Riacho fundo 1": null,
+ "Santuário Mãe Rainha de Schoenstatt | DF-001 | Rodovia DF-001, km 4 (após a Torre de TV Digital), Brasília - DF": null,
  "Seminário maior | Lago Sul": null,
  "São Charbel | Noroeste": null
 }

@@ -121,7 +121,9 @@ def para_site(h, p, esp, gerado):
     for r in h.itertuples():
         rows.append([int(r.paroquia_id), TIPOS.index(r.tipo), WD[r.dia], r.inicio, r.fim if isinstance(r.fim, str) else "",
                      round(float(r.hora_num), 4), int(bool(r.aproximado)), str(r.atualizado_em), FONTES.index(r.fonte), r.local])
-    E = [[r.data, r.inicio, r.fim, int(r.paroquia_id), r.celebracao, curadoria.TIPOS_ESP.index(r.tipo), r.obs] for r in esp.itertuples()]
+    CAT = {"": 0, "Votiva": 1, "Solenidades e festas": 2}
+    E = [[r.data, r.inicio, r.fim, int(r.paroquia_id), r.celebracao, curadoria.TIPOS_ESP.index(r.tipo), r.obs, CAT.get(r.categoria, 0)]
+         for r in esp.itertuples()]
     return dict(tipos=TIPOS, fontes=FONTES, par=par, rows=rows, esp=E, nParoquias=len(p), gerado=gerado)
 
 

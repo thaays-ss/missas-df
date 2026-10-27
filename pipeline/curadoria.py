@@ -254,7 +254,9 @@ def aplica(caminho, h, p, avisos):
         if tipo not in ("Missa", "Confissão", "Adoração"):
             avisos.append(f"Horários linha {n + 2}: tipo '{tipo}' inválido")
             continue
-        trocar.add((pid, tipo))
+        subst = k(r.get("Substituir a base?"))
+        if not subst.startswith("nao"):
+            trocar.add((pid, tipo))
         obs = "" if vazio(r.get("Observação")) else str(r.get("Observação")).strip()
         ini, fim = hora(r.get("Início")), hora(r.get("Fim (opcional)"))
         if ini is None:
@@ -269,7 +271,7 @@ def aplica(caminho, h, p, avisos):
         local = "Matriz / igreja principal" if vazio(r.get("Local (opcional)")) else str(r.get("Local (opcional)")).strip()
         for d in ds:
             novas.append(dict(paroquia_id=pid, tipo=tipo, dia=d, inicio=ini, fim=fim, local=local,
-                              aproximado=bool(re.search(r"aprox|antes|apos|após|depois", obs.lower())),
+                              aproximado=bool(re.search(r"\(aprox|aproximad|(antes|apos|após|depois) d[ao]s? missa", obs.lower())),
                               obs=obs, fonte=FONTE, atualizado_em=upd))
     if trocar:
         fora = h.apply(lambda r: (r.paroquia_id, r.tipo) in trocar, axis=1)
@@ -294,10 +296,15 @@ def aplica(caminho, h, p, avisos):
         tit = "" if vazio(r.get("Celebração")) else str(r.get("Celebração")).strip()
         obs = "" if vazio(r.get("Observação")) else str(r.get("Observação")).strip()
         ds = ocorrencias(r, ini, fim)
+        exc = [DIAS.index(x) for x in re.findall(r"dom|seg|ter|qua|qui|sex|sab", k(r.get("Exceto (dias da semana)")))
+               for x in [dict(dom="Dom", seg="Seg", ter="Ter", qua="Qua", qui="Qui", sex="Sex", sab="Sab")[x]]]
+        ds = [d for d in ds if (d.weekday() + 1) % 7 not in exc]
+        cat = k(r.get("Categoria"))
+        cat = "Votiva" if cat.startswith("votiv") else "Solenidades e festas" if cat.startswith(("solen", "festa")) else ""
         if not ds:
             avisos.append(f"Especiais linha {n + 2}: não consegui calcular a data (confira Repete e as colunas da regra)")
         for d in ds:
             occ.append(dict(data=d.isoformat(), inicio=hi or "", fim=hf or "", paroquia_id=pid, celebracao=tit or tipo,
-                            tipo=tipo, obs=obs))
-    especiais = pd.DataFrame(occ, columns=["data", "inicio", "fim", "paroquia_id", "celebracao", "tipo", "obs"]).sort_values(["data", "inicio"])
+                            tipo=tipo, obs=obs, categoria=cat))
+    especiais = pd.DataFrame(occ, columns=["data", "inicio", "fim", "paroquia_id", "celebracao", "tipo", "obs", "categoria"]).sort_values(["data", "inicio"])
     return h, p, especiais

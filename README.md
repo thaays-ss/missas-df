@@ -23,7 +23,8 @@ Tabela de missas da Arquidiocese 2023 ┘        limpa · junta · confere
 ### Planilha de curadoria
 Uma segunda planilha, mantida pela autora, entra **por cima** das outras fontes:
 - **Horários:** quando uma igreja aparece aqui com um tipo (missa, confissão ou adoração), os horários daquele tipo vêm só desta planilha.
-- **Especiais:** celebrações que não são semanais, como dia 1, 1ª sexta, Finados, Natal e padroeiros. As festas móveis (Cinzas, Semana Santa, Páscoa, Corpus Christi…) são calculadas a partir da data da Páscoa. Tudo aparece na aba **Especiais** do site.
+- **Especiais:** celebrações que não são semanais, em duas categorias: **missas votivas** (todo mês num dia fixo) e **solenidades e festas** (Natal, Nossa Senhora Aparecida, Semana Santa…). As festas móveis (Cinzas, Páscoa, Corpus Christi…) são calculadas a partir da data da Páscoa, e uma regra "exceto" pula dias da semana. Aparecem na aba **Especiais**, com filtros, e no dia também na aba **Agora**.
+- **Só acrescentar:** cada horário pode substituir os da base para aquela igreja ou só somar a eles.
 - **Igrejas novas:** igrejas fora do cadastro da Arquidiocese (como as capelanias militares) e correções de endereço ou nome. O link do Google Maps vira o pino e o botão "Ver rota".
 
 ### Travas de segurança

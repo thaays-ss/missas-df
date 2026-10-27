@@ -1,13 +1,25 @@
 {
+ "Canção Nova (SAAN) | SAAN | Canção Nova, SAAN, Brasília - DF": null,
  "Capela Militar São Paulo Apóstolo (PMDF) | Setor Policial Sul | Setor Policial Sul, dentro da PMDF, Brasília - DF": null,
  "Capela Santa Paulina | Guará II": [
   -15.851362,
   -47.974069
  ],
  "Capela São Pedro Nolasco (Vila Telebrasília - Asa Sul) | Asa Sul": null,
+ "Capela do HMIB | Asa Sul | Hospital Materno Infantil de Brasília (HMIB), SGAS 608, Asa Sul, Brasília - DF": null,
+ "Capela do HRAN (térreo) | Asa Norte | Hospital Regional da Asa Norte (HRAN), SMHN, Asa Norte, Brasília - DF": null,
+ "Capela do HRT | Taguatinga | Hospital Regional de Taguatinga (HRT), Taguatinga, Brasília - DF": [
+  -15.821986,
+  -48.069373
+ ],
+ "Capela do Hospital de Base | Asa Sul | Hospital de Base do DF, SMHS, Asa Sul, Brasília - DF": null,
  "Carmelo | Lago Sul": [
   -15.798313,
   -47.805713
+ ],
+ "Casa do Candango (603 Sul) | Asa Sul | SGAS 603, Asa Sul, Brasília - DF": [
+  -15.818925,
+  -47.892041
  ],
  "Catedral Militar Rainha da Paz | Eixo Monumental | Via Canteiro Central do Eixo Monumental, Rua G, SMU, Brasília - DF": [
   -15.780807,
@@ -16,9 +28,14 @@
  "Comunidade Católica Shalom (507 Sul) | Asa Sul | SHCS CRS 507, Bloco 23, Asa Sul, Brasília - DF, 70351-510": null,
  "Comunidade Católica Shalom (508 sul) | Asa Sul": null,
  "Comunidade Fidelidade da Cruz | Taguatinga": null,
+ "Cúria Metropolitana | Asa Sul | Cúria Metropolitana de Brasília, Asa Sul, Brasília - DF": null,
  "Lar dos Velhinhos | Taguatinga": [
   -15.844242,
   -48.051947
+ ],
+ "Ministério da Defesa | Esplanada dos Ministérios | Ministério da Defesa, Esplanada dos Ministérios, Bloco Q, Brasília - DF": [
+  -15.796463,
+  -47.868936
  ],
  "Mosteiro de São Bento | Lago Sul": null,
  "Nossa Senhora Aparecida | Gama": [
@@ -65,5 +82,6 @@
  "Santos Anjos da Guarda | Riacho fundo 1": null,
  "Santuário Mãe Rainha de Schoenstatt | DF-001 | Rodovia DF-001, km 4 (após a Torre de TV Digital), Brasília - DF": null,
  "Seminário maior | Lago Sul": null,
- "São Charbel | Noroeste": null
+ "São Charbel | Noroeste": null,
+ "UnB · ICC Sul, Anfiteatro 6 | Asa Norte | Universidade de Brasília, ICC Sul, Asa Norte, Brasília - DF": null
 }

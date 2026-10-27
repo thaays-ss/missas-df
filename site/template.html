@@ -87,6 +87,21 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .heat .hd{font-size:11px;font-weight:600;color:var(--mute);text-align:center}
 .heat .d{font-size:13px;display:flex;align-items:center}
 .heat .c{height:28px;display:flex;align-items:center;justify-content:center;border-radius:3px;font-size:12px;font-weight:600}
+.espbox{margin:0 22px 16px;padding:14px 16px;border-radius:10px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.espbox .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.14em;color:var(--blue);text-transform:uppercase}
+.espbox a.ln{font-size:13px;font-weight:600}
+.espbox .it{display:flex;gap:10px;font-size:13px;line-height:1.35}.espbox .it b{font-variant-numeric:tabular-nums;min-width:40px}
+.efil{display:flex;flex-direction:column;gap:10px}
+.efil .search{height:50px}
+.efil .sels{grid-template-columns:1fr 1fr}
+.edate{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 18px;background:#F2F4F7;border-bottom:1px solid var(--line);font-family:'Cinzel',serif;font-size:12px;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+.edate small{font-family:'Libre Franklin',sans-serif;letter-spacing:0;text-transform:none;font-size:12px;color:var(--mute)}
+.eit{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:start;padding:14px 18px;border-bottom:1px solid var(--line2)}
+.eit .hr{font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;padding-top:2px}
+.eit .tt{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;line-height:1.15}
+.eit .sb{font-size:13px;color:var(--mute);margin-top:2px}.eit .ob{font-size:13px;color:var(--ink2);margin-top:4px;font-style:italic}
+.eit .rt{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.tp{font-size:11px;font-weight:600;padding:3px 8px;border-radius:99px;color:#fff;white-space:nowrap}
 .ded{margin:0 22px 22px;padding:16px;border-radius:10px;background:#F5EEDC;display:flex;flex-direction:column;gap:3px}
 .ded .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.14em;color:#7A5A12;text-transform:uppercase}
 .ded .tx{font-size:14px;line-height:1.45;color:var(--ink)}
@@ -148,7 +163,7 @@ footer b{color:var(--ink);font-weight:600}
  .item{grid-template-columns:52px minmax(0,1fr) auto;padding:12px 16px}.item .rota{grid-column:2/-1}
  .h3row{padding:18px 16px 8px}.more,.empty{padding-left:16px;padding-right:16px}
  .grid3>.col.fit{position:static}.fitin{position:static}.scroll{max-height:480px}.grid3 .col:nth-child(2) .fitin{position:absolute}.grid3 .col:nth-child(2){position:relative;height:340px}.dark,.ded{margin-left:16px;margin-right:16px}.box{padding:18px 16px}
- .chead{padding:24px 16px 8px;gap:24px}.chead h2{font-size:28px}.cbody{padding:16px}
+ .chead{padding:24px 16px 8px;gap:24px}.eit{grid-template-columns:52px minmax(0,1fr);padding:12px 14px}.eit .rt{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between}.edate{padding:10px 14px}.efil .sels .sel:last-child{grid-column:auto}.espbox{margin-left:16px;margin-right:16px}.chead h2{font-size:28px}.cbody{padding:16px}
  .tr{grid-template-columns:56px minmax(0,1fr) auto;gap:8px;padding:8px 12px}.tr .xs{display:none}
  .kpis{grid-template-columns:repeat(2,1fr);padding:24px 16px 0;gap:0}.kpi{padding:0 0 20px 16px}.kpi:nth-child(odd){border-left:0;padding-left:0}.kpi b{font-size:34px}
  .two{grid-template-columns:1fr}.two .cell:first-child{border-right:0;border-bottom:1px solid var(--line)}.cell{padding:22px 16px}
@@ -163,6 +178,7 @@ footer b{color:var(--ink);font-weight:600}
   <nav>
     <button data-p="agora" class="on">Agora</button>
     <button data-p="conf">Confissão à noite</button>
+    <button data-p="esp">Especiais</button>
     <button data-p="num">Números da base</button>
   </nav>
  </div>
@@ -206,6 +222,7 @@ footer b{color:var(--ink);font-weight:600}
         <span class="small" style="margin-bottom:8px" id="heatSub"></span>
         <div class="heat" id="heat1"></div>
       </div>
+      <div class="espbox" id="espHoje" hidden></div>
       <div class="ded" id="ded"></div>
     </div>
   </div>
@@ -230,6 +247,28 @@ footer b{color:var(--ink);font-weight:600}
     </div>
   </div>
   <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair.</footer>
+</section>
+
+<!-- ESPECIAIS -->
+<section class="page" id="pg-esp">
+  <div class="chead">
+    <div><h2>Missas e celebrações especiais</h2><p>Primeira sexta, dia 13, padroeiros, Finados, Natal, Semana Santa: as celebrações que não se repetem toda semana. As festas que mudam de data a cada ano, como Cinzas e Páscoa, são calculadas automaticamente.</p></div>
+    <div class="efil">
+      <label class="search"><span class="ring"></span><input id="eq" placeholder="Buscar igreja, bairro ou celebração" autocomplete="off" aria-label="Buscar nas celebrações especiais"></label>
+      <div class="sels">
+        <label class="sel"><select id="eper" aria-label="Período"><option value="30">Próximos 30 dias</option><option value="90">Próximos 3 meses</option><option value="400">Próximos 12 meses</option></select></label>
+        <label class="sel"><select id="ereg" aria-label="Região"><option value="">Todas as regiões</option></select></label>
+      </div>
+    </div>
+  </div>
+  <div class="cbody">
+    <div class="tbl" id="elist"></div>
+    <div class="cside">
+      <div class="cmap" id="map3"></div>
+      <div class="note" style="background:#EFF4F7"><b style="color:var(--blue)">Sua paróquia tem uma celebração especial?</b> Missa do padroeiro, novena, missa de cura… Manda as informações que a gente inclui.</div>
+    </div>
+  </div>
+  <footer><b>Horários mudam.</b> Em datas festivas, confirme com a paróquia antes de sair.</footer>
 </section>
 
 <!-- NÚMEROS -->
@@ -258,7 +297,8 @@ footer b{color:var(--ink);font-weight:600}
 <script>/*LEAFLETJS*/</script>
 <script>
 const DATA = /*DATA*/;
-const TIPOS=DATA.tipos, PLURAL=['Missas','Confissões','Adorações'], COR=['#084D6E','#5E3A87','#A67C1A'];
+const TIPOS=DATA.tipos, PLURAL=['Missas','Confissões','Adorações'], COR=['#084D6E','#5E3A87','#A67C1A','#2F7A4F'];
+const TIPOS_E=['Missa','Confissão','Adoração','Celebração'];
 const DIAS=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
 const DIAS_C=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 const DIA_LOW=['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
@@ -274,6 +314,7 @@ const $=id=>document.getElementById(id);
 
 // linhas: [pid,tipo,wd,inicio,fim,hora,aprox,atual,fonte,local]
 const R=DATA.rows.map(r=>{const p=DATA.par[r[0]]; return {pid:r[0],tipo:r[1],wd:r[2],ini:r[3],fim:r[4],h:r[5],aprox:r[6],atual:r[7],fonte:r[8],local:r[9],nome:p[0],bairro:p[1],reg:p[2],lat:p[3],lng:p[4],rota:p[5],busca:norm(p[0]+' '+p[1]+' '+p[2])}});
+const ESP=(DATA.esp||[]).map(e=>{const p=DATA.par[e[3]]||['', '', '', null, null, '#', '', ''];return {data:e[0],ini:e[1],fim:e[2],pid:e[3],tit:e[4],tipo:e[5],obs:e[6],nome:p[0],bairro:p[1],reg:p[2],lat:p[3],lng:p[4],rota:p[5],busca:norm(p[0]+' '+p[1]+' '+p[2]+' '+e[4]+' '+e[6])}});
 const periodo=h=>h<12?0:h<18?1:2;
 const mins=r=>Math.round(r.h*60);
 
@@ -325,7 +366,9 @@ function montaSelects(wd){
 
 // ---------- mapas
 const tiles=()=>L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',maxZoom:19});
-let map1,layer1,map2,layer2;
+let map1,layer1,map2,layer2,map3,layer3;
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const hm=s=>s?(+s.slice(0,2))*60+(+s.slice(3,5)):null;
 function mkMap(id){const m=L.map(id,{scrollWheelZoom:false,zoomControl:true}).setView([-15.80,-47.93],11);tiles().addTo(m);return m}
 function pin(cor,soon){return L.divIcon({className:'',html:`<div class="pin${soon?' soon':''}" style="background:${cor}"></div>`,iconSize:soon?[16,16]:[12,12]})}
 function drawPins(m,layer,rows,soonSet){if(layer)layer.remove();const g=L.layerGroup();const by={};
@@ -335,13 +378,16 @@ function drawPins(m,layer,rows,soonSet){if(layer)layer.remove();const g=L.layerG
  g.addTo(m);m.invalidateSize();if(pts.length)m.fitBounds(pts,{padding:[36,36],maxZoom:14});return g}
 
 // ---------- página Agora
+const fimMin=r=>r.fim?(+r.fim.slice(0,2))*60+(+r.fim.slice(3,5)):null;
+const is24=r=>r.ini==='00:00'&&r.fim==='23:59';
+const aberto=(r,m)=>!!r.fim&&mins(r)<=m&&fimMin(r)>m;
 function filtra(tipo,dia,min,hoje){const q=norm(st.q);
  return R.filter(r=>r.tipo===tipo&&r.wd===dia&&(!st.reg||r.reg===st.reg)&&(!q||r.busca.includes(q))&&
-  (st.hora==='agora'?(!hoje||mins(r)>=min):st.hora==='todo'?true:periodo(r.h)===+st.hora)).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome))}
+  (st.hora==='agora'?(!hoje||mins(r)>=min||aberto(r,min)):st.hora==='todo'?true:periodo(r.h)===+st.hora)).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome))}
 function itemHTML(r,m,hoje){let cls='none',txt='—';
- if(hoje){const dif=mins(r)-m;cls=dif<0?'past':dif<=15?'hot':'';txt=dif<0?'já começou':emTxt(dif)}
- const sub=TIPOS[r.tipo]+(r.fim?' até '+r.fim:'')+(r.aprox?' (aprox.)':'')+' · '+(r.bairro||r.reg);
- return `<div class="item"><span class="t"><b>${r.ini}</b><i style="background:${COR[r.tipo]}"></i></span><span class="n"><b class="ell">${esc(r.nome)}</b><span class="ell">${esc(sub)}</span></span><span class="em ${cls}">${txt}</span><a class="rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
+ if(hoje){const dif=mins(r)-m;if(is24(r)){cls='hot';txt='aberta 24h'}else if(aberto(r,m)){cls='hot';txt='até '+r.fim}else{cls=dif<0?'past':dif<=15?'hot':'';txt=dif<0?'já começou':emTxt(dif)}}
+ const sub=TIPOS[r.tipo]+(is24(r)?' 24h':r.fim?' até '+r.fim:'')+(r.aprox?' (aprox.)':'')+' · '+(r.bairro||r.reg);
+ return `<div class="item"><span class="t"><b>${is24(r)?'24h':r.ini}</b><i style="background:${COR[r.tipo]}"></i></span><span class="n"><b class="ell">${esc(r.nome)}</b><span class="ell">${esc(sub)}</span></span><span class="em ${cls}">${txt}</span><a class="rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
 function renderAgora(){
  const {d,wd,min}=agoraSP();
  montaSelects(wd);
@@ -377,9 +423,11 @@ function renderAgora(){
  const at=$('allToday');at.hidden=!st.all||!extra.length;if(!at.hidden)at.innerHTML=extra.map(r=>itemHTML(r,min,hoje)).join('');
  // ainda dá tempo / último do dia
  const late=$('late');
- const rest=hoje?doDia.filter(r=>mins(r)>=min):doDia;
+ const rest=hoje?doDia.filter(r=>mins(r)>=min||aberto(r,min)):doDia;
  const kick=hoje?'Ainda dá tempo':'Último horário · '+DIAS[dia];
- if(rest.length){const lastRows=[...rest].sort((a,b)=>b.h-a.h).slice(0,5);
+ const r24=rest.filter(is24);
+ if(r24.length){late.innerHTML=`<span class="kicker">${kick}</span><span class="big">24h</span><span class="tx">Adoração perpétua: aberta o dia todo${st.reg?' em '+esc(st.reg):''}.</span><ul>${r24.slice(0,5).map(r=>`<li><b>24h</b><span class="ell">${esc(r.nome)} · ${esc(r.reg)}</span></li>`).join('')}</ul>`}
+ else if(rest.length){const lastRows=[...rest].sort((a,b)=>b.h-a.h).slice(0,5);
   late.innerHTML=`<span class="kicker">${kick}</span><span class="big">${rest[rest.length-1].ini}</span><span class="tx">${hoje?'Último horário de '+tn+' hoje':'Último horário de '+tn+' '+naDia(dia)}${st.reg?' em '+esc(st.reg):''}. Os mais tarde:</span><ul>${lastRows.map(r=>`<li><b>${r.ini}</b><span class="ell">${esc(r.nome)} · ${esc(r.reg)}</span></li>`).join('')}</ul>`}
  else late.innerHTML=`<span class="kicker">${kick}</span><span class="big">—</span><span class="tx">${hoje?'Por hoje acabou. Amanhã tem de novo.':'Nada encontrado com esses filtros.'}</span>`;
  // heatmap região
@@ -390,6 +438,10 @@ function renderAgora(){
  const ord=[1,2,3,4,5,6,0];
  $('heat1').innerHTML='<span></span><span class="hd">Manhã</span><span class="hd">Tarde</span><span class="hd">Noite</span>'+ord.map(i=>`<span class="d" style="color:${i===dia?'var(--blue)':'var(--ink2)'};font-weight:${i===dia?700:400}">${DIAS[i]}</span>`+M[i].map(v=>{const t=v/mx;return `<span class="c" style="background:oklch(${(96-t*50).toFixed(1)}% ${(0.02+t*0.11).toFixed(3)} 235);color:${t>.5?'#fff':'#08344B'}">${v||''}</span>`}).join('')).join('');
  // amanhã
+ // especiais de hoje
+ const hj=ymd(d),eh=ESP.filter(e=>e.data===hj&&(!st.reg||e.reg===st.reg)&&(!e.ini||(e.fim?hm(e.fim):hm(e.ini)+60)>=min)).sort((a,b)=>(a.ini||'').localeCompare(b.ini||''));
+ const eb=$('espHoje');eb.hidden=!eh.length;
+ if(eh.length)eb.innerHTML=`<span class="k">Hoje tem especial</span>${eh.slice(0,3).map(e=>`<div class="it"><b>${e.ini||'—'}</b><span><b style="font-weight:600">${esc(e.tit)}</b> · ${esc(e.nome)}</span></div>`).join('')}<a class="ln" href="#esp" onclick="event.preventDefault();vaiPara('esp')">Ver todas as celebrações especiais →</a>`;
  const am=(wd+1)%7;
  $('ded').innerHTML=`<span class="k">Amanhã, ${DIA_LOW[am]}</span><span class="tx">${DED[am]}.</span>`;
  // mapa
@@ -409,6 +461,22 @@ function renderConf(){
  $('ctbl').innerHTML=`<div class="tr th"><span>Início</span><span>Até</span><span>Paróquia · ${DIAS[dia]}</span><span class="xs">Bairro</span><span class="xs">Atualizado</span><span class="xs"></span></div>`+
   (rows.length?rows.map(r=>{const [bg,fg]=tom(r.atual);const fim=r.aprox?'aprox.':r.fim||'—';return `<div class="tr"><b style="font-size:15px;font-variant-numeric:tabular-nums">${r.ini}</b><span style="font-variant-numeric:tabular-nums;color:${fim==='—'?'#9DBBCB':fim==='aprox.'?'#5E3A87':'#0B2F42'}">${fim}</span><span style="display:flex;flex-direction:column;min-width:0"><b class="ell" style="font-weight:600">${esc(r.nome)}</b></span><span class="xs ell" style="color:var(--ink2)">${esc(r.bairro)}</span><span class="xs tag" style="background:${bg};color:${fg}">${mesAno(r.atual)}</span><a class="xs rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Rota →</a></div>`}).join(''):'<div class="empty">Nenhuma confissão à noite neste dia na base.</div>');
  if(window.L){if(!map2)map2=mkMap('map2');layer2=drawPins(map2,layer2,rows)}
+}
+
+// ---------- Especiais
+function renderEsp(){
+ const {d,min}=agoraSP(),hj=ymd(d),per=+$('eper').value,lim=ymd(new Date(d.getFullYear(),d.getMonth(),d.getDate()+per));
+ const q=norm($('eq').value),rg=$('ereg').value;
+ const L=ESP.filter(e=>e.data>=hj&&e.data<=lim&&(!rg||e.reg===rg)&&(!q||e.busca.includes(q))&&!(e.data===hj&&e.ini&&(e.fim?hm(e.fim):hm(e.ini)+60)<min))
+  .sort((a,b)=>a.data.localeCompare(b.data)||(a.ini||'').localeCompare(b.ini||'')||a.nome.localeCompare(b.nome));
+ const grupos={};L.forEach(e=>(grupos[e.data]=grupos[e.data]||[]).push(e));
+ const t0=new Date(d.getFullYear(),d.getMonth(),d.getDate());
+ const html=Object.entries(grupos).map(([dt,arr])=>{const [y,m,dd]=dt.split('-').map(Number);const D=new Date(y,m-1,dd);const n=Math.round((D-t0)/864e5);
+  const rel=n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
+  return `<div class="edate"><span>${DIA_LOW[D.getDay()]}, ${dd} de ${MESES[m-1]}</span><small>${rel}</small></div>`+arr.map(e=>`<div class="eit"><span class="hr">${e.ini||'—'}${e.fim?`<div style="font-size:12px;font-weight:400;color:var(--mute)">até ${e.fim}</div>`:''}</span><div style="min-width:0"><div class="tt">${esc(e.tit)}</div><div class="sb">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}</div>${e.obs&&e.obs!==e.tit?`<div class="ob">${esc(e.obs)}</div>`:''}</div><div class="rt"><span class="tp" style="background:${COR[e.tipo]}">${TIPOS_E[e.tipo]}</span><a class="rota" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a></div></div>`).join('')}).join('');
+ const per_t=per===30?'nos próximos 30 dias':per===90?'nos próximos 3 meses':'nos próximos 12 meses';
+ $('elist').innerHTML=html||`<div class="empty" style="border-top:0">Nenhuma celebração especial cadastrada ${per_t}${rg?' em '+esc(rg):''}${q?' para “'+esc($('eq').value)+'”':''}. Tente um período maior.</div>`;
+ if(window.L){if(!map3)map3=mkMap('map3');layer3=drawPins(map3,layer3,L.map(e=>({pid:e.pid,lat:e.lat,lng:e.lng,tipo:e.tipo,nome:e.nome,bairro:e.bairro,rota:e.rota,ini:e.data.slice(8,10)+'/'+e.data.slice(5,7)+' '+(e.ini||''),fim:''})))}
 }
 
 // ---------- Números
@@ -432,19 +500,19 @@ function renderNum(){
  $('hreg').innerHTML=r12.map(([n,v])=>`<div class="hb"><span class="ell" style="color:var(--ink2)">${esc(n)}</span><div class="tr0"><div style="width:${Math.round(v/rmax*100)}%;background:#084D6E"></div></div><b style="text-align:right;font-variant-numeric:tabular-nums">${v}</b></div>`).join('');
  const cf=R.filter(r=>r.tipo===1);const H=ord.map(i=>[0,1,2].map(p=>new Set(cf.filter(r=>r.wd===i&&periodo(r.h)===p).map(r=>r.pid)).size));const hx=Math.max(...H.flat());
  $('heat2').innerHTML='<span></span><span class="hd" style="font-size:12px">Manhã</span><span class="hd" style="font-size:12px">Tarde</span><span class="hd" style="font-size:12px">Noite</span>'+H.map((row,k)=>`<span class="d" style="color:var(--ink2)">${DIAS[ord[k]]}</span>`+row.map(v=>{const t=v/hx;return `<span class="c" style="height:34px;font-size:13px;border-radius:4px;background:oklch(${(96-t*58).toFixed(1)}% ${(0.02+t*0.13).toFixed(3)} 305);color:${t>.45?'#fff':'#3B2A55'}">${v}</span>`}).join('')).join('');
- const fc=DATA.fontes.map((_,i)=>R.filter(r=>r.fonte===i).length);const fOrd=[1,0,2],fCor={1:'#0B2F42',0:'#A67C1A',2:'#9DBBCB'},fNome={1:'página da paróquia no site da Arquidiocese',0:'planilha do grupo de WhatsApp',2:'tabela Horários de Missas, 2023'};
+ const fc=DATA.fontes.map((_,i)=>R.filter(r=>r.fonte===i).length);const fOrd=[1,3,0,2].filter(i=>i<DATA.fontes.length),fCor={1:'#0B2F42',3:'#5E9784',0:'#A67C1A',2:'#9DBBCB'},fNome={1:'página da paróquia no site da Arquidiocese',3:'curadoria do projeto (horários enviados por paróquias e fiéis)',0:'planilha colaborativa de fiéis',2:'tabela Horários de Missas, 2023'};
  $('fonteBar').innerHTML=fOrd.map(i=>`<div style="width:${(fc[i]/R.length*100).toFixed(1)}%;background:${fCor[i]}"></div>`).join('');
  $('fonteLeg').innerHTML=fOrd.map(i=>`<span style="display:flex;align-items:center;gap:8px"><i style="width:10px;height:10px;background:${fCor[i]};border-radius:2px;display:inline-block"></i><b style="font-weight:600">${Math.round(fc[i]/R.length*100)||'<1'}%</b> ${fNome[i]}</span>`).join('');
  const ano=a=>{const y=+(a||'0').slice(0,4);return y<2020?'sem data válida':y<=2023?'2021 a 2023':String(y)};const an={};R.forEach(r=>{const k=ano(r.atual);an[k]=(an[k]||0)+1});const aL=[['2026','#2F6B57'],['2025','#5E9784'],['2021 a 2023','#9DBBCB'],['sem data válida','#084D6E']].filter(([k])=>an[k]);const am=Math.max(...aL.map(([k])=>an[k]));
  $('anos').innerHTML=aL.map(([k,c])=>`<div class="hb" style="grid-template-columns:110px minmax(0,1fr) 50px"><span style="color:var(--ink2)">${k}</span><div class="tr0" style="height:12px"><div style="width:${Math.max(1,Math.round(an[k]/am*100))}%;background:${c}"></div></div><b style="text-align:right">${fmt(an[k])}</b></div>`).join('');
  const nAd=new Set(R.filter(r=>r.tipo===2).map(r=>r.pid)).size,semH=DATA.nParoquias-P;
- $('cuid').innerHTML=[['Contar linhas ≠ contar igrejas','Uma igreja com missa às 7h e às 19h vira duas linhas. Para “quantas igrejas”, a conta é de paróquias distintas.'],['Missas mensais ficaram de fora','“1ª sexta do mês” e parecidos aparecem só no texto original da paróquia.'],['Adoração é parcial',`Só ${nAd} igrejas têm adoração na base: ela só entra quando aparece junto dos horários de missa. Não dá para comparar regiões por adoração.`],['Sem horário não é sem missa',`${semH} igrejas do cadastro ficaram sem nenhum horário estruturado, porque o texto do site estava vazio ou solto demais.`],['Região agrupada à mão','A partir do bairro informado no site. Não é o limite oficial das Regiões Administrativas.']].map(([t,d])=>`<div class="care"><b>${t}</b><span>${d}</span></div>`).join('');
+ $('cuid').innerHTML=[['Contar linhas ≠ contar igrejas','Uma igreja com missa às 7h e às 19h vira duas linhas. Para “quantas igrejas”, a conta é de paróquias distintas.'],['Missas mensais e festas ficam na aba Especiais','“1ª sexta do mês”, padroeiros e festas só aparecem quando alguém cadastra. Não entram nestas contas semanais.'],['Adoração é parcial',`Só ${nAd} igrejas têm adoração na base: ela só entra quando aparece junto dos horários de missa. Não dá para comparar regiões por adoração.`],['Sem horário não é sem missa',`${semH} igrejas do cadastro ficaram sem nenhum horário estruturado, porque o texto do site estava vazio ou solto demais.`],['Região agrupada à mão','A partir do bairro informado no site. Não é o limite oficial das Regiões Administrativas.']].map(([t,d])=>`<div class="care"><b>${t}</b><span>${d}</span></div>`).join('');
 }
 
 // ---------- eventos
 function vaiPara(p){document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.p===p));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id==='pg-'+p));
- try{if(p==='conf')renderConf();if(p==='num')renderNum()}catch(e){console.error(e)}
- setTimeout(()=>{map1&&map1.invalidateSize();if(p==='conf'&&map2){map2.invalidateSize();renderConf()}},60);
+ try{if(p==='conf')renderConf();if(p==='num')renderNum();if(p==='esp')renderEsp()}catch(e){console.error(e)}
+ setTimeout(()=>{map1&&map1.invalidateSize();if(p==='conf'&&map2){map2.invalidateSize();renderConf()}if(p==='esp'&&map3){map3.invalidateSize();renderEsp()}},60);
  try{history.replaceState(null,'','#'+p)}catch(e){} try{window.scrollTo(0,0)}catch(e){}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>vaiPara(b.dataset.p));
 document.querySelector('.brand').onclick=e=>{e.preventDefault();vaiPara('agora')};
@@ -453,10 +521,12 @@ $('q').oninput=e=>{st.q=e.target.value;renderAgora()};
 selReg.onchange=e=>{st.reg=e.target.value;renderAgora()};
 $('dia').onchange=e=>{st.dia=e.target.value;st.hora=st.dia===''?'agora':(st.hora==='agora'?'todo':st.hora);st.all=false;renderAgora()};
 $('hora').onchange=e=>{st.hora=e.target.value;st.all=false;renderAgora()};
+{const ers=[...new Set(R.map(r=>r.reg).concat(ESP.map(e=>e.reg)).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt'));ers.forEach(r=>$('ereg').insertAdjacentHTML('beforeend',`<option>${esc(r)}</option>`))}
+$('eq').oninput=renderEsp;$('eper').onchange=renderEsp;$('ereg').onchange=renderEsp;
 $('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(!st.all)$('listScroll').scrollTop=0};
 (()=>{const g=String(DATA.gerado||'');const m=g.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}:\d{2}))?/);$('gerado').textContent=m?`Base atualizada em ${m[3]}/${m[2]}/${m[1]}${m[4]?' às '+m[4]:''}.`:''})();
 renderAgora();renderNum();
-let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num'].includes(h0))vaiPara(h0);
+let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp'].includes(h0))vaiPara(h0);
 setInterval(()=>{if($('pg-agora').classList.contains('on'))renderAgora()},60000);
 </script>
 </body>

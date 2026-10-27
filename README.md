@@ -20,6 +20,12 @@ Tabela de missas da Arquidiocese 2023 ┘        limpa · junta · confere
    - procura no OpenStreetMap as igrejas que ainda não têm pino no mapa.
 3. **Se algo mudou**, o robô grava `dados/` e `public/index.html` num commit. O Cloudflare publica a nova versão sozinho.
 
+### Planilha de curadoria
+Uma segunda planilha, mantida pela autora, entra **por cima** das outras fontes:
+- **Horários:** quando uma igreja aparece aqui com um tipo (missa, confissão ou adoração), os horários daquele tipo vêm só desta planilha.
+- **Especiais:** celebrações que não são semanais, como dia 1, 1ª sexta, Finados, Natal e padroeiros. As festas móveis (Cinzas, Semana Santa, Páscoa, Corpus Christi…) são calculadas a partir da data da Páscoa. Tudo aparece na aba **Especiais** do site.
+- **Igrejas novas:** igrejas fora do cadastro da Arquidiocese (como as capelanias militares) e correções de endereço ou nome. O link do Google Maps vira o pino e o botão "Ver rota".
+
 ### Travas de segurança
 - **Quedas bruscas:** se o total de horários cair mais de 15% de uma vez (uma coluna apagada, por exemplo), o robô **não publica**. A execução fica vermelha na aba *Actions*.
 - **Texto incompreensível:** o que o robô não entende (como "1ª sexta do mês") fica de fora e vai para `dados/conferir.csv`, em vez de entrar errado no site.
@@ -29,7 +35,7 @@ Tabela de missas da Arquidiocese 2023 ┘        limpa · junta · confere
 
 | Pasta | O que tem |
 |---|---|
-| `pipeline/` | o robô em Python: `atualiza.py` comanda, `fontes.py` lê as fontes, `parser_horarios.py` entende texto livre, `build_base.py` junta tudo |
+| `pipeline/` | o robô em Python: `atualiza.py` comanda, `curadoria.py` lê a planilha de curadoria, `fontes.py` lê as outras fontes, `parser_horarios.py` entende texto livre, `build_base.py` junta tudo |
 | `dados/` | base limpa (`horarios.csv`, `paroquias.csv`), o que conferir (`conferir.csv`) e os dados fixos da Arquidiocese |
 | `site/` | modelo do site (`template.html`), ícone e Leaflet |
 | `public/` | o site pronto: a única pasta que vai para o ar |

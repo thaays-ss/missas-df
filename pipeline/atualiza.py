@@ -29,7 +29,7 @@ from build_base import main as monta_base, faixa, DIA_NOME  # noqa: E402
 import curadoria  # noqa: E402
 
 PLANILHA_ID = os.environ.get("PLANILHA_ID", "154ru-gzOx4rKf2jpgQmIRokFDx5b9_h7ZMFqRAs7RME")
-CURADORIA_ID = os.environ.get("CURADORIA_ID", "16BcOkQZhD_5nPhK6edl-veavis-Mc1qM")
+CURADORIA_ID = os.environ.get("CURADORIA_ID", "1GNIsgfB31KY2Ij4MmEcIjxJ2BQITxuvY2Q8B9P24Juo")
 URL_XLSX = f"https://docs.google.com/spreadsheets/d/{PLANILHA_ID}/export?format=xlsx"
 DADOS, PUBLIC, SITE = RAIZ / "dados", RAIZ / "public", RAIZ / "site"
 TIPOS = ["Missa", "Confissão", "Adoração"]

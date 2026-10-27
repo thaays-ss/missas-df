@@ -233,7 +233,8 @@ def aplica(caminho, h, p, avisos):
         if not vazio(link):
             p.loc[i, "como_chegar"] = str(link).strip()
         elif not vazio(r.get("Endereço")) and not c:
-            p.loc[i, ["lat", "lng"]] = [pd.NA, pd.NA]  # endereço corrigido: o robô procura de novo no mapa
+            # endereço corrigido: se a igreja ainda não tem pino, o robô procura pelo endereço novo
+            # (se já tem pino e ele estiver errado, cole o link do Google Maps)
             p.loc[i, "como_chegar"] = ""
     # rota para quem não tem: busca pelo nome + endereço no Google Maps
     sem = p.como_chegar.isna() | (p.como_chegar.astype(str).str.len() < 10)

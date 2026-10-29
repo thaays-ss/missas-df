@@ -1,6 +1,10 @@
 {
  "Canção Nova (SAAN) | SAAN | Canção Nova, SAAN, Brasília - DF": null,
  "Capela Militar São Paulo Apóstolo (PMDF) | Setor Policial Sul | Setor Policial Sul, dentro da PMDF, Brasília - DF": null,
+ "Capela Nossa Senhora de Fátima (Ceilândia Sul) | Ceilândia Sul | Ceilândia Sul, Brasília - DF": [
+  -15.837797,
+  -48.103338
+ ],
  "Capela Santa Paulina | Guará II": [
   -15.851362,
   -47.974069
@@ -13,6 +17,7 @@
   -48.069373
  ],
  "Capela do Hospital de Base | Asa Sul | Hospital de Base do DF, SMHS, Asa Sul, Brasília - DF": null,
+ "Capela do Senado Federal | Esplanada dos Ministérios | Senado Federal, Praça dos Três Poderes, Brasília - DF": null,
  "Carmelo | Lago Sul": [
   -15.798313,
   -47.805713
@@ -24,6 +29,24 @@
  "Catedral Militar Rainha da Paz | Eixo Monumental | Via Canteiro Central do Eixo Monumental, Rua G, SMU, Brasília - DF": [
   -15.780807,
   -47.924166
+ ],
+ "Cemitério Campo da Esperança (Asa Sul) | Asa Sul | Cemitério Campo da Esperança, Asa Sul, Brasília - DF": null,
+ "Cemitério de Brazlândia | Brazlândia | Cemitério de Brazlândia, Brazlândia, Brasília - DF": [
+  -15.677179,
+  -48.189267
+ ],
+ "Cemitério de Planaltina | Planaltina | Cemitério de Planaltina, Planaltina, Brasília - DF": null,
+ "Cemitério de Sobradinho | Sobradinho | Cemitério de Sobradinho, Sobradinho, Brasília - DF": [
+  -15.636514,
+  -47.826377
+ ],
+ "Cemitério de Taguatinga | Taguatinga | Cemitério de Taguatinga, Taguatinga, Brasília - DF": [
+  -15.803842,
+  -48.089167
+ ],
+ "Cemitério do Gama | Gama | Cemitério do Gama, Gama, Brasília - DF": [
+  -15.998441,
+  -48.08124
  ],
  "Comunidade Católica Shalom (507 Sul) | Asa Sul | SHCS CRS 507, Bloco 23, Asa Sul, Brasília - DF, 70351-510": null,
  "Comunidade Católica Shalom (508 sul) | Asa Sul": null,

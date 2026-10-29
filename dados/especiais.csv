@@ -2,13 +2,52 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2026-11-02,07:00,,1067,Missa de Finados,Missa,,Solenidades e festas,Santa Teresinha,Cruzeiro Novo
 2026-11-02,07:00,,563,Missa de Finados,Missa,rito normal,Solenidades e festas,Maria Imaculada,Guará II
 2026-11-02,07:00,,570,Missa de Finados,Missa,,Solenidades e festas,Santuário Nossa Senhora do Perpétuo Socorro,Taguatinga
+2026-11-02,07:30,,1405959,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Brazlândia,Brazlândia
 2026-11-02,08:00,,640,Missa de Finados,Missa,na capela,Solenidades e festas,Nossa Senhora do Rosário,Lago Sul
 2026-11-02,08:00,,586,Missa de Finados,Missa,,Solenidades e festas,Santo Antônio,Ceilândia
+2026-11-02,08:00,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,08:00,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,08:00,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,08:00,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,08:00,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
 2026-11-02,09:00,,534,Missa de Finados,Missa,,Solenidades e festas,Nossa Senhora das Dores,Cruzeiro
 2026-11-02,09:00,,1067,Missa de Finados,Missa,,Solenidades e festas,Santa Teresinha,Cruzeiro Novo
 2026-11-02,09:00,,570,Missa de Finados,Missa,,Solenidades e festas,Santuário Nossa Senhora do Perpétuo Socorro,Taguatinga
+2026-11-02,09:30,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,09:30,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,09:30,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,09:30,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,09:30,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
+2026-11-02,10:30,,1405959,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Brazlândia,Brazlândia
+2026-11-02,10:30,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
 2026-11-02,11:00,,563,Missa de Finados,Missa,rito normal,Solenidades e festas,Maria Imaculada,Guará II
+2026-11-02,11:00,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,11:00,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,11:00,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,11:00,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
 2026-11-02,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2026-11-02,12:00,,1114228,Missa de Finados no cemitério,Missa,transmitida pela Canção Nova,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,12:30,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,12:30,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,12:30,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,12:30,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
+2026-11-02,14:00,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,14:00,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,14:00,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,14:00,,1405959,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Brazlândia,Brazlândia
+2026-11-02,14:00,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,14:00,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
+2026-11-02,15:30,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,15:30,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,15:30,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,15:30,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,15:30,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
+2026-11-02,16:00,,1405959,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Brazlândia,Brazlândia
+2026-11-02,17:00,,1676340,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Sobradinho,Sobradinho
+2026-11-02,17:00,,1623999,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Taguatinga,Taguatinga
+2026-11-02,17:00,,1216021,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério do Gama,Gama
+2026-11-02,17:00,,1114228,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério Campo da Esperança (Asa Sul),Asa Sul
+2026-11-02,17:00,,1592524,Missa de Finados no cemitério,Missa,,Solenidades e festas,Cemitério de Planaltina,Planaltina
 2026-11-02,19:00,,640,Missa de Finados,Missa,na matriz,Solenidades e festas,Nossa Senhora do Rosário,Lago Sul
 2026-11-02,19:00,,534,Missa de Finados,Missa,,Solenidades e festas,Nossa Senhora das Dores,Cruzeiro
 2026-11-02,19:00,,1067,Missa de Finados,Missa,,Solenidades e festas,Santa Teresinha,Cruzeiro Novo

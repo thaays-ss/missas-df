@@ -185,13 +185,19 @@ def main():
     esp_f = DADOS / "especiais.csv"
     esp_out = esp.merge(p[["paroquia_id", "paroquia", "bairro"]], on="paroquia_id", how="left")
     novo_esp = esp_out.to_csv(index=False)
-    mudou = (not ant_f.exists() or ant_f.read_text() != novo_csv or not esp_f.exists() or esp_f.read_text() != novo_esp)
+    # o site também é regerado quando o modelo (site/) muda
+    import hashlib
+    tpl_f = DADOS / "versao_site.txt"
+    tpl = hashlib.sha1(b"".join((SITE / x).read_bytes() for x in ("template.html", "icone.png"))).hexdigest()
+    mudou = (not ant_f.exists() or ant_f.read_text() != novo_csv or not esp_f.exists() or esp_f.read_text() != novo_esp
+             or not tpl_f.exists() or tpl_f.read_text() != tpl)
     if not mudou and not a.forcar:
         print("3. nada mudou na planilha. Fim.")
         return
 
     ant_f.write_text(novo_csv)
     esp_f.write_text(novo_esp)
+    tpl_f.write_text(tpl)
     p.drop(columns=["obs_grupo"]).to_csv(DADOS / "paroquias.csv", index=False)
     conferir = qual[qual.fonte_escolhida.eq("sem horário estruturado")][["paroquia_id", "paroquia", "regiao", "tipo"]]
     conferir = pd.concat([conferir.assign(motivo="texto sem horário que o robô entenda"),

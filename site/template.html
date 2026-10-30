@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Onde tem missa? · DF</title>
+<link rel="canonical" href="https://missanodf.com.br/">
+<script>
+// Link antigo (workers.dev) → domínio novo. Só redireciona se o domínio novo já estiver respondendo,
+// pra ninguém cair em página de erro enquanto ele não ativa.
+(function(){try{if(/workers\.dev$/.test(location.hostname)){var alvo='https://missanodf.com.br/'+location.hash;
+ fetch('https://missanodf.com.br/?v='+Date.now(),{mode:'no-cors',cache:'no-store'}).then(function(){location.replace(alvo)}).catch(function(){})}}catch(e){}})();
+</script>
 <!-- Google Analytics 4 (medição anônima; a pessoa pode recusar no aviso do rodapé) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4FQ67EYSJ"></script>
 <script>

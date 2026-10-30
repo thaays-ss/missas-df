@@ -2,7 +2,7 @@
 
 Horários de **missa, confissão e adoração** no Distrito Federal, num site só: o que está começando agora, onde ainda dá tempo hoje e onde se confessar depois do trabalho.
 
-**→ [Abrir o site](https://missas-df.thaysoaresilva0.workers.dev)**
+**→ [Abrir o site](https://missanodf.com.br)**
 
 ## Como funciona
 

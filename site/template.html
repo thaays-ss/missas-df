@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Onde tem missa? · DF</title>
+<!-- Google Analytics 4 (medição anônima; a pessoa pode recusar no aviso do rodapé) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4FQ67EYSJ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+var _optout=false;try{_optout=localStorage.getItem('ga_optout')==='1'}catch(e){}
+gtag('consent','default',{analytics_storage:_optout?'denied':'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+gtag('js',new Date());
+gtag('config','G-W4FQ67EYSJ',{send_page_view:false});
+</script>
 <meta name="description" content="Horários de missa, confissão e adoração no Distrito Federal, reunidos do site da Arquidiocese de Brasília e de uma planilha colaborativa.">
 <link rel="icon" href="data:image/png;base64,/*ICON*/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,6 +114,10 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .bd.b1{background:#F5EEDC;color:#7A5A12}.bd.b2{background:#DDEDF3;color:#084D6E}.bd.b3{background:#E2EFE6;color:#2F6B57}
 .nm1{display:flex;align-items:center;gap:6px;min-width:0}
 .item .n .nota{font-size:11.5px;color:#2F6B57;font-style:italic;white-space:normal;line-height:1.35}
+.ganote{position:fixed;left:16px;bottom:16px;z-index:2000;max-width:420px;background:var(--ink);color:#F3F5F9;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;line-height:1.4;box-shadow:0 8px 24px rgba(11,47,66,.25)}
+.ganote span{flex:1 1 220px}.ganote button{all:unset;cursor:pointer;font-weight:600;padding:6px 12px;border-radius:99px;background:#fff;color:var(--ink)}.ganote button.lnk{background:none;color:#CFDFE7;text-decoration:underline;padding:6px 4px}
+.ganote button:focus-visible{outline:2px solid var(--gold)}.ganote[hidden]{display:none}
+@media (max-width:760px){.ganote{left:12px;right:12px;max-width:none}}
 .ebar{padding:20px 36px 0;display:flex;flex-direction:column;gap:10px}
 .echips{display:flex;gap:8px;flex-wrap:wrap}
 .echip{all:unset;cursor:pointer;height:36px;padding:0 14px;border-radius:99px;border:1px solid var(--bd);background:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-sizing:border-box}
@@ -314,6 +327,7 @@ footer b{color:var(--ink);font-weight:600}
   <footer>Projeto de <a href="https://thaays-ss.github.io/">Thays Soares</a> · dados públicos da Arquidiocese de Brasília e de voluntários · código e base em <a href="https://github.com/thaays-ss/missas-df">github.com/thaays-ss/missas-df</a></footer>
 </section>
 </main>
+<div id="gaNote" class="ganote" hidden><span>Usamos o Google Analytics, de forma anônima, pra entender como o site é usado.</span><button id="gaOk">Ok</button><button id="gaNo" class="lnk">Não quero</button></div>
 
 <script>/*LEAFLETJS*/</script>
 <script>
@@ -395,7 +409,7 @@ function pin(cor,soon){return L.divIcon({className:'',html:`<div class="pin${soo
 function drawPins(m,layer,rows,soonSet){if(layer)layer.remove();const g=L.layerGroup();const by={};
  rows.forEach(r=>{if(r.lat==null)return;(by[r.pid]=by[r.pid]||[]).push(r)});
  const pts=[];Object.values(by).forEach(list=>{const r=list[0];const s=soonSet&&list.some(x=>soonSet.has(x));pts.push([r.lat,r.lng]);
-  L.marker([r.lat,r.lng],{icon:pin(COR[r.tipo],s),zIndexOffset:s?1000:0}).bindPopup(`<b>${esc(r.nome)}</b><br>${esc(r.bairro)}<br>${list.map(x=>x.ini+(x.fim?'–'+x.fim:'')).join(' · ')}<br><a href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a>`).addTo(g)});
+  L.marker([r.lat,r.lng],{icon:pin(COR[r.tipo],s),zIndexOffset:s?1000:0}).bindPopup(`<b>${esc(r.nome)}</b><br>${esc(r.bairro)}<br>${list.map(x=>x.ini+(x.fim?'–'+x.fim:'')).join(' · ')}<br><a class="rota" data-n="${esc(r.nome)}" data-r="${esc(r.reg||'')}" data-t="mapa" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a>`).addTo(g)});
  g.addTo(m);m.invalidateSize();if(pts.length)m.fitBounds(pts,{padding:[36,36],maxZoom:14});return g}
 
 // ---------- página Agora
@@ -414,7 +428,7 @@ function itemHTML(r,m,hoje){let cls='none',txt='—';
  if(hoje){const dif=mins(r)-m;if(is24(r)){cls='hot';txt='aberta 24h'}else if(aberto(r,m)){cls='hot';txt='até '+r.fim}else{cls=dif<0?'past':dif<=15?'hot':'';txt=dif<0?'já começou':emTxt(dif)}}
  const sub=(r.palavra?'Celebração da Palavra':r.tit?r.tit:TIPOS[r.tipo])+(is24(r)?' 24h':r.fim?' até '+r.fim:'')+(r.aprox?' (aprox.)':'')+' · '+(r.bairro||r.reg);
  const bd=r.palavra?'<span class="bd b3">Não é missa</span>':r.esp?`<span class="bd b${r.esp}">${r.esp===1?'Votiva':'Solenidade/festa'}</span>`:'';
- return `<div class="item"><span class="t"><b>${is24(r)?'24h':r.ini}</b><i style="background:${r.palavra?'#2F7A4F':COR[r.tipo]}"></i></span><span class="n"><span class="nm1"><b class="ell">${esc(r.nome)}</b>${bd}</span><span class="ell">${esc(sub)}</span>${r.palavra?`<span class="nota">${NOTA_PALAVRA}</span>`:''}</span><span class="em ${cls}">${txt}</span><a class="rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
+ return `<div class="item"><span class="t"><b>${is24(r)?'24h':r.ini}</b><i style="background:${r.palavra?'#2F7A4F':COR[r.tipo]}"></i></span><span class="n"><span class="nm1"><b class="ell">${esc(r.nome)}</b>${bd}</span><span class="ell">${esc(sub)}</span>${r.palavra?`<span class="nota">${NOTA_PALAVRA}</span>`:''}</span><span class="em ${cls}">${txt}</span><a class="rota" data-n="${esc(r.nome)}" data-r="${esc(r.reg)}" data-t="${r.palavra?'Celebração da Palavra':TIPOS[r.tipo]}" data-e="${r.esp?CAT_N[r.esp]:''}" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
 function renderAgora(){
  const {d,wd,min}=agoraSP();
  montaSelects(wd);
@@ -482,11 +496,11 @@ function renderConf(){
  const ativo=st.confDia;
  $('cbars').innerHTML=ord.map((i,k)=>{const on=ativo===null?i===wd:ativo===i;return `<button data-d="${i}" title="${DIAS[i]}" aria-pressed="${on}"><span class="v" style="color:${on?'var(--conf)':'var(--ink2)'}">${cnt[k]}</span><span class="b" style="height:${Math.round(cnt[k]/mx*96)}px;background:${on?'#5E3A87':'#D9CFE6'}"></span></button>`}).join('');
  $('clabs').innerHTML=ord.map(i=>{const on=ativo===null?i===wd:ativo===i;return `<span style="color:${on?'var(--conf)':'var(--ink2)'};font-weight:${on?700:400}">${DIAS_C[i]}</span>`}).join('');
- document.querySelectorAll('#cbars button').forEach(b=>b.onclick=()=>{const d=+b.dataset.d;st.confDia=st.confDia===d?null:d;renderConf()});
+ document.querySelectorAll('#cbars button').forEach(b=>b.onclick=()=>{const d=+b.dataset.d;st.confDia=st.confDia===d?null:d;renderConf();ga('filtrar',{filtro:'dia',valor:st.confDia===null?'hoje':DIAS[d]})});
  const dia=ativo===null?wd:ativo;
  const rows=noite.filter(r=>r.wd===dia).sort((a,b)=>a.h-b.h||a.nome.localeCompare(b.nome));
  $('ctbl').innerHTML=`<div class="tr th"><span>Início</span><span>Até</span><span>Paróquia · ${DIAS[dia]}</span><span class="xs">Bairro</span><span class="xs">Atualizado</span><span class="xs"></span></div>`+
-  (rows.length?rows.map(r=>{const [bg,fg]=tom(r.atual);const fim=r.aprox?'aprox.':r.fim||'—';return `<div class="tr"><b style="font-size:15px;font-variant-numeric:tabular-nums">${r.ini}</b><span style="font-variant-numeric:tabular-nums;color:${fim==='—'?'#9DBBCB':fim==='aprox.'?'#5E3A87':'#0B2F42'}">${fim}</span><span style="display:flex;flex-direction:column;min-width:0"><b class="ell" style="font-weight:600">${esc(r.nome)}</b></span><span class="xs ell" style="color:var(--ink2)">${esc(r.bairro)}</span><span class="xs tag" style="background:${bg};color:${fg}">${mesAno(r.atual)}</span><a class="xs rota" href="${esc(r.rota)}" target="_blank" rel="noopener">Rota →</a></div>`}).join(''):'<div class="empty">Nenhuma confissão à noite neste dia na base.</div>');
+  (rows.length?rows.map(r=>{const [bg,fg]=tom(r.atual);const fim=r.aprox?'aprox.':r.fim||'—';return `<div class="tr"><b style="font-size:15px;font-variant-numeric:tabular-nums">${r.ini}</b><span style="font-variant-numeric:tabular-nums;color:${fim==='—'?'#9DBBCB':fim==='aprox.'?'#5E3A87':'#0B2F42'}">${fim}</span><span style="display:flex;flex-direction:column;min-width:0"><b class="ell" style="font-weight:600">${esc(r.nome)}</b></span><span class="xs ell" style="color:var(--ink2)">${esc(r.bairro)}</span><span class="xs tag" style="background:${bg};color:${fg}">${mesAno(r.atual)}</span><a class="xs rota" data-n="${esc(r.nome)}" data-r="${esc(r.reg)}" data-t="Confissão" href="${esc(r.rota)}" target="_blank" rel="noopener">Rota →</a></div>`}).join(''):'<div class="empty">Nenhuma confissão à noite neste dia na base.</div>');
  if(window.L){if(!map2)map2=mkMap('map2');layer2=drawPins(map2,layer2,rows)}
 }
 
@@ -498,18 +512,18 @@ function renderEsp(){
  const base=ESP.filter(e=>e.cat&&e.data>=hj&&e.data<=lim&&(!rg||e.reg===rg)&&!(e.data===hj&&e.ini&&(e.fim?hm(e.fim):hm(e.ini)+60)<min));
  const nC=[base.length,base.filter(e=>e.cat===1).length,base.filter(e=>e.cat===2).length];
  $('ecat').innerHTML=[[0,'Todas'],[1,'Votivas'],[2,'Solenidades e festas']].map(([c,n])=>`<button class="echip${stE.cat===c?' on':''}" data-c="${c}" aria-pressed="${stE.cat===c}">${n} <small>${nC[c]}</small></button>`).join('');
- document.querySelectorAll('#ecat .echip').forEach(b=>b.onclick=()=>{stE.cat=+b.dataset.c;stE.sub='';renderEsp()});
+ document.querySelectorAll('#ecat .echip').forEach(b=>b.onclick=()=>{stE.cat=+b.dataset.c;stE.sub='';renderEsp();ga('filtro_especial',{categoria:['todas','votiva','solenidades e festas'][stE.cat]})});
  const subs=[...new Set(base.filter(e=>e.cat===2).map(e=>e.tit))];
  $('esub').hidden=stE.cat!==2||!subs.length;
  $('esub').innerHTML=['',...subs].map(s=>`<button class="echip${stE.sub===s?' on':''}" data-s="${esc(s)}">${s?esc(s):'Todas as festas'}</button>`).join('');
- document.querySelectorAll('#esub .echip').forEach(b=>b.onclick=()=>{stE.sub=b.dataset.s;renderEsp()});
+ document.querySelectorAll('#esub .echip').forEach(b=>b.onclick=()=>{stE.sub=b.dataset.s;renderEsp();ga('filtro_especial',{categoria:'solenidades e festas',celebracao:stE.sub||'todas'})});
  const L=base.filter(e=>(!stE.cat||e.cat===stE.cat)&&(!stE.sub||e.tit===stE.sub)&&(!rg||e.reg===rg)&&(!q||e.busca.includes(q))&&!(e.data===hj&&e.ini&&(e.fim?hm(e.fim):hm(e.ini)+60)<min))
   .sort((a,b)=>a.data.localeCompare(b.data)||(a.ini||'').localeCompare(b.ini||'')||a.nome.localeCompare(b.nome));
  const grupos={};L.forEach(e=>(grupos[e.data]=grupos[e.data]||[]).push(e));
  const t0=new Date(d.getFullYear(),d.getMonth(),d.getDate());
  const html=Object.entries(grupos).map(([dt,arr])=>{const [y,m,dd]=dt.split('-').map(Number);const D=new Date(y,m-1,dd);const n=Math.round((D-t0)/864e5);
   const rel=n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
-  return `<div class="edate"><span>${DIA_LOW[D.getDay()]}, ${dd} de ${MESES[m-1]}</span><small>${rel}</small></div>`+arr.map(e=>`<div class="eit"><span class="hr">${e.ini||'—'}${e.fim?`<div style="font-size:12px;font-weight:400;color:var(--mute)">até ${e.fim}</div>`:''}</span><div style="min-width:0"><div class="tt">${esc(e.tit)}</div><div class="sb">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}</div>${e.obs&&e.obs!==e.tit?`<div class="ob">${esc(e.obs)}</div>`:''}</div><div class="rt"><span class="bd b${e.cat}">${e.cat===1?'Votiva':'Solenidade/festa'}</span><a class="rota" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a></div></div>`).join('')}).join('');
+  return `<div class="edate"><span>${DIA_LOW[D.getDay()]}, ${dd} de ${MESES[m-1]}</span><small>${rel}</small></div>`+arr.map(e=>`<div class="eit"><span class="hr">${e.ini||'—'}${e.fim?`<div style="font-size:12px;font-weight:400;color:var(--mute)">até ${e.fim}</div>`:''}</span><div style="min-width:0"><div class="tt">${esc(e.tit)}</div><div class="sb">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}</div>${e.obs&&e.obs!==e.tit?`<div class="ob">${esc(e.obs)}</div>`:''}</div><div class="rt"><span class="bd b${e.cat}">${e.cat===1?'Votiva':'Solenidade/festa'}</span><a class="rota" data-n="${esc(e.nome)}" data-r="${esc(e.reg)}" data-t="${TIPOS_E[e.tipo]}" data-e="${CAT_N[e.cat]||''}" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a></div></div>`).join('')}).join('');
  const per_t=per===30?'nos próximos 30 dias':per===90?'nos próximos 3 meses':'nos próximos 12 meses';
  $('elist').innerHTML=html||`<div class="empty" style="border-top:0">Nenhuma ${stE.cat===1?'missa votiva':stE.cat===2?'solenidade ou festa':'celebração especial'} cadastrada ${per_t}${rg?' em '+esc(rg):''}${q?' para “'+esc($('eq').value)+'”':''}. Tente um período maior.</div>`;
  if(window.L){if(!map3)map3=mkMap('map3');layer3=drawPins(map3,layer3,L.map(e=>({pid:e.pid,lat:e.lat,lng:e.lng,tipo:e.tipo,nome:e.nome,bairro:e.bairro,rota:e.rota,ini:e.data.slice(8,10)+'/'+e.data.slice(5,7)+' '+(e.ini||''),fim:''})))}
@@ -556,23 +570,32 @@ function renderNum(){
 }
 
 // ---------- eventos
-function vaiPara(p){document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.p===p));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id==='pg-'+p));
+// ---------- Google Analytics
+const ABA_N={agora:'Agora',conf:'Confissão à noite',esp:'Especiais',num:'Números da base'};let abaAtual='agora',_pv0=false;
+function ga(ev,p){try{if(window.gtag)gtag('event',ev,Object.assign({aba:abaAtual},p||{}))}catch(e){}}
+function gaPage(p){abaAtual=p;_pv0=true;try{const u=location.origin+location.pathname;ga('page_view',{page_title:'Onde tem missa? · '+ABA_N[p],page_location:u+(p==='agora'?'':'#'+p)})}catch(e){}}
+let _bt;function gaBusca(v,aba){clearTimeout(_bt);v=(v||'').trim();if(v.length<3)return;_bt=setTimeout(()=>ga('search',{search_term:v.toLowerCase()}),1500)}
+document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a.rota');if(!a)return;ga('ver_rota',{paroquia:a.dataset.n||'',regiao:a.dataset.r||'',tipo:a.dataset.t==='mapa'?'':(a.dataset.t||''),especial:a.dataset.e||'',origem:a.dataset.t==='mapa'?'mapa':'lista'})});
+(()=>{let v=null;try{v=localStorage.getItem('ga_ok')||localStorage.getItem('ga_optout')}catch(e){}const n=$('gaNote');if(v)return;n.hidden=false;
+ const fecha=()=>{n.hidden=true};$('gaOk').onclick=()=>{try{localStorage.setItem('ga_ok','1')}catch(e){}fecha()};
+ $('gaNo').onclick=()=>{try{localStorage.setItem('ga_optout','1')}catch(e){}try{gtag('consent','update',{analytics_storage:'denied'})}catch(e){}fecha()}})();
+function vaiPara(p){if(p!==abaAtual||!_pv0)gaPage(p);document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.p===p));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id==='pg-'+p));
  try{if(p==='conf')renderConf();if(p==='num')renderNum();if(p==='esp')renderEsp()}catch(e){console.error(e)}
  setTimeout(()=>{map1&&map1.invalidateSize();if(p==='conf'&&map2){map2.invalidateSize();renderConf()}if(p==='esp'&&map3){map3.invalidateSize();renderEsp()}},60);
  try{history.replaceState(null,'','#'+p)}catch(e){} try{window.scrollTo(0,0)}catch(e){}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>vaiPara(b.dataset.p));
 document.querySelector('.brand').onclick=e=>{e.preventDefault();vaiPara('agora')};
-document.querySelectorAll('#cards .card').forEach(c=>c.onclick=()=>{st.tipo=+c.dataset.t;st.all=false;renderAgora()});
-$('q').oninput=e=>{st.q=e.target.value;renderAgora()};
-selReg.onchange=e=>{st.reg=e.target.value;renderAgora()};
-$('dia').onchange=e=>{st.dia=e.target.value;st.hora=st.dia===''?'agora':(st.hora==='agora'?'todo':st.hora);st.all=false;renderAgora()};
-$('hora').onchange=e=>{st.hora=e.target.value;st.all=false;renderAgora()};
+document.querySelectorAll('#cards .card').forEach(c=>c.onclick=()=>{st.tipo=+c.dataset.t;st.all=false;renderAgora();ga('selecionar_tipo',{tipo:TIPOS[st.tipo]})});
+$('q').oninput=e=>{st.q=e.target.value;renderAgora();gaBusca(e.target.value,'agora')};
+selReg.onchange=e=>{st.reg=e.target.value;renderAgora();ga('filtrar',{filtro:'regiao',valor:st.reg||'todas'})};
+$('dia').onchange=e=>{st.dia=e.target.value;st.hora=st.dia===''?'agora':(st.hora==='agora'?'todo':st.hora);st.all=false;renderAgora();ga('filtrar',{filtro:'dia',valor:st.dia===''?'hoje':DIAS[+st.dia]})};
+$('hora').onchange=e=>{st.hora=e.target.value;st.all=false;renderAgora();ga('filtrar',{filtro:'horario',valor:st.hora==='agora'?'a partir de agora':st.hora==='todo'?'dia todo':['manha','tarde','noite'][+st.hora]})};
 {const ers=[...new Set(R.map(r=>r.reg).concat(ESP.map(e=>e.reg)).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt'));ers.forEach(r=>$('ereg').insertAdjacentHTML('beforeend',`<option>${esc(r)}</option>`))}
-$('eq').oninput=renderEsp;$('eper').onchange=renderEsp;$('ereg').onchange=renderEsp;
-$('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(!st.all)$('listScroll').scrollTop=0};
+$('eq').oninput=e=>{renderEsp();gaBusca(e.target.value,'especiais')};$('eper').onchange=e=>{renderEsp();ga('filtrar',{filtro:'periodo',valor:e.target.value+' dias'})};$('ereg').onchange=e=>{renderEsp();ga('filtrar',{filtro:'regiao',valor:e.target.value||'todas'})};
+$('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(st.all)ga('ver_todos',{tipo:TIPOS[st.tipo]});if(!st.all)$('listScroll').scrollTop=0};
 (()=>{const g=String(DATA.gerado||'');const m=g.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}:\d{2}))?/);$('gerado').textContent=m?`Base atualizada em ${m[3]}/${m[2]}/${m[1]}${m[4]?' às '+m[4]:''}.`:''})();
 renderAgora();renderNum();
-let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp'].includes(h0))vaiPara(h0);
+let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp'].includes(h0))vaiPara(h0);else gaPage('agora');
 setInterval(()=>{if($('pg-agora').classList.contains('on'))renderAgora()},60000);
 </script>
 </body>

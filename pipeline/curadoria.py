@@ -301,7 +301,7 @@ def aplica(caminho, h, p, avisos):
                for x in [dict(dom="Dom", seg="Seg", ter="Ter", qua="Qua", qui="Qui", sex="Sex", sab="Sab")[x]]]
         ds = [d for d in ds if (d.weekday() + 1) % 7 not in exc]
         cat = k(r.get("Categoria"))
-        cat = "Votiva" if cat.startswith("votiv") else "Solenidades e festas" if cat.startswith(("solen", "festa")) else ""
+        cat = "Votiva" if cat.startswith("votiv") else "Solenidades e festas" if cat.startswith(("solen", "festa")) else "Destaque" if cat.startswith("destaq") else ""
         if not ds:
             avisos.append(f"Especiais linha {n + 2}: não consegui calcular a data (confira Repete e as colunas da regra)")
         for d in ds:

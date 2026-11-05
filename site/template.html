@@ -118,13 +118,21 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .eit .sb{font-size:13px;color:var(--mute);margin-top:2px}.eit .ob{font-size:13px;color:var(--ink2);margin-top:4px;font-style:italic}
 .eit .rt{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .bd{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:2px 7px;border-radius:99px;line-height:1.3}
-.bd.b1{background:#F5EEDC;color:#7A5A12}.bd.b2{background:#DDEDF3;color:#084D6E}.bd.b3{background:#E2EFE6;color:#2F6B57}
+.bd.b4{background:#C9A24A;color:#0B2F42}.bd.b1{background:#F5EEDC;color:#7A5A12}.bd.b2{background:#DDEDF3;color:#084D6E}.bd.b3{background:#E2EFE6;color:#2F6B57}
 .nm1{display:flex;align-items:center;gap:6px;min-width:0}
 .item .n .nota{font-size:11.5px;color:#2F6B57;font-style:italic;white-space:normal;line-height:1.35}
 .ganote{position:fixed;left:16px;bottom:16px;z-index:2000;max-width:420px;background:var(--ink);color:#F3F5F9;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;line-height:1.4;box-shadow:0 8px 24px rgba(11,47,66,.25)}
 .ganote span{flex:1 1 220px}.ganote button{all:unset;cursor:pointer;font-weight:600;padding:6px 12px;border-radius:99px;background:#fff;color:var(--ink)}.ganote button.lnk{background:none;color:#CFDFE7;text-decoration:underline;padding:6px 4px}
 .ganote button:focus-visible{outline:2px solid var(--gold)}.ganote[hidden]{display:none}
 @media (max-width:760px){.ganote{left:12px;right:12px;max-width:none}}
+.destaq{margin:0;padding:16px 36px;background:linear-gradient(90deg,#0B2F42,#084D6E);color:#F3F5F9;display:flex;align-items:center;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.destaq[hidden]{display:none}
+.destaq .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.destaq .q{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.15}
+.destaq .s{font-size:13.5px;color:#CFDFE7}
+.destaq .tm{flex:none;text-align:center;border:1px solid rgba(201,162,74,.6);border-radius:10px;padding:8px 14px}.destaq .tm b{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1}.destaq .tm span{font-size:12px;color:#CFDFE7}
+.destaq a{color:#fff;font-weight:600}
+@media (max-width:760px){.destaq{padding:14px 16px;gap:12px}.destaq .q{font-size:21px}}
 .natal{margin:0 22px 16px;padding:14px 16px;border-radius:10px;background:#7A1F2B;color:#FBEFEF;display:flex;flex-direction:column;gap:4px}
 .natal .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#F2D58A}
 .natal .tx{font-size:13.5px;line-height:1.45}.natal a{color:#fff;font-weight:600;text-decoration:underline}
@@ -246,6 +254,7 @@ footer b{color:var(--ink);font-weight:600}
       </div>
     </div>
   </div></div>
+  <div class="destaq" id="destaq" hidden></div>
   <div class="grid3">
     <div class="col fit"><div class="fitin">
       <div class="h3row"><span class="h3" id="listTitle">Começando em breve</span><span class="small" id="listSub">próxima hora</span></div>
@@ -430,7 +439,7 @@ function drawPins(m,layer,rows,soonSet){if(layer)layer.remove();const g=L.layerG
 const fimMin=r=>r.fim?(+r.fim.slice(0,2))*60+(+r.fim.slice(3,5)):null;
 const is24=r=>r.ini==='00:00'&&r.fim==='23:59';
 const aberto=(r,m)=>!!r.fim&&mins(r)<=m&&fimMin(r)>m;
-const CAT_N=['','Votiva','Solenidades e festas'];
+const CAT_N=['','Votiva','Solenidades e festas','Destaque'];
 const NOTA_PALAVRA='Celebração da Palavra: não é missa. Tem as leituras e, em geral, a comunhão, mas sem a consagração.';
 function espDia(dia){const {d,wd}=agoraSP();const D=new Date(d.getFullYear(),d.getMonth(),d.getDate()+((dia-wd+7)%7));const iso=ymd(D);
  return ESP.filter(e=>e.data===iso&&e.ini).map(e=>({pid:e.pid,tipo:e.tipo===3?0:e.tipo,wd:dia,ini:e.ini,fim:e.fim,h:hm(e.ini)/60,aprox:0,nome:e.nome,bairro:e.bairro,reg:e.reg,lat:e.lat,lng:e.lng,rota:e.rota,busca:e.busca,esp:e.cat,tit:e.tit,palavra:e.tipo===3}))}
@@ -441,7 +450,7 @@ function filtra(tipo,dia,min,hoje){const q=norm(st.q);
 function itemHTML(r,m,hoje){let cls='none',txt='—';
  if(hoje){const dif=mins(r)-m;if(is24(r)){cls='hot';txt='aberta 24h'}else if(aberto(r,m)){cls='hot';txt='até '+r.fim}else{cls=dif<0?'past':dif<=15?'hot':'';txt=dif<0?'já começou':emTxt(dif)}}
  const sub=(r.palavra?'Celebração da Palavra':r.tit?r.tit:TIPOS[r.tipo])+(is24(r)?' 24h':r.fim?' até '+r.fim:'')+(r.aprox?' (aprox.)':'')+' · '+(r.bairro||r.reg);
- const bd=r.palavra?'<span class="bd b3">Não é missa</span>':r.esp?`<span class="bd b${r.esp}">${r.esp===1?'Votiva':'Solenidade/festa'}</span>`:'';
+ const bd=r.palavra?'<span class="bd b3">Não é missa</span>':r.esp?`<span class="bd b${r.esp===3?4:r.esp}">${r.esp===1?'Votiva':r.esp===3?'Destaque':'Solenidade/festa'}</span>`:'';
  return `<div class="item"><span class="t"><b>${is24(r)?'24h':r.ini}</b><i style="background:${r.palavra?'#2F7A4F':COR[r.tipo]}"></i></span><span class="n"><span class="nm1"><b class="ell">${esc(r.nome)}</b>${bd}</span><span class="ell">${esc(sub)}</span>${r.palavra?`<span class="nota">${NOTA_PALAVRA}</span>`:''}</span><span class="em ${cls}">${txt}</span><a class="rota" data-n="${esc(r.nome)}" data-r="${esc(r.reg)}" data-t="${r.palavra?'Celebração da Palavra':TIPOS[r.tipo]}" data-e="${r.esp?CAT_N[r.esp]:''}" href="${esc(r.rota)}" target="_blank" rel="noopener">Ver rota →</a></div>`}
 function renderAgora(){
  const {d,wd,min}=agoraSP();
@@ -493,6 +502,10 @@ function renderAgora(){
  const ord=[1,2,3,4,5,6,0];
  $('heat1').innerHTML='<span></span><span class="hd">Manhã</span><span class="hd">Tarde</span><span class="hd">Noite</span>'+ord.map(i=>`<span class="d" style="color:${i===dia?'var(--blue)':'var(--ink2)'};font-weight:${i===dia?700:400}">${DIAS[i]}</span>`+M[i].map(v=>{const t=v/mx;return `<span class="c" style="background:oklch(${(96-t*50).toFixed(1)}% ${(0.02+t*0.11).toFixed(3)} 235);color:${t>.5?'#fff':'#08344B'}">${v||''}</span>`}).join('')).join('');
  // amanhã
+ // destaques: aparecem todo dia até a data, quando o tipo escolhido bate
+ {const dq=ESP.filter(e=>e.cat===3&&e.data>=ymd(d)&&(e.tipo===st.tipo||(e.tipo===3&&st.tipo===0))).sort((a,b)=>a.data.localeCompare(b.data));const el=$('destaq');el.hidden=!dq.length;
+  if(dq.length){const e=dq[0];const [y,m,dd]=e.data.split('-').map(Number);const D=new Date(y,m-1,dd);
+   el.innerHTML=`<div class="tm"><b>${String(dd).padStart(2,'0')}/${String(m).padStart(2,'0')}</b><span>${e.data===ymd(d)?'hoje':DIA_CURTO[D.getDay()]}${e.ini?' · '+e.ini:''}</span></div><div style="flex:1 1 280px;min-width:0"><div class="k">★ Em destaque</div><div class="q">${esc(e.tit)}</div><div class="s">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}${e.obs?' · '+esc(e.obs):''}</div></div><a class="rota" data-n="${esc(e.nome)}" data-r="${esc(e.reg)}" data-t="${TIPOS_E[e.tipo]}" data-e="Destaque" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a>`}}
  // especiais de hoje
  const hj=ymd(d),eh=ESP.filter(e=>e.cat&&e.data===hj&&(!st.reg||e.reg===st.reg)&&(!e.ini||(e.fim?hm(e.fim):hm(e.ini)+60)>=min)).sort((a,b)=>(a.ini||'').localeCompare(b.ini||''));
  const eb=$('espHoje');eb.hidden=!eh.length;
@@ -537,7 +550,7 @@ function renderEsp(){
  const t0=new Date(d.getFullYear(),d.getMonth(),d.getDate());
  const html=Object.entries(grupos).map(([dt,arr])=>{const [y,m,dd]=dt.split('-').map(Number);const D=new Date(y,m-1,dd);const n=Math.round((D-t0)/864e5);
   const rel=n===0?'hoje':n===1?'amanhã':'em '+n+' dias';
-  return `<div class="edate"><span>${DIA_LOW[D.getDay()]}, ${dd} de ${MESES[m-1]}</span><small>${rel}</small></div>`+arr.map(e=>`<div class="eit"><span class="hr">${e.ini||'—'}${e.fim?`<div style="font-size:12px;font-weight:400;color:var(--mute)">até ${e.fim}</div>`:''}</span><div style="min-width:0"><div class="tt">${esc(e.tit)}</div><div class="sb">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}</div>${e.obs&&e.obs!==e.tit?`<div class="ob">${esc(e.obs)}</div>`:''}</div><div class="rt"><span class="bd b${e.cat}">${e.cat===1?'Votiva':'Solenidade/festa'}</span><a class="rota" data-n="${esc(e.nome)}" data-r="${esc(e.reg)}" data-t="${TIPOS_E[e.tipo]}" data-e="${CAT_N[e.cat]||''}" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a></div></div>`).join('')}).join('');
+  return `<div class="edate"><span>${DIA_LOW[D.getDay()]}, ${dd} de ${MESES[m-1]}</span><small>${rel}</small></div>`+arr.map(e=>`<div class="eit"><span class="hr">${e.ini||'—'}${e.fim?`<div style="font-size:12px;font-weight:400;color:var(--mute)">até ${e.fim}</div>`:''}</span><div style="min-width:0"><div class="tt">${esc(e.tit)}</div><div class="sb">${esc(e.nome)}${e.bairro?' · '+esc(e.bairro):''}</div>${e.obs&&e.obs!==e.tit?`<div class="ob">${esc(e.obs)}</div>`:''}</div><div class="rt"><span class="bd b${e.cat===3?4:e.cat}">${e.cat===1?'Votiva':e.cat===3?'Destaque':'Solenidade/festa'}</span><a class="rota" data-n="${esc(e.nome)}" data-r="${esc(e.reg)}" data-t="${TIPOS_E[e.tipo]}" data-e="${CAT_N[e.cat]||''}" href="${esc(e.rota)}" target="_blank" rel="noopener">Ver rota →</a></div></div>`).join('')}).join('');
  const per_t=per===30?'nos próximos 30 dias':per===90?'nos próximos 3 meses':'nos próximos 12 meses';
  $('elist').innerHTML=html||`<div class="empty" style="border-top:0">Nenhuma ${stE.cat===1?'missa votiva':stE.cat===2?'solenidade ou festa':'celebração especial'} cadastrada ${per_t}${rg?' em '+esc(rg):''}${q?' para “'+esc($('eq').value)+'”':''}. Tente um período maior.</div>`;
  if(window.L){if(!map3)map3=mkMap('map3');layer3=drawPins(map3,layer3,L.map(e=>({pid:e.pid,lat:e.lat,lng:e.lng,tipo:e.tipo,nome:e.nome,bairro:e.bairro,rota:e.rota,ini:e.data.slice(8,10)+'/'+e.data.slice(5,7)+' '+(e.ini||''),fim:''})))}
@@ -574,7 +587,7 @@ function renderNum(){
   $('s_esp').textContent='Celebrações cadastradas na curadoria, nos próximos 12 meses';
   $('kesp').innerHTML=`<div><b style="color:#7A5A12">${reg(1)}</b><span>missas votivas (todo mês)</span></div><div><b style="color:#084D6E">${reg(2)}</b><span>solenidades e festas</span></div>`;
   const prox=EC.filter(e=>e.data>=hj).slice(0,6);
-  $('lesp').innerHTML=prox.length?prox.map(e=>`<div><b>${e.data.slice(8,10)}/${e.data.slice(5,7)}</b><span class="ell">${esc(e.tit)} · ${esc(e.nome)}</span><span class="bd b${e.cat}">${e.cat===1?'Votiva':'Solenidade/festa'}</span></div>`).join(''):'<span class="small">Nada cadastrado ainda.</span>'}
+  $('lesp').innerHTML=prox.length?prox.map(e=>`<div><b>${e.data.slice(8,10)}/${e.data.slice(5,7)}</b><span class="ell">${esc(e.tit)} · ${esc(e.nome)}</span><span class="bd b${e.cat===3?4:e.cat}">${e.cat===1?'Votiva':e.cat===3?'Destaque':'Solenidade/festa'}</span></div>`).join(''):'<span class="small">Nada cadastrado ainda.</span>'}
  // curadoria
  {const C=R.filter(r=>r.fonte===3);const fora=[...new Set(R.filter(r=>r.pid>=90000).map(r=>r.pid))].map(p=>DATA.par[p][0]).sort((a,b)=>a.localeCompare(b,'pt'));
   $('kcur').innerHTML=`<div><b style="color:#5E9784">${fmt(C.length)}</b><span>horários semanais da curadoria</span></div><div><b>${fora.length}</b><span>lugares fora do cadastro da Arquidiocese</span></div>`;

@@ -302,7 +302,8 @@ def aplica(caminho, h, p, avisos):
         ds = [d for d in ds if (d.weekday() + 1) % 7 not in exc]
         cat = k(r.get("Categoria"))
         cat = "Votiva" if cat.startswith("votiv") else "Solenidades e festas" if cat.startswith(("solen", "festa")) else "Destaque" if cat.startswith("destaq") else ""
-        if not ds:
+        passou = k(r.get("Repete")).startswith("so uma") and data_br(r.get("Data")) is not None
+        if not ds and not passou:  # "só uma vez" com data que já passou não é erro
             avisos.append(f"Especiais linha {n + 2}: não consegui calcular a data (confira Repete e as colunas da regra)")
         for d in ds:
             occ.append(dict(data=d.isoformat(), inicio=hi or "", fim=hf or "", paroquia_id=pid, celebracao=tit or tipo,

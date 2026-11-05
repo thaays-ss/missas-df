@@ -125,6 +125,11 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .ganote span{flex:1 1 220px}.ganote button{all:unset;cursor:pointer;font-weight:600;padding:6px 12px;border-radius:99px;background:#fff;color:var(--ink)}.ganote button.lnk{background:none;color:#CFDFE7;text-decoration:underline;padding:6px 4px}
 .ganote button:focus-visible{outline:2px solid var(--gold)}.ganote[hidden]{display:none}
 @media (max-width:760px){.ganote{left:12px;right:12px;max-width:none}}
+.natal{margin:0 22px 16px;padding:14px 16px;border-radius:10px;background:#7A1F2B;color:#FBEFEF;display:flex;flex-direction:column;gap:4px}
+.natal .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#F2D58A}
+.natal .tx{font-size:13.5px;line-height:1.45}.natal a{color:#fff;font-weight:600;text-decoration:underline}
+.natal[hidden],.echips[hidden]{display:none}.natal-esp{margin:20px 36px 0}
+@media (max-width:760px){.natal{margin-left:16px;margin-right:16px}.natal-esp{margin:16px 16px 0}}
 .ebar{padding:20px 36px 0;display:flex;flex-direction:column;gap:10px}
 .echips{display:flex;gap:8px;flex-wrap:wrap}
 .echip{all:unset;cursor:pointer;height:36px;padding:0 14px;border-radius:99px;border:1px solid var(--bd);background:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;box-sizing:border-box}
@@ -255,6 +260,7 @@ footer b{color:var(--ink);font-weight:600}
         <span class="small" style="margin-bottom:8px" id="heatSub"></span>
         <div class="heat" id="heat1"></div>
       </div>
+      <div class="natal" data-natal hidden><span class="k">Natal 2026 · Missa do Galo e Missas de Natal</span><span class="tx">Estamos reunindo os horários de Natal das paróquias do DF. Sua paróquia já divulgou? Mande o cartaz ou os horários para <a class="mail" href="#">e-mail</a>.</span></div>
       <div class="espbox" id="espHoje" hidden></div>
       <div class="ded" id="ded"></div>
     </div>
@@ -294,6 +300,7 @@ footer b{color:var(--ink);font-weight:600}
       </div>
     </div>
   </div>
+  <div class="natal natal-esp" data-natal hidden><span class="k">Natal 2026 · Missa do Galo e Missas de Natal</span><span class="tx">Estamos reunindo os horários de Natal das paróquias do DF. Sua paróquia já divulgou? Mande o cartaz ou os horários para <a class="mail" href="#">e-mail</a>.</span></div>
   <div class="ebar">
     <div class="echips" id="ecat" role="group" aria-label="Categoria"></div>
     <div class="echips sub" id="esub" role="group" aria-label="Celebração"></div>
@@ -602,6 +609,7 @@ $('eq').oninput=e=>{renderEsp();gaBusca(e.target.value,'especiais')};$('eper').o
 $('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(st.all)ga('ver_todos',{tipo:TIPOS[st.tipo]});if(!st.all)$('listScroll').scrollTop=0};
 (()=>{const g=String(DATA.gerado||'');const m=g.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}:\d{2}))?/);$('gerado').textContent=m?`Base atualizada em ${m[3]}/${m[2]}/${m[1]}${m[4]?' às '+m[4]:''}.`:''})();
 (()=>{const m=['thaysoaresilva0','gmail.com'].join('@');document.querySelectorAll('a.mail').forEach(a=>{a.href='mailto:'+m+'?subject='+encodeURIComponent('Onde tem missa? · horário');a.textContent=m;a.addEventListener('click',()=>ga('contato_email'))})})();
+(()=>{const {d}=agoraSP();const md=(d.getMonth()+1)*100+d.getDate();if(md>=1101&&md<=1226)document.querySelectorAll('[data-natal]').forEach(x=>x.hidden=false)})();
 renderAgora();renderNum();
 let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp'].includes(h0))vaiPara(h0);else gaPage('agora');
 setInterval(()=>{if($('pg-agora').classList.contains('on'))renderAgora()},60000);

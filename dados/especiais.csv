@@ -1,5 +1,4 @@
 data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
-2026-11-07,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
 2026-11-09,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2026-11-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
 2026-11-12,15:00,,531,Missa das Rosas,Missa,,Votiva,Nossa Senhora de Guadalupe,Asa Sul
@@ -186,3 +185,4 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-12-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
 2027-12-12,15:00,,531,Missa das Rosas,Missa,,Votiva,Nossa Senhora de Guadalupe,Asa Sul
 2027-12-13,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-12-14,17:00,,529,Missa dos Enfermos,Missa,,Votiva,São Camilo de Lellis,Asa Sul

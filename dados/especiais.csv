@@ -1,5 +1,4 @@
 data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
-2026-11-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
 2026-11-12,15:00,,531,Missa das Rosas,Missa,,Votiva,Nossa Senhora de Guadalupe,Asa Sul
 2026-11-13,19:30,,1118879,"Missa e Adoração com Dom Adair, bispo de Formosa",Adoração,realização: Kyrios,Destaque,Santuário Mãe Rainha de Schoenstatt,DF-001
 2026-11-14,17:00,,529,Missa dos Enfermos,Missa,,Votiva,São Camilo de Lellis,Asa Sul
@@ -185,3 +184,4 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-12-12,15:00,,531,Missa das Rosas,Missa,,Votiva,Nossa Senhora de Guadalupe,Asa Sul
 2027-12-13,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-12-14,17:00,,529,Missa dos Enfermos,Missa,,Votiva,São Camilo de Lellis,Asa Sul
+2027-12-18,16:00,,1118879,Missa e Celebração da Aliança de Amor,Missa,,Votiva,Santuário Mãe Rainha de Schoenstatt,DF-001

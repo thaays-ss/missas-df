@@ -145,7 +145,9 @@ def gera_formulario(h, p, esp=None):
     """public/formulario/index.html: formulário das paróquias, já com os horários de hoje marcados."""
     DI = dict(Seg=0, Ter=1, Qua=2, Qui=3, Sex=4, Sab=5, Dom=6)
     s = lambda v: v if isinstance(v, str) else ""
-    lista = sorted(([int(r.paroquia_id), r.paroquia, s(r.bairro) or s(r.regiao)] for r in p.itertuples()),
+    # rótulo = como a igreja se chama na planilha de curadoria ("Nome — Bairro")
+    lista = sorted(([int(r.paroquia_id), r.paroquia, s(r.bairro) or s(r.regiao),
+                     f"{r.paroquia} — {s(r.bairro)}" if s(r.bairro) else r.paroquia] for r in p.itertuples()),
                    key=lambda x: x[1].lower())
     hs = {}
     for r in h[h.inicio.notna()].itertuples():

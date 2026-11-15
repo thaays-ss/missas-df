@@ -12,7 +12,7 @@
  */
 const ABA = "Respostas";
 const CAB = ["Recebido em", "Paróquia", "ID", "Bairro", "Horários certos?", "O que mexeu",
-  "Missas", "Confissões", "Adoração", "24/12", "25/12", "31/12 e 01/01", "Mutirão de confissão",
+  "Missas", "Confissões", "Adoração", "Missas especiais", "24/12", "25/12", "31/12 e 01/01", "Mutirão de confissão",
   "WhatsApp", "Dados (robô)", "Aprovado ✔"];
 const AVISAR_POR_EMAIL = true; // manda um e-mail pra você a cada resposta
 
@@ -48,7 +48,7 @@ function doPost(e) {
     if (d.hp || !d.paroquia) return ContentService.createTextOutput("ignorado"); // robô de spam
     const sh = aba_();
     sh.appendRow([new Date(), limpa_(d.paroquia, 150), limpa_(d.id, 12), limpa_(d.bairro, 80),
-      limpa_(d.certo, 5), limpa_(d.mexeu, 60), limpa_(d.missas), limpa_(d.confissoes), limpa_(d.adoracao),
+      limpa_(d.certo, 5), limpa_(d.mexeu, 60), limpa_(d.missas), limpa_(d.confissoes), limpa_(d.adoracao), limpa_(d.especiais, 400),
       limpa_(d.n24, 200), limpa_(d.n25, 200), limpa_(d.n31, 200), limpa_(d.mutirao, 200),
       limpa_(d.zap, 40), limpa_(d.bruto, 4000), false]);
     sh.getRange(sh.getLastRow(), CAB.length).insertCheckboxes();

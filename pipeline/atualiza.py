@@ -141,7 +141,7 @@ def gera_html(data):
 FORM_ENDPOINT = os.environ.get("FORM_ENDPOINT", "")
 
 
-def gera_formulario(h, p):
+def gera_formulario(h, p, esp=None):
     """public/formulario/index.html: formulário das paróquias, já com os horários de hoje marcados."""
     DI = dict(Seg=0, Ter=1, Qua=2, Qui=3, Sex=4, Sab=5, Dom=6)
     s = lambda v: v if isinstance(v, str) else ""
@@ -151,10 +151,17 @@ def gera_formulario(h, p):
     for r in h[h.inicio.notna()].itertuples():
         hs.setdefault(str(int(r.paroquia_id)), []).append(
             [TIPOS.index(r.tipo), DI[r.dia], r.inicio, r.fim if isinstance(r.fim, str) else ""])
+    ve = {}  # missas especiais que já temos (votivas), pra paróquia conferir
+    if esp is not None and len(esp):
+        for r in esp[esp.categoria.eq("Votiva")].itertuples():
+            x = f"{r.celebracao} · {int(r.inicio[:2])}h{r.inicio[3:] if r.inicio[3:] != '00' else ''}" if isinstance(r.inicio, str) else r.celebracao
+            L = ve.setdefault(str(int(r.paroquia_id)), [])
+            if x not in L:
+                L.append(x)
     t = (SITE / "formulario.html").read_text()
     t = t.replace("/*ICON*/", base64.b64encode((SITE / "icone.png").read_bytes()).decode())
     t = t.replace("/*ENDPOINT*/", FORM_ENDPOINT)
-    t = t.replace("/*DATA*/", json.dumps(dict(par=lista, h=hs), ensure_ascii=False, separators=(",", ":")))
+    t = t.replace("/*DATA*/", json.dumps(dict(par=lista, h=hs, esp=ve), ensure_ascii=False, separators=(",", ":")))
     (PUBLIC / "formulario").mkdir(parents=True, exist_ok=True)
     (PUBLIC / "formulario" / "index.html").write_text(t)
 
@@ -231,7 +238,7 @@ def main():
 
     gerado = datetime.now(BRT).strftime("%Y-%m-%d %H:%M")
     gera_html(para_site(h, p, esp, gerado))
-    gera_formulario(h, p)
+    gera_formulario(h, p, esp)
     print(f"3. site gerado: {len(h)} horários · {len(conferir)} itens para conferir · {gerado}")
 
 

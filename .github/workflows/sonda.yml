@@ -5,19 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          python3 - <<'PY'
-          import json, urllib.request as u
-          def get(x):
-              return json.load(u.urlopen(u.Request(x, headers={"User-Agent":"Mozilla/5.0"}), timeout=30))
-          d = get("https://liturgia.up.railway.app/v2/")
-          print("KEYS", list(d.keys()))
-          for k,v in d.get("leituras",{}).items():
-              print("LEIT", k, json.dumps(v, ensure_ascii=False)[:300])
-          for q in ["?dia=16&mes=11&ano=2026", "?data=16-11-2026", "?periodo=7"]:
-              try:
-                  x = get("https://liturgia.up.railway.app/v2/"+q)
-                  print("Q", q, json.dumps(x, ensure_ascii=False)[:200] if isinstance(x,dict) else ("LIST", len(x), json.dumps(x[0], ensure_ascii=False)[:150]))
-              except Exception as e: print("Q", q, "ERR", e)
-          m = get("https://arqbrasilia.com.br/wp-json/wp/v2/media?mime_type=application/pdf&per_page=40&orderby=date&_fields=date,title,source_url,post")
-          for x in m: print("PDF", x["date"], x["title"]["rendered"], x.get("post"), x["source_url"])
-          PY
+          set +e
+          for u in "https://liturgia.cancaonova.com/pb/?sDia=16&sMes=11&sAno=2026" "https://liturgiadiaria.cnbb.org.br/app/user/user/UserView.php?ano=2026&mes=11&dia=16" "https://liturgiadiaria.cnbb.org.br/" "https://www.cnbb.org.br/liturgia-diaria/" "https://liturgia.cnbb.org.br/"; do
+            echo "=== $u"; curl -sL -m 20 -o /tmp/p -w "%{http_code} %{url_effective}\n" -A "Mozilla/5.0" "$u"; grep -o '[0-9]\{1,2\}ª feira[^<]\{0,60\}\|Mt [0-9][^<]\{0,15\}\|Mc [0-9][^<]\{0,15\}\|Lc [0-9][^<]\{0,15\}\|Jo [0-9][^<]\{0,15\}' /tmp/p | head -5
+          done

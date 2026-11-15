@@ -137,6 +137,28 @@ def gera_html(data):
     (PUBLIC / "index.html").write_text(t)
 
 
+# endereço do Apps Script (Implantar → App da Web) que grava as respostas do formulário
+FORM_ENDPOINT = os.environ.get("FORM_ENDPOINT", "")
+
+
+def gera_formulario(h, p):
+    """public/formulario/index.html: formulário das paróquias, já com os horários de hoje marcados."""
+    DI = dict(Seg=0, Ter=1, Qua=2, Qui=3, Sex=4, Sab=5, Dom=6)
+    s = lambda v: v if isinstance(v, str) else ""
+    lista = sorted(([int(r.paroquia_id), r.paroquia, s(r.bairro) or s(r.regiao)] for r in p.itertuples()),
+                   key=lambda x: x[1].lower())
+    hs = {}
+    for r in h[h.inicio.notna()].itertuples():
+        hs.setdefault(str(int(r.paroquia_id)), []).append(
+            [TIPOS.index(r.tipo), DI[r.dia], r.inicio, r.fim if isinstance(r.fim, str) else ""])
+    t = (SITE / "formulario.html").read_text()
+    t = t.replace("/*ICON*/", base64.b64encode((SITE / "icone.png").read_bytes()).decode())
+    t = t.replace("/*ENDPOINT*/", FORM_ENDPOINT)
+    t = t.replace("/*DATA*/", json.dumps(dict(par=lista, h=hs), ensure_ascii=False, separators=(",", ":")))
+    (PUBLIC / "formulario").mkdir(parents=True, exist_ok=True)
+    (PUBLIC / "formulario" / "index.html").write_text(t)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--planilha", help="arquivo .xlsx local (senão baixa do Google Sheets)")
@@ -188,7 +210,7 @@ def main():
     # o site também é regerado quando o modelo (site/) muda
     import hashlib
     tpl_f = DADOS / "versao_site.txt"
-    tpl = hashlib.sha1(b"".join((SITE / x).read_bytes() for x in ("template.html", "icone.png"))).hexdigest()
+    tpl = hashlib.sha1(b"".join((SITE / x).read_bytes() for x in ("template.html", "formulario.html", "icone.png"))).hexdigest() + FORM_ENDPOINT
     mudou = (not ant_f.exists() or ant_f.read_text() != novo_csv or not esp_f.exists() or esp_f.read_text() != novo_esp
              or not tpl_f.exists() or tpl_f.read_text() != tpl)
     if not mudou and not a.forcar:
@@ -209,6 +231,7 @@ def main():
 
     gerado = datetime.now(BRT).strftime("%Y-%m-%d %H:%M")
     gera_html(para_site(h, p, esp, gerado))
+    gera_formulario(h, p)
     print(f"3. site gerado: {len(h)} horários · {len(conferir)} itens para conferir · {gerado}")
 
 

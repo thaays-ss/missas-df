@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horários da paróquia · Onde tem missa? DF</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Formulário rápido para as paróquias do DF confirmarem os horários de missa, confissão, adoração e Natal.">
+<link rel="icon" href="data:image/png;base64,/*ICON*/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4FQ67EYSJ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+var _optout=false;try{_optout=localStorage.getItem('ga_optout')==='1'}catch(e){}
+gtag('consent','default',{analytics_storage:_optout?'denied':'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+gtag('js',new Date());gtag('config','G-W4FQ67EYSJ',{page_title:'Formulário paróquias'});
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Cinzel:wght@500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F8F8F5;--blue:#084D6E;--ink:#0B2F42;--ink2:#3C4558;--mute:#5B6476;--faint:#7D8597;--line:#DCE1E8;--line2:#E8ECF1;--bd:#C3CCD8;--missa:#084D6E;--conf:#5E3A87;--ador:#A67C1A;--gold:#C9A24A;--ok:#1E7A4C;--c:var(--missa)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Libre Franklin',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.45}
+a{color:var(--blue)}
+header{background:var(--blue);color:#fff}
+.hin{max-width:640px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.hin img{height:36px}
+.hin b{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1;display:block}
+.hin small{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.16em;color:#B9D3E0}
+main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.05;margin:4px 0 6px}
+.lead{color:var(--ink2);margin:0 0 18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:0 0 14px}
+.card[hidden],[hidden]{display:none!important}
+.num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;color:var(--faint);margin:0 0 4px}
+h2{font-size:18px;margin:0 0 12px;font-weight:600}
+.hint{font-size:13px;color:var(--mute);margin:6px 0 0}
+input[type=text],input[type=tel],input[type=time]{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--bd);border-radius:10px;background:#fff;color:var(--ink)}
+input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+label.f{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
+label.f:first-of-type{margin-top:0}
+label.f span{font-weight:400;color:var(--faint)}
+/* busca de paróquia */
+.lista{border:1px solid var(--line);border-radius:10px;margin-top:6px;max-height:260px;overflow:auto}
+.lista button{all:unset;display:block;width:100%;box-sizing:border-box;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--line2)}
+.lista button:hover,.lista button:focus-visible{background:#F1F6F9}
+.lista small{color:var(--faint)}
+.esc{display:flex;align-items:center;gap:10px;justify-content:space-between;background:#F1F6F9;border-radius:10px;padding:12px 14px}
+.esc b{display:block}.esc small{color:var(--mute)}
+.lnk{all:unset;cursor:pointer;color:var(--blue);text-decoration:underline;font-size:14px;white-space:nowrap}
+/* horários atuais */
+.atual{margin:0 0 14px;display:grid;gap:8px}
+.atual div{font-size:14px}
+.atual b{display:inline-block;min-width:92px;font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.atual .m b{color:var(--missa)}.atual .c b{color:var(--conf)}.atual .a b{color:var(--ador)}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.big{all:unset;cursor:pointer;text-align:center;padding:14px 10px;border-radius:12px;border:1.5px solid var(--bd);font-weight:600;background:#fff}
+.big.on{border-color:var(--blue);background:var(--blue);color:#fff}
+.big:focus-visible{outline:2px solid var(--gold)}
+/* editor tipo agendamento */
+.seg{display:flex;background:#EEF2F6;border-radius:99px;padding:4px;gap:4px;margin:0 0 12px}
+.seg button{all:unset;flex:1;text-align:center;cursor:pointer;padding:9px 4px;border-radius:99px;font-size:14px;font-weight:600;color:var(--ink2)}
+.seg button.on{background:#fff;color:var(--c);box-shadow:0 1px 3px rgba(11,47,66,.15)}
+.seg button:focus-visible{outline:2px solid var(--gold)}
+.dias{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:0 0 12px}
+.dias button{all:unset;cursor:pointer;text-align:center;padding:8px 0 6px;border-radius:10px;border:1.5px solid var(--line);font-size:13px;font-weight:600;position:relative;background:#fff}
+.dias button small{display:block;font-size:11px;font-weight:500;color:var(--faint);min-height:14px}
+.dias button.tem small{color:var(--c);font-weight:700}
+.dias button.on{border-color:var(--c);background:var(--c);color:#fff}
+.dias button.on small{color:#fff}
+.dias button:focus-visible{outline:2px solid var(--gold)}
+.per{display:flex;gap:6px;margin:0 0 10px}
+.per button{all:unset;cursor:pointer;padding:6px 12px;border-radius:99px;font-size:13px;font-weight:600;color:var(--mute);border:1px solid transparent}
+.per button.on{color:var(--c);border-color:var(--c)}
+.per button i{font-style:normal;font-weight:700}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chips button{all:unset;cursor:pointer;text-align:center;padding:11px 0;border-radius:10px;border:1.5px solid var(--line);font-variant-numeric:tabular-nums;font-weight:500;background:#fff}
+.chips button.on{background:var(--c);border-color:var(--c);color:#fff;font-weight:700}
+.chips button.mid{border-radius:0}
+.chips button:focus-visible{outline:2px solid var(--gold)}
+.extra{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.extra span{display:inline-flex;align-items:center;gap:6px;background:var(--c);color:#fff;border-radius:99px;padding:5px 6px 5px 12px;font-size:13px;font-weight:600}
+.extra span button{all:unset;cursor:pointer;width:20px;height:20px;border-radius:99px;text-align:center;line-height:20px;background:rgba(255,255,255,.25)}
+.acoes{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0 0;align-items:center}
+.outro{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.outro input{width:auto;flex:1 1 110px;min-width:0;padding:9px 10px}
+.outro button,.mini{all:unset;cursor:pointer;padding:9px 14px;border-radius:10px;border:1.5px solid var(--bd);font-size:14px;font-weight:600;background:#fff}
+.resumo{margin:14px 0 0;padding:12px 14px;border-radius:10px;background:#F7F9FB;font-size:14px;color:var(--ink2)}
+.resumo b{color:var(--c)}
+/* enviar */
+.send{all:unset;cursor:pointer;display:block;text-align:center;width:100%;box-sizing:border-box;padding:16px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;font-size:17px}
+.send:disabled{opacity:.5;cursor:default}
+.send:focus-visible{outline:3px solid var(--gold)}
+.legal{font-size:12.5px;color:var(--mute);margin:10px 2px 0;text-align:center}
+.hp{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+.erro{color:#A3261F;font-size:14px;margin:10px 0 0;text-align:center}
+.fim{text-align:center;padding:40px 16px}
+.fim .ic{font-size:44px}
+@media (max-width:380px){.chips{grid-template-columns:repeat(3,1fr)}.dias button{font-size:12px}}
+</style>
+</head>
+<body>
+<header><div class="hin"><img src="data:image/png;base64,/*ICON*/" alt=""><div><b>Onde tem missa?</b><small>DISTRITO FEDERAL</small></div></div></header>
+<main id="form">
+  <h1>Os horários da sua paróquia</h1>
+  <p class="lead">Leva uns 2 minutinhos. Com isso, quem procura missa, confissão ou adoração no <a href="https://missanodf.com.br/" target="_blank" rel="noopener">missanodf.com.br</a> encontra a sua paróquia com o horário certo, inclusive no Natal. 🙏</p>
+
+  <section class="card" id="c1">
+    <p class="num">1 de 4</p>
+    <h2>Qual é a paróquia ou capela?</h2>
+    <div id="busca">
+      <input type="text" id="q" placeholder="Digite o nome ou o bairro" autocomplete="off" aria-label="Buscar paróquia">
+      <div class="lista" id="lista" hidden></div>
+      <p class="hint"><button class="lnk" id="naoLista" type="button">Não está na lista</button></p>
+    </div>
+    <div id="nova" hidden>
+      <label class="f" for="novaNome">Nome</label>
+      <input type="text" id="novaNome" placeholder="Ex.: Capela São Judas Tadeu">
+      <label class="f" for="novaBairro">Bairro / região</label>
+      <input type="text" id="novaBairro" placeholder="Ex.: Guará II">
+      <p class="hint"><button class="lnk" id="voltaLista" type="button">Voltar para a lista</button></p>
+    </div>
+    <div class="esc" id="esc" hidden><div><b id="escNome"></b><small id="escBairro"></small></div><button class="lnk" id="trocar" type="button">trocar</button></div>
+  </section>
+
+  <section class="card" id="c2" hidden>
+    <p class="num">2 de 4</p>
+    <h2 id="c2t">Estes são os horários que temos hoje. Estão certos?</h2>
+    <div class="atual" id="atual"></div>
+    <div class="duas" id="duas">
+      <button class="big" type="button" data-ok="1">✅ Estão certos</button>
+      <button class="big" type="button" data-ok="0">✏️ Tem coisa errada</button>
+    </div>
+
+    <div id="editor" hidden>
+      <p class="hint" style="margin:14px 0 12px">Toque nos horários para marcar ou desmarcar. Já deixamos marcado o que temos hoje.</p>
+      <div class="seg" id="tipos" role="tablist">
+        <button type="button" data-t="0" class="on">Missas</button>
+        <button type="button" data-t="1">Confissões</button>
+        <button type="button" data-t="2">Adoração</button>
+      </div>
+      <div class="dias" id="dias"></div>
+      <div class="per" id="per">
+        <button type="button" data-p="0">Manhã <i></i></button>
+        <button type="button" data-p="1">Tarde <i></i></button>
+        <button type="button" data-p="2">Noite <i></i></button>
+      </div>
+      <p class="hint" id="dica" style="margin:0 0 10px"></p>
+      <div class="chips" id="chips"></div>
+      <div class="extra" id="extra"></div>
+      <div class="outro"><input type="time" id="outroIni" aria-label="Outro horário"><span id="outroAte" hidden>até</span><input type="time" id="outroFim" aria-label="Até" hidden><button type="button" id="outroAdd">+ outro horário</button></div>
+      <div class="acoes">
+        <button class="mini" type="button" id="copiaUteis">Repetir este dia de seg a sex</button>
+        <button class="mini" type="button" id="ador24" hidden>Adoração 24 horas</button>
+        <button class="lnk" type="button" id="limpa">limpar o dia</button>
+      </div>
+      <div class="resumo" id="resumo"></div>
+    </div>
+  </section>
+
+  <section class="card" id="c3" hidden>
+    <p class="num">3 de 4</p>
+    <h2>E no Natal e Ano-Novo? 🎄</h2>
+    <p class="hint" style="margin:-6px 0 12px">Pode deixar em branco se ainda não estiver definido.</p>
+    <label class="f" for="n24">24/12 · Noite de Natal</label>
+    <input type="text" id="n24" placeholder="ex.: 19h, 22h, 0h">
+    <label class="f" for="n25">25/12 · Natal do Senhor</label>
+    <input type="text" id="n25" placeholder="ex.: 8h, 10h, 19h">
+    <label class="f" for="n31">31/12 e 01/01</label>
+    <input type="text" id="n31" placeholder="ex.: 31: 22h · 01: 9h, 19h">
+    <label class="f" for="mut">Mutirão de confissão no Advento <span>(opcional)</span></label>
+    <input type="text" id="mut" placeholder="ex.: 18/12, das 18h às 21h">
+  </section>
+
+  <section class="card" id="c4" hidden>
+    <p class="num">4 de 4</p>
+    <h2>Um WhatsApp pra tirar dúvida <span style="font-weight:400;color:var(--faint)">(opcional)</span></h2>
+    <input type="tel" id="zap" placeholder="(61) 9 0000-0000" autocomplete="tel">
+    <p class="hint">Só usamos se precisar confirmar algo. Não aparece no site.</p>
+    <div class="hp" aria-hidden="true"><label>Não preencha<input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
+  </section>
+
+  <div id="envio" hidden>
+    <button class="send" id="enviar" type="button">Enviar</button>
+    <p class="erro" id="erro" hidden></p>
+    <p class="legal">Ao enviar, você autoriza a publicação desses horários no missanodf.com.br. Os horários passam por uma conferência antes de entrar no site.</p>
+  </div>
+</main>
+
+<main id="obrigado" hidden>
+  <div class="fim">
+    <div class="ic">🙏</div>
+    <h1>Recebido, obrigada!</h1>
+    <p class="lead">Vamos conferir e, em breve, os horários aparecem no site.</p>
+    <p><a href="https://missanodf.com.br/">Ver o site →</a></p>
+    <p class="hint"><button class="lnk" id="outra" type="button">Enviar de outra paróquia</button></p>
+  </div>
+</main>
+
+<script>
+// Endereço do Apps Script que grava as respostas na planilha (Implantar → App da Web).
+const ENDPOINT = "/*ENDPOINT*/";
+const D = /*DATA*/;
+// D.par = [[id, nome, bairro], ...] · D.h = {id: [[tipo, dia(0=Seg..6=Dom), inicio, fim], ...]}
+
+const $ = id => document.getElementById(id);
+const DIAS = ["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"];
+const TIPO = ["Missas","Confissões","Adoração"];
+const COR = ["var(--missa)","var(--conf)","var(--ador)"];
+const PER = [["06:00","11:30"],["12:00","17:30"],["18:00","22:00"]];
+const ga = (ev,p) => { try { gtag('event', ev, p||{}) } catch(e){} };
+const min = t => +t.slice(0,2)*60 + +t.slice(3,5);
+const hhmm = m => String(Math.floor(m/60)).padStart(2,"0")+":"+String(m%60).padStart(2,"0");
+const fmt = t => { const [h,m] = t.split(":"); return (+h)+"h"+(m==="00"?"":m) };
+const sem = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+
+// estado: E[tipo][dia] = {s:Set de horários marcados nos botões, x:[outros horários]}
+let par = null, nova = false, certo = null, mexeu = new Set();
+let E, t = 0, d = 0, p = 2;
+const vazio = () => [0,1,2].map(() => DIAS.map(() => ({s:new Set(), x:[]})));
+
+// ---------- 1. paróquia ----------
+const idx = D.par.map(r => [r, sem(r[1]+" "+r[2])]);
+function lista(){
+  const q = sem($("q").value.trim());
+  const L = $("lista");
+  if (q.length < 2) { L.hidden = true; return }
+  const ws = q.split(/\s+/);
+  const r = idx.filter(([,s]) => ws.every(w => s.includes(w))).slice(0,30);
+  L.innerHTML = r.length ? r.map(([x]) => `<button type="button" data-id="${x[0]}">${x[1]}<br><small>${x[2]||""}</small></button>`).join("")
+    : `<p class="hint" style="padding:10px 14px;margin:0">Não achamos. Tente outra palavra ou clique em "Não está na lista".</p>`;
+  L.hidden = false;
+}
+$("q").oninput = lista;
+$("lista").onclick = e => { const b = e.target.closest("button"); if (b) escolhe(+b.dataset.id) };
+function escolhe(id){
+  par = D.par.find(r => r[0] === id); if (!par) return;
+  nova = false;
+  $("busca").hidden = true; $("nova").hidden = true; $("esc").hidden = false;
+  $("escNome").textContent = par[1]; $("escBairro").textContent = par[2] || "";
+  carrega(); mostra(); ga("form_paroquia", {paroquia: par[1]});
+}
+$("trocar").onclick = () => { par = null; $("esc").hidden = true; $("busca").hidden = false; $("q").value = ""; lista(); $("q").focus() };
+$("naoLista").onclick = () => { nova = true; par = null; $("busca").hidden = true; $("nova").hidden = false; $("novaNome").focus(); carrega(); mostra() };
+$("voltaLista").onclick = () => { nova = false; $("nova").hidden = true; $("busca").hidden = false; mostra() };
+
+// carrega o que a base tem hoje para dentro dos botões
+function carrega(){
+  E = vazio(); mexeu = new Set(); certo = null;
+  for (const [ti, di, ini, fim] of (par && D.h[par[0]]) || []) {
+    const c = E[ti][di];
+    const grade = x => /:(00|30)$/.test(x) && min(x) >= 360 && min(x) <= 1320;
+    if (ti === 0) { grade(ini) ? c.s.add(ini) : c.x.push(ini); continue }
+    if (ini === "00:00" && fim === "23:59") { c.x.push("24 horas"); continue }
+    if (fim && grade(ini) && /:(00|30)$/.test(fim) && min(fim) > min(ini) && min(fim) <= 1350)
+      for (let m = min(ini); m < min(fim); m += 30) c.s.add(hhmm(m));
+    else c.x.push(fim ? fmt(ini)+" às "+fmt(fim) : fmt(ini));
+  }
+  document.querySelectorAll("#duas .big").forEach(b => b.classList.remove("on"));
+}
+
+// ---------- 2. horários ----------
+// confissão e adoração: botões seguidos viram uma faixa (16:00 + 16:30 + 17:00 → 16h às 17h30)
+function faixas(c, ti){
+  const s = [...c.s].sort();
+  if (ti === 0) return [...s, ...c.x].sort().map(x => /^\d\d:\d\d$/.test(x) ? fmt(x) : x);
+  const out = []; let a = null, b = null;
+  for (const x of s) { const m = min(x); if (a !== null && m === b) b = m+30; else { if (a !== null) out.push([a,b]); a = m; b = m+30 } }
+  if (a !== null) out.push([a,b]);
+  return [...out.map(([a,b]) => fmt(hhmm(a))+" às "+fmt(hhmm(b))), ...c.x];
+}
+function texto(ti, sep){
+  // junta dias seguidos iguais: "Ter a Sex: 19h"
+  const g = [];
+  E[ti].forEach((c,di) => { const f = faixas(c,ti).join(", "), u = g[g.length-1];
+    if (f && u && u.f === f && u.b === di-1) u.b = di; else if (f) g.push({a:di, b:di, f}) });
+  return g.map(x => (x.a === x.b ? DIAS[x.a] : DIAS[x.a]+(x.b-x.a > 1 ? " a " : " e ")+DIAS[x.b])+": "+x.f).join(sep || " · ");
+}
+function atual(){
+  const cls = ["m","c","a"];
+  const h = [0,1,2].map(ti => { const tx = texto(ti, "<br>"); return tx ? `<div class="${cls[ti]}"><b>${TIPO[ti]}</b><br>${tx}</div>` : "" }).join("");
+  $("atual").innerHTML = h || `<p class="hint" style="margin:0">Ainda não temos horários dessa paróquia. Marque abaixo, por favor. 🙂</p>`;
+  return !!h;
+}
+function mostra(){
+  const temPar = !!par || nova;
+  ["c2","c3","c4"].forEach(i => $(i).hidden = !temPar);
+  if (!temPar) { $("envio").hidden = true; return }
+  const tem = atual();
+  $("c2t").textContent = tem ? "Estes são os horários que temos hoje. Estão certos?" : "Quais são os horários?";
+  $("duas").hidden = !tem;
+  $("editor").hidden = tem && certo !== false;
+  if (!tem) certo = false;
+  if (!$("editor").hidden) desenha();
+  $("envio").hidden = certo === null;
+}
+$("duas").onclick = e => {
+  const b = e.target.closest(".big"); if (!b) return;
+  certo = b.dataset.ok === "1";
+  document.querySelectorAll("#duas .big").forEach(x => x.classList.toggle("on", x === b));
+  mostra(); ga("form_confere", {certo});
+};
+
+function desenha(){
+  document.documentElement.style.setProperty("--c", COR[t]);
+  document.querySelectorAll("#tipos button").forEach(b => b.classList.toggle("on", +b.dataset.t === t));
+  $("dias").innerHTML = DIAS.map((n,i) => { const c = E[t][i], k = c.s.size + c.x.length;
+    return `<button type="button" data-d="${i}" class="${i===d?"on":""} ${k?"tem":""}">${n}<small>${k? (t? "✓" : k) : ""}</small></button>` }).join("");
+  const c = E[t][d];
+  document.querySelectorAll("#per button").forEach(b => { const i = +b.dataset.p, [a,z] = PER[i];
+    const k = [...c.s].filter(x => x >= a && x <= z).length;
+    b.classList.toggle("on", i === p); b.querySelector("i").textContent = k ? "· "+k : "" });
+  const [a,z] = PER[p], bs = [];
+  for (let m = min(a); m <= min(z); m += 30) { const x = hhmm(m); bs.push(`<button type="button" data-h="${x}" class="${c.s.has(x)?"on":""}" aria-pressed="${c.s.has(x)}">${x}</button>`) }
+  $("chips").innerHTML = bs.join("");
+  $("extra").innerHTML = c.x.map((x,i) => `<span>${/^\d\d:\d\d$/.test(x)?fmt(x):x} <button type="button" data-i="${i}" aria-label="remover">×</button></span>`).join("");
+  $("dica").textContent = t === 0 ? "Toque no horário de início de cada missa." : "Marque cada meia hora em que tem " + (t === 1 ? "padre atendendo" : "adoração") + ". Ex.: 16:00, 16:30 e 17:00 = das 16h às 17h30.";
+  $("outroFim").hidden = $("outroAte").hidden = t === 0;
+  $("ador24").hidden = t !== 2;
+  const r = texto(t);
+  $("resumo").innerHTML = `<b>${TIPO[t]}</b>: ` + (r || "nenhum horário marcado");
+}
+$("tipos").onclick = e => { const b = e.target.closest("button"); if (b) { t = +b.dataset.t; desenha() } };
+$("dias").onclick = e => { const b = e.target.closest("button"); if (!b) return; d = +b.dataset.d;
+  const c = E[t][d]; const k = [0,1,2].map(i => [...c.s].filter(x => x >= PER[i][0] && x <= PER[i][1]).length);
+  if (k[p] === 0 && Math.max(...k) > 0) p = k.indexOf(Math.max(...k));
+  desenha() };
+$("per").onclick = e => { const b = e.target.closest("button"); if (b) { p = +b.dataset.p; desenha() } };
+$("chips").onclick = e => { const b = e.target.closest("button"); if (!b) return;
+  const s = E[t][d].s, x = b.dataset.h; s.has(x) ? s.delete(x) : s.add(x); mexeu.add(t); desenha() };
+$("extra").onclick = e => { const b = e.target.closest("button"); if (!b) return; E[t][d].x.splice(+b.dataset.i,1); mexeu.add(t); desenha() };
+$("outroAdd").onclick = () => { const a = $("outroIni").value, z = $("outroFim").value; if (!a) { $("outroIni").focus(); return }
+  E[t][d].x.push(t === 0 ? a : z ? fmt(a)+" às "+fmt(z) : fmt(a)); $("outroIni").value = $("outroFim").value = ""; mexeu.add(t); desenha() };
+$("copiaUteis").onclick = () => { const c = E[t][d]; for (let i = 0; i < 5; i++) if (i !== d) E[t][i] = {s:new Set(c.s), x:[...c.x]}; mexeu.add(t); desenha() };
+$("ador24").onclick = () => { const c = E[2][d]; if (!c.x.includes("24 horas")) c.x.push("24 horas"); mexeu.add(2); desenha() };
+$("limpa").onclick = () => { E[t][d] = {s:new Set(), x:[]}; mexeu.add(t); desenha() };
+
+// ---------- enviar ----------
+$("enviar").onclick = async () => {
+  const nome = nova ? $("novaNome").value.trim() : par && par[1];
+  if (!nome) { $("erro").textContent = "Falta o nome da paróquia."; $("erro").hidden = false; return }
+  if (!ENDPOINT || ENDPOINT.indexOf("script.google") < 0) { $("erro").textContent = "O formulário ainda está sendo configurado. Tente de novo mais tarde."; $("erro").hidden = false; return }
+  const dados = { paroquia: nome, id: par ? par[0] : "", bairro: nova ? $("novaBairro").value.trim() : (par[2]||""),
+    certo: certo ? "Sim" : "Não",
+    missas: certo ? "" : texto(0), confissoes: certo ? "" : texto(1), adoracao: certo ? "" : texto(2),
+    mexeu: certo ? "" : [...mexeu].sort().map(i => TIPO[i]).join(", "),
+    n24: $("n24").value.trim(), n25: $("n25").value.trim(), n31: $("n31").value.trim(), mutirao: $("mut").value.trim(),
+    zap: $("zap").value.trim(), hp: $("hp").value,
+    bruto: certo ? "" : JSON.stringify(E.map(ti => ti.map(c => [[...c.s].sort(), c.x]))) };
+  const b = $("enviar"); b.disabled = true; b.textContent = "Enviando…"; $("erro").hidden = true;
+  try {
+    await fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: {"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(dados) });
+    ga("form_enviado", {paroquia: nome, certo: dados.certo});
+    $("form").hidden = true; $("obrigado").hidden = false; scrollTo(0,0);
+  } catch (e) {
+    $("erro").textContent = "Não conseguimos enviar. Confira a internet e tente de novo."; $("erro").hidden = false;
+  }
+  b.disabled = false; b.textContent = "Enviar";
+};
+$("outra").onclick = () => { location.href = location.pathname };
+
+// link pré-preenchido: missanodf.com.br/formulario/?p=ID
+const pid = +new URLSearchParams(location.search).get("p");
+if (pid) escolhe(pid);
+</script>
+</body>
+</html>

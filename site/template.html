@@ -134,9 +134,11 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .destaq a{color:#fff;font-weight:600}
 @media (max-width:760px){.destaq{padding:14px 16px;gap:12px}.destaq .q{font-size:21px}}
 /* chamada para as paróquias atualizarem (formulário) */
-nav a.navpar{display:flex;align-items:center;align-self:center;gap:6px;padding:7px 14px;border-radius:99px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none}
-nav a.navpar:hover{background:#D9B560;text-decoration:none;color:var(--ink)}
-nav a.navpar:focus-visible{outline:2px solid #fff;outline-offset:3px}
+a.navpar.mob{display:none}
+@media (max-width:760px){a.navpar.mob{display:flex;margin-left:auto;font-size:13px;padding:6px 12px}nav a.navpar{display:none}}
+a.navpar{display:flex;align-items:center;align-self:center;gap:6px;padding:7px 14px;border-radius:99px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none}
+a.navpar:hover{background:#D9B560;text-decoration:none;color:var(--ink)}
+a.navpar:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .parban{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap;padding:14px 36px;background:#FBF4E3;border-bottom:1px solid #EAD9AE;color:var(--ink)}
 .parban .ic{font-size:22px;line-height:1}
 .parban .tx{flex:1 1 300px;min-width:0;font-size:14.5px;line-height:1.4}
@@ -232,6 +234,7 @@ footer b{color:var(--ink);font-weight:600}
 <header class="top">
  <div class="topin">
   <a class="brand" href="#agora" data-go="agora"><img src="data:image/png;base64,/*ICON*/" alt=""><span class="nm"><b>Onde tem missa?</b><small>DISTRITO FEDERAL</small></span></a>
+  <a class="navpar mob" href="/formulario/" data-form="menu-celular">✎ Atualizar</a>
   <nav>
     <button data-p="agora" class="on">Agora</button>
     <button data-p="conf">Confissão à noite</button>

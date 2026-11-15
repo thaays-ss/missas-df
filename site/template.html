@@ -54,6 +54,13 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .dateL{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.14em;color:var(--blue)}
 .dedL{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;line-height:1.1}
 .lit{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--ink2)}
+.lit a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.folh{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:7px 14px 7px 10px;border-radius:99px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13.5px;text-decoration:none;max-width:100%}
+.folh:hover{border-color:var(--blue);text-decoration:none}
+.folh svg{flex:none}
+.folh span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.folh b{font-weight:600}
+.folh[hidden]{display:none}
 .lit i{width:12px;height:12px;border-radius:50%;border:2px solid #fff;flex:none}
 .search{height:56px;background:#fff;border:1.5px solid var(--ink);border-radius:10px;display:flex;align-items:center;padding:0 20px;gap:14px}
 .search input{all:unset;flex:1;font-size:18px;color:var(--ink);min-width:0}.search input::placeholder{color:var(--faint)}
@@ -254,6 +261,7 @@ footer b{color:var(--ink);font-weight:600}
       <span class="dateL" id="nowLine"></span>
       <span class="dedL" id="dedHoje"></span>
       <span class="lit" id="lit"></span>
+      <a class="folh" id="folh" target="_blank" rel="noopener" hidden></a>
     </div>
     <label class="search"><span class="ring"></span><input id="q" placeholder="Buscar igreja, bairro ou região" autocomplete="off" aria-label="Buscar igreja, bairro ou região"></label>
     <div style="display:flex;flex-direction:column;gap:10px">
@@ -291,7 +299,7 @@ footer b{color:var(--ink);font-weight:600}
       <div class="ded" id="ded"></div>
     </div>
   </div>
-  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair. Fontes: site da Arquidiocese de Brasília e planilha colaborativa de um grupo de católicos. <span id="gerado"></span><br><span class="contato">Sua paróquia não está aqui ou o horário mudou? Escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
+  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair. Fontes: site da Arquidiocese de Brasília e planilha colaborativa de um grupo de católicos. <span id="gerado"></span><br><span class="contato">Sua paróquia não está aqui ou o horário mudou? <a href="/formulario/" data-form="rodape">Atualize por aqui</a>, chame no WhatsApp <a class="zap" href="#">WhatsApp</a> ou escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
 </section>
 
 <!-- CONFISSÃO -->
@@ -311,7 +319,7 @@ footer b{color:var(--ink);font-weight:600}
       <div class="note"><b>“aprox.”</b> quer dizer horário relativo, como “após a missa das 19h”. Muitas paróquias também atendem por agendamento; isso aparece só no texto da paróquia.</div>
     </div>
   </div>
-  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair.<br><span class="contato">Sua paróquia não está aqui ou o horário mudou? Escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
+  <footer><b>Horários mudam.</b> Confirme com a paróquia antes de sair.<br><span class="contato">Sua paróquia não está aqui ou o horário mudou? <a href="/formulario/" data-form="rodape">Atualize por aqui</a>, chame no WhatsApp <a class="zap" href="#">WhatsApp</a> ou escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
 </section>
 
 <!-- ESPECIAIS -->
@@ -335,10 +343,10 @@ footer b{color:var(--ink);font-weight:600}
     <div class="tbl" id="elist"></div>
     <div class="cside">
       <div class="cmap" id="map3"></div>
-      <div class="note" style="background:#EFF4F7"><b style="color:var(--blue)">Sua paróquia tem uma celebração especial?</b> Missa do padroeiro, novena, missa de cura… Manda as informações para <a class="mail" href="#">e-mail</a> que a gente inclui.</div>
+      <div class="note" style="background:#EFF4F7"><b style="color:var(--blue)">Sua paróquia tem uma celebração especial?</b> Missa do padroeiro, novena, missa de cura… Manda as informações pelo WhatsApp <a class="zap" href="#">WhatsApp</a> ou para <a class="mail" href="#">e-mail</a> que a gente inclui.</div>
     </div>
   </div>
-  <footer><b>Horários mudam.</b> Em datas festivas, confirme com a paróquia antes de sair.<br><span class="contato">Sua paróquia não está aqui ou o horário mudou? Escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
+  <footer><b>Horários mudam.</b> Em datas festivas, confirme com a paróquia antes de sair.<br><span class="contato">Sua paróquia não está aqui ou o horário mudou? <a href="/formulario/" data-form="rodape">Atualize por aqui</a>, chame no WhatsApp <a class="zap" href="#">WhatsApp</a> ou escreva para <a class="mail" href="#">e-mail</a>. Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a>.</span></footer>
 </section>
 
 <!-- NÚMEROS -->
@@ -364,7 +372,7 @@ footer b{color:var(--ink);font-weight:600}
     </div>
     <div class="cell" style="gap:12px"><span class="h3">Cuidados ao ler os números</span><div id="cuid" style="display:flex;flex-direction:column;gap:12px"></div></div>
   </div>
-  <footer>Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a> (<a href="https://thaays-ss.github.io/">portfólio</a>) · contato: <a class="mail" href="#">e-mail</a> · dados públicos da Arquidiocese de Brasília e de voluntários · código e base em <a href="https://github.com/thaays-ss/missas-df">github.com/thaays-ss/missas-df</a></footer>
+  <footer>Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a> (<a href="https://thaays-ss.github.io/">portfólio</a>) · contato: <a class="zap" href="#">WhatsApp</a> e <a class="mail" href="#">e-mail</a> · dados públicos da Arquidiocese de Brasília e de voluntários · código e base em <a href="https://github.com/thaays-ss/missas-df">github.com/thaays-ss/missas-df</a></footer>
 </section>
 </main>
 <div id="gaNote" class="ganote" hidden><span>Usamos o Google Analytics, de forma anônima, pra entender como o site é usado.</span><button id="gaOk">Ok</button><button id="gaNo" class="lnk">Não quero</button></div>
@@ -476,7 +484,13 @@ function renderAgora(){
  const hh=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
  $('nowLine').textContent=`${DIA_LOW[wd]}, ${d.getDate()} de ${MESES[d.getMonth()]} · ${hh}`.toUpperCase();
  $('dedHoje').textContent=DED[wd];
- const tl=tempoLit(d);$('lit').innerHTML=`<i style="background:${tl.hex};box-shadow:0 0 0 1px ${tl.hex==='#FFFFFF'?'#9DBBCB':tl.hex}"></i>${tl.nome} · cor litúrgica ${tl.cor}`;
+ const tl=tempoLit(d), lt=(DATA.lit||{})[ymd(d)];
+ $('lit').innerHTML=`<i style="background:${tl.hex};box-shadow:0 0 0 1px ${tl.hex==='#FFFFFF'?'#9DBBCB':tl.hex}"></i><span>${esc(lt&&lt[0]?lt[0]:tl.nome)} · cor litúrgica ${tl.cor}${lt&&lt[1]?` · <a href="https://www.cnbb.org.br/liturgia-diaria/" target="_blank" rel="noopener" data-ev="1">Evangelho: ${esc(lt[1])}</a>`:''}</span>`;
+ // folheto O Povo de Deus (Arquidiocese de Brasília): o de hoje, senão o do próximo domingo, senão o último
+ {const F=DATA.folh||[], h=ymd(d), fo=F.find(f=>f[0]===h)||F.find(f=>f[0]>h)||F.slice().reverse().find(f=>f[0]<h), el=$('folh');
+  el.hidden=!fo||st.tipo!==0;
+  if(fo){const [a,m,dd]=fo[0].split('-'), q=fo[0]===h?'de hoje':(fo[0]>h?'de '+DIA_LOW[new Date(+a,+m-1,+dd).getDay()]+', '+dd+'/'+m:'de '+dd+'/'+m);
+   el.href=fo[2];el.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><span>Folheto <b>O Povo de Deus</b> ${q} · ${esc(fo[1])}</span>`;}}
  // cards
  const quando=hoje?(st.hora==='agora'?'hoje, a partir de agora':st.hora==='todo'?'hoje':'hoje '+PER[+st.hora]):naDia(dia)+(st.hora==='todo'?'':' '+PER[+st.hora]);
  document.querySelectorAll('#cards .card').forEach(c=>{const t=+c.dataset.t;c.classList.toggle('on',t===st.tipo);c.setAttribute('aria-pressed',t===st.tipo);
@@ -629,6 +643,7 @@ function vaiPara(p){if(p!==abaAtual||!_pv0)gaPage(p);document.querySelectorAll('
  try{history.replaceState(null,'','#'+p)}catch(e){} try{window.scrollTo(0,0)}catch(e){}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>vaiPara(b.dataset.p));
 document.querySelectorAll('[data-form]').forEach(a=>a.addEventListener('click',()=>ga('abrir_formulario',{origem:a.dataset.form})));
+$('folh').addEventListener('click',()=>ga('abrir_folheto'));$('lit').addEventListener('click',e=>{if(e.target.closest('[data-ev]'))ga('abrir_evangelho')});
 document.querySelector('.brand').onclick=e=>{e.preventDefault();vaiPara('agora')};
 document.querySelectorAll('#cards .card').forEach(c=>c.onclick=()=>{st.tipo=+c.dataset.t;st.all=false;renderAgora();ga('selecionar_tipo',{tipo:TIPOS[st.tipo]})});
 $('q').oninput=e=>{st.q=e.target.value;renderAgora();gaBusca(e.target.value,'agora')};
@@ -639,6 +654,7 @@ $('hora').onchange=e=>{st.hora=e.target.value;st.all=false;renderAgora();ga('fil
 $('eq').oninput=e=>{renderEsp();gaBusca(e.target.value,'especiais')};$('eper').onchange=e=>{renderEsp();ga('filtrar',{filtro:'periodo',valor:e.target.value+' dias'})};$('ereg').onchange=e=>{renderEsp();ga('filtrar',{filtro:'regiao',valor:e.target.value||'todas'})};
 $('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(st.all)ga('ver_todos',{tipo:TIPOS[st.tipo]});if(!st.all)$('listScroll').scrollTop=0};
 (()=>{const g=String(DATA.gerado||'');const m=g.match(/^(\d{4})-(\d{2})-(\d{2})(?: (\d{2}:\d{2}))?/);$('gerado').textContent=m?`Base atualizada em ${m[3]}/${m[2]}/${m[1]}${m[4]?' às '+m[4]:''}.`:''})();
+(()=>{const z=['55','61','982283435'].join('');document.querySelectorAll('a.zap').forEach(a=>{a.href='https://wa.me/'+z+'?text='+encodeURIComponent('Oi! Vim pelo site Onde tem missa? DF.');a.target='_blank';a.rel='noopener';a.textContent='(61) 98228-3435';a.addEventListener('click',()=>ga('contato_whatsapp'))})})();
 (()=>{const m=['thaysoaresilva0','gmail.com'].join('@');document.querySelectorAll('a.mail').forEach(a=>{a.href='mailto:'+m+'?subject='+encodeURIComponent('Onde tem missa? · horário');a.textContent=m;a.addEventListener('click',()=>ga('contato_email'))})})();
 (()=>{const {d}=agoraSP();const md=(d.getMonth()+1)*100+d.getDate();if(md>=1101&&md<=1226)document.querySelectorAll('[data-natal]').forEach(x=>x.hidden=false)})();
 renderAgora();renderNum();

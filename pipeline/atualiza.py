@@ -26,7 +26,8 @@ AQUI = Path(__file__).resolve().parent
 RAIZ = AQUI.parent
 sys.path.insert(0, str(AQUI))
 from build_base import main as monta_base, faixa, DIA_NOME  # noqa: E402
-import curadoria  # noqa: E402
+import curadoria
+import liturgia  # noqa: E402
 
 PLANILHA_ID = os.environ.get("PLANILHA_ID", "154ru-gzOx4rKf2jpgQmIRokFDx5b9_h7ZMFqRAs7RME")
 CURADORIA_ID = os.environ.get("CURADORIA_ID", "1GNIsgfB31KY2Ij4MmEcIjxJ2BQITxuvY2Q8B9P24Juo")
@@ -220,8 +221,12 @@ def main():
     import hashlib
     tpl_f = DADOS / "versao_site.txt"
     tpl = hashlib.sha1(b"".join((SITE / x).read_bytes() for x in ("template.html", "formulario.html", "icone.png"))).hexdigest() + FORM_ENDPOINT
+    # evangelho do dia e folheto O Povo de Deus (cache em dados/liturgia.json)
+    lit_f = DADOS / "liturgia.json"
+    lit_ant = lit_f.read_text() if lit_f.exists() else ""
+    lit = liturgia.busca(lit_f)
     mudou = (not ant_f.exists() or ant_f.read_text() != novo_csv or not esp_f.exists() or esp_f.read_text() != novo_esp
-             or not tpl_f.exists() or tpl_f.read_text() != tpl)
+             or not tpl_f.exists() or tpl_f.read_text() != tpl or lit_f.read_text() != lit_ant)
     if not mudou and not a.forcar:
         print("3. nada mudou na planilha. Fim.")
         return
@@ -239,7 +244,7 @@ def main():
     conferir.to_csv(DADOS / "conferir.csv", index=False)
 
     gerado = datetime.now(BRT).strftime("%Y-%m-%d %H:%M")
-    gera_html(para_site(h, p, esp, gerado))
+    gera_html({**para_site(h, p, esp, gerado), **lit})
     gera_formulario(h, p, esp)
     print(f"3. site gerado: {len(h)} horários · {len(conferir)} itens para conferir · {gerado}")
 

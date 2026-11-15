@@ -1,0 +1,12 @@
+name: sonda
+on: push
+jobs:
+  s:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set +e
+          for u in "https://liturgia.up.railway.app/v2/" "https://liturgia.up.railway.app/" "https://api-liturgia-diaria.vercel.app/" ; do echo "=== $u"; curl -sL -m 20 "$u" | head -c 1500; echo; done
+          echo "=== cnbb"; curl -sL -m 20 "https://liturgiadiaria.cnbb.org.br/" | grep -io '<h[1-3][^>]*>[^<]*\|evangelho[^<]\{0,120\}' | head -20
+          echo "=== cancaonova"; curl -sL -m 20 "https://liturgia.cancaonova.com/pb/" | grep -io 'evangelho[^<]\{0,150\}' | head -10
+          echo "=== wp media"; curl -sL -m 20 "https://arqbrasilia.com.br/wp-json/wp/v2/media?mime_type=application/pdf&per_page=15&orderby=date&_fields=date,title,source_url" | head -c 4000; echo

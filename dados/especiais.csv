@@ -6,8 +6,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2026-11-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2026-11-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2026-11-30,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2026-12-05,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2026-12-05,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2026-12-06,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2026-12-07,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2026-12-07,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2026-12-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2026-12-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2026-12-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -20,8 +23,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2026-12-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2026-12-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2026-12-28,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-01-02,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-01-02,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-01-03,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-01-04,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-01-04,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-01-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-01-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-01-11,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
@@ -34,7 +40,10 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-01-25,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-01-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-02-01,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-02-01,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
+2027-02-06,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-02-06,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-02-07,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-02-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-02-08,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-02-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
@@ -48,7 +57,10 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-02-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-02-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-03-01,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-03-01,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
+2027-03-06,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-03-06,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-03-07,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-03-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-03-08,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-03-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
@@ -62,8 +74,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-03-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-03-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-03-29,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-04-03,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-04-03,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-04-04,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-04-05,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-04-05,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-04-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-04-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-04-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -76,8 +91,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-04-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-04-26,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-04-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
+2027-05-01,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-05-01,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-05-02,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-05-03,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-05-03,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-05-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-05-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-05-10,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
@@ -90,8 +108,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-05-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-05-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-05-31,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-06-05,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-06-05,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-06-06,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-06-07,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-06-07,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-06-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-06-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-06-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -104,8 +125,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-06-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-06-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-06-28,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-07-03,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-07-03,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-07-04,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-07-05,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-07-05,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-07-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-07-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-07-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -118,7 +142,10 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-07-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-07-26,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-07-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
+2027-08-01,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-08-02,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-08-02,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
+2027-08-07,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-08-07,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
 2027-08-09,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-08-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -131,8 +158,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-08-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-08-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-08-30,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-09-04,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-09-04,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-09-05,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-09-06,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-09-06,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-09-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-09-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-09-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul
@@ -145,8 +175,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-09-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-09-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-09-27,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-10-02,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-10-02,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-10-03,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-10-04,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-10-04,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-10-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-10-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-10-11,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
@@ -159,7 +192,10 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-10-25,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-10-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-11-01,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-11-01,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
+2027-11-06,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-11-06,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-11-07,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-11-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-11-08,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-11-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
@@ -173,8 +209,11 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-11-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-11-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-11-29,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-12-04,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-12-04,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte
+2027-12-05,17:00,,582,Missa em latim,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-12-06,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2027-12-06,19:30,,582,Missa pelas almas do purgatório,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
 2027-12-08,08:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-12-08,15:00,,549,Missa votiva,Missa,,Votiva,Santuário Nossa Senhora da Saúde,Asa Norte
 2027-12-11,19:30,,90009,Missa votiva,Missa,,Votiva,Mosteiro de São Bento,Lago Sul

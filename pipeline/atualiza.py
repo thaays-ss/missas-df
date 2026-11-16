@@ -139,7 +139,7 @@ def gera_html(data):
 
 
 # endereço do Apps Script (Implantar → App da Web) que grava as respostas do formulário
-FORM_ENDPOINT = os.environ.get("FORM_ENDPOINT", "")
+FORM_ENDPOINT = os.environ.get("FORM_ENDPOINT", "https://script.google.com/macros/s/AKfycbzVCT1viUhSqOoIBEmR3kEgfbv_6X33tljlYjTf0ullJAKHFDwZiHQpRTwQYGJWCAIU/exec")
 
 
 def gera_formulario(h, p, esp=None):

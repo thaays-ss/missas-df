@@ -1,5 +1,4 @@
 data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
-2026-11-18,16:00,,1118879,Missa e Celebração da Aliança de Amor,Missa,,Votiva,Santuário Mãe Rainha de Schoenstatt,DF-001
 2026-11-23,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2026-11-23,19:15,,535,Missa votiva de São Pio,Missa,,Votiva,São Pio de Pietrelcina,Setor Sudoeste
 2026-11-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
@@ -222,3 +221,4 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-12-18,16:00,,1118879,Missa e Celebração da Aliança de Amor,Missa,,Votiva,Santuário Mãe Rainha de Schoenstatt,DF-001
 2027-12-20,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
 2027-12-23,19:15,,535,Missa votiva de São Pio,Missa,,Votiva,São Pio de Pietrelcina,Setor Sudoeste
+2027-12-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental

@@ -1,5 +1,4 @@
 data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
-2026-11-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2026-11-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2026-11-27,07:00,,548,Festa da Padroeira · Nossa Senhora das Graças,Missa,,Solenidades e festas,Paróquia Nossa Senhora das Graças da Medalha Milagrosa,Asa Norte
 2026-11-27,09:00,,548,Festa da Padroeira · Nossa Senhora das Graças,Missa,,Solenidades e festas,Paróquia Nossa Senhora das Graças da Medalha Milagrosa,Asa Norte
@@ -228,3 +227,5 @@ data,inicio,fim,paroquia_id,celebracao,tipo,obs,categoria,paroquia,bairro
 2027-12-25,11:00,,1492921,Missa votiva,Missa,,Votiva,Catedral Militar Rainha da Paz,Eixo Monumental
 2027-12-26,20:00,,613,Missa votiva de São Josemaria Escrivá,Missa,,Votiva,Nossa Senhora de Fátima,Granja do Torto
 2027-12-27,12:00,,1586807,Celebração da Palavra,Celebração,Celebração da Palavra (não é missa),,Paróquia Militar Divino Espírito Santo (CBMDF),SAIS
+2028-01-01,09:00,,582,Missa em honra ao Imaculado Coração de Maria,Missa,,Votiva,Imaculado Coração de Maria,Taguatinga
+2028-01-01,09:30,11:30,1180455,Confissões por ordem de chegada,Confissão,"Somente confissões, por ordem de chegada",,Paróquia Militar São Miguel Arcanjo e Santo Expedito,Asa Norte

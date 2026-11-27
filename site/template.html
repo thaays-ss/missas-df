@@ -140,6 +140,39 @@ nav button:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .destaq .tm{flex:none;text-align:center;border:1px solid rgba(201,162,74,.6);border-radius:10px;padding:8px 14px}.destaq .tm b{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1}.destaq .tm span{font-size:12px;color:#CFDFE7}
 .destaq a{color:#fff;font-weight:600}
 @media (max-width:760px){.destaq{padding:14px 16px;gap:12px}.destaq .q{font-size:21px}}
+.apoio{background:#FBF7EF;border-bottom:1px solid #EADBC8}
+.apoioin{max-width:1280px;margin:0 auto;padding:8px 36px;display:flex;align-items:center;gap:10px;font-size:13.5px;color:#5B6476;box-sizing:border-box}
+.apoioin img{width:28px;height:28px;border-radius:6px;display:block;flex:none}
+.apoioin .k{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A1F}
+.apoioin b{color:#0B2F42;font-weight:600}
+.apoioin a{margin-left:auto;font-weight:600;color:#084D6E;white-space:nowrap}
+@media (max-width:760px){.apoioin{padding:8px 16px;gap:8px}.apoioin .k{font-size:9.5px}.apoioin .fr{display:none}}
+.qs{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:36px;padding:24px 20px 8px;box-sizing:border-box}
+.qs .kick{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;color:var(--blue)}
+.qs h1{margin:6px 0 0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,6vw,52px);line-height:1.05;color:var(--ink)}
+.qs h2{margin:0;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;line-height:1.1;color:var(--ink)}
+.qs p{margin:0;font-size:16.5px;line-height:1.65;color:var(--ink2)}
+.qs .sec{display:flex;flex-direction:column;gap:12px}
+.qs .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.qs .nums div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:4px}
+.qs .nums b{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;line-height:1;color:var(--blue)}
+.qs .nums span{font-size:13px;color:var(--mute)}
+.qs ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:q}
+.qs ol li{display:flex;gap:14px;font-size:15.5px;line-height:1.55;color:var(--ink2);counter-increment:q}
+.qs ol li::before{content:counter(q);flex:0 0 22px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;line-height:1.1;color:var(--gold)}
+.qs ol b{color:var(--ink)}
+.qs .ac{background:#fff;border:1px solid #EADBC8;border-radius:16px;padding:24px 26px;display:flex;flex-wrap:wrap;gap:18px 26px;align-items:flex-start}
+.qs .ac img{width:112px;height:112px;border-radius:14px;display:block;flex:none}
+.qs .ac>div{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.qs .ac .k{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;color:#8A6A1F}
+.qs .quem{display:flex;flex-wrap:wrap;gap:20px 28px;align-items:flex-start}
+.qs .quem>div:first-child{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.qs .fale{flex:1 1 300px;min-width:0;background:var(--blue);color:#fff;border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.qs .fale b{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;line-height:1.15}
+.qs .fale span{font-size:14px;color:#CFDFE7;line-height:1.5}
+.qs .fale a{display:flex;align-items:center;justify-content:center;padding:12px;border-radius:99px;font-weight:700;font-size:15px;text-decoration:none;text-align:center}
+.qs .fale a.z{background:#F2D58A;color:#2A1E05}.qs .fale a.f{border:1.5px solid #9DBBCB;color:#fff;font-weight:600;font-size:14px}
+.qs .fale a.m{padding:0;color:#fff;font-weight:600;font-size:13.5px;text-decoration:underline;display:inline}
 /* chamada para as paróquias atualizarem (formulário) */
 a.navpar.mob{display:none}
 @media (max-width:760px){header.top .topin{flex-direction:row;flex-wrap:wrap;align-items:center}a.navpar.mob{display:flex;margin-left:auto;font-size:13px;padding:6px 12px}nav a.navpar{display:none}}
@@ -248,10 +281,12 @@ footer b{color:var(--ink);font-weight:600}
     <button data-p="conf">Confissão à noite</button>
     <button data-p="esp">Especiais</button>
     <button data-p="num">Números da base</button>
+    <button data-p="quem">Quem somos</button>
     <a class="navpar" href="/formulario/" data-form="menu">Atualizar horários</a>
   </nav>
  </div>
 </header>
+<div class="apoio"><div class="apoioin"><img src="/apoio/agenda-catolica.jpg" alt="" width="28" height="28"><span class="k">Apoio oficial</span><b>Agenda Católica</b><span class="fr">ajuda a manter os horários em dia</span><a href="https://www.instagram.com/agendacatolicabsb" target="_blank" rel="noopener" data-apoio="faixa">Conheça →</a></div></div>
 
 <main class="wrap">
 <!-- AGORA -->
@@ -373,6 +408,47 @@ footer b{color:var(--ink);font-weight:600}
     <div class="cell" style="gap:12px"><span class="h3">Cuidados ao ler os números</span><div id="cuid" style="display:flex;flex-direction:column;gap:12px"></div></div>
   </div>
   <footer>Projeto de <a href="https://www.linkedin.com/in/thays-soares/" target="_blank" rel="noopener">Thays Soares</a> (<a href="https://thaays-ss.github.io/">portfólio</a>) · contato: <a class="zap" href="#">WhatsApp</a> e <a class="mail" href="#">e-mail</a> · dados públicos da Arquidiocese de Brasília e de voluntários · código e base em <a href="https://github.com/thaays-ss/missas-df">github.com/thaays-ss/missas-df</a></footer>
+</section>
+
+<!-- QUEM SOMOS -->
+<section class="page" id="pg-quem">
+ <div class="qs">
+  <div class="sec">
+   <span class="kick">QUEM SOMOS</span>
+   <h1>Um jeito simples de achar onde tem missa no DF</h1>
+   <p>O Onde tem missa? nasceu de uma pergunta de todo dia: “ainda dá tempo de ir à missa hoje? E de me confessar depois do trabalho?”. Os horários existiam, mas estavam espalhados em sites, cartazes, grupos de WhatsApp e perfis de Instagram.</p>
+   <p>O site junta tudo isso num lugar só, com mapa e rota até a igreja: missas, confissões e adoração ao Santíssimo das paróquias e capelas do Distrito Federal. É gratuito, não tem anúncio e é feito por voluntários.</p>
+  </div>
+  <div class="nums"><div><b id="qsH"></b><span>horários por semana</span></div><div><b id="qsI"></b><span>igrejas e capelas</span></div><div><b>1 h</b><span>entre uma atualização e outra</span></div></div>
+  <div class="sec">
+   <h2>De onde vêm os horários</h2>
+   <ol>
+    <li><span><b>Arquidiocese de Brasília:</b> a base vem das páginas oficiais das paróquias.</span></li>
+    <li><span><b>Paróquias e paroquianos:</b> quem conhece os horários da sua comunidade confirma ou corrige pelo <a href="/formulario/" data-form="quem-somos">formulário</a>.</span></li>
+    <li><span><b>Agenda Católica:</b> nossa apoiadora oficial ajuda a conferir e trazer horários novos.</span></li>
+    <li><span><b>Conferência:</b> tudo passa por uma revisão antes de ir ao ar, e o site se atualiza sozinho a cada hora.</span></li>
+   </ol>
+  </div>
+  <div class="ac">
+   <img src="/apoio/agenda-catolica-g.jpg" alt="Logo da Agenda Católica" width="112" height="112">
+   <div>
+    <span class="k">APOIO OFICIAL</span>
+    <h2>Agenda Católica</h2>
+    <p>Tudo começou com uma entrevista na rádio Canção Nova, em que o projeto foi apresentado. Dali veio o contato com a Agenda Católica, iniciativa ligada à Canção Nova que acompanha a programação da Igreja em Brasília. Desde então, a equipe deles ajuda a manter os horários em dia, para que mais gente encontre onde rezar.</p>
+    <a href="https://www.instagram.com/agendacatolicabsb" target="_blank" rel="noopener" data-apoio="quem-somos" style="font-weight:600;font-size:14px">Siga @agendacatolicabsb no Instagram →</a>
+   </div>
+  </div>
+  <div class="quem">
+   <div><h2>Quem faz</h2><p>Sou a Thays Soares, católica de Brasília e analista de dados. Criei o site como voluntária, para ajudar quem procura uma missa ou uma confissão perto de casa ou do trabalho.</p></div>
+   <div class="fale">
+    <b>É de uma paróquia? Fale comigo</b>
+    <span>Para corrigir horários, divulgar uma celebração ou conversar sobre o projeto.</span>
+    <a class="zap z" href="#">WhatsApp</a>
+    <a class="f" href="/formulario/" data-form="quem-somos">Atualizar horários pelo formulário</a>
+    <span>ou por e-mail: <a class="mail m" href="#">e-mail</a></span>
+   </div>
+  </div>
+ </div>
 </section>
 </main>
 <div id="gaNote" class="ganote" hidden><span>Usamos o Google Analytics, de forma anônima, pra entender como o site é usado.</span><button id="gaOk">Ok</button><button id="gaNo" class="lnk">Não quero</button></div>
@@ -629,7 +705,7 @@ function renderNum(){
 
 // ---------- eventos
 // ---------- Google Analytics
-const ABA_N={agora:'Agora',conf:'Confissão à noite',esp:'Especiais',num:'Números da base'};let abaAtual='agora',_pv0=false;
+const ABA_N={agora:'Agora',conf:'Confissão à noite',esp:'Especiais',num:'Números da base',quem:'Quem somos'};let abaAtual='agora',_pv0=false;
 function ga(ev,p){try{if(window.gtag)gtag('event',ev,Object.assign({aba:abaAtual},p||{}))}catch(e){}}
 function gaPage(p){abaAtual=p;_pv0=true;try{const u=location.origin+location.pathname;ga('page_view',{page_title:'Onde tem missa? · '+ABA_N[p],page_location:u+(p==='agora'?'':'#'+p)})}catch(e){}}
 let _bt;function gaBusca(v,aba){clearTimeout(_bt);v=(v||'').trim();if(v.length<3)return;_bt=setTimeout(()=>ga('search',{search_term:v.toLowerCase()}),1500)}
@@ -638,12 +714,12 @@ document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest
  const fecha=()=>{n.hidden=true};$('gaOk').onclick=()=>{try{localStorage.setItem('ga_ok','1')}catch(e){}fecha()};
  $('gaNo').onclick=()=>{try{localStorage.setItem('ga_optout','1')}catch(e){}try{gtag('consent','update',{analytics_storage:'denied'})}catch(e){}fecha()}})();
 function vaiPara(p){if(p!==abaAtual||!_pv0)gaPage(p);document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x.dataset.p===p));document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id==='pg-'+p));
- try{if(p==='conf')renderConf();if(p==='num')renderNum();if(p==='esp')renderEsp()}catch(e){console.error(e)}
+ try{if(p==='conf')renderConf();if(p==='num')renderNum();if(p==='esp')renderEsp();if(p==='quem'){$('qsH').textContent=fmt(R.length);$('qsI').textContent=fmt(new Set(R.map(r=>r.pid)).size)}}catch(e){console.error(e)}
  setTimeout(()=>{map1&&map1.invalidateSize();if(p==='conf'&&map2){map2.invalidateSize();renderConf()}if(p==='esp'&&map3){map3.invalidateSize();renderEsp()}},60);
  try{history.replaceState(null,'','#'+p)}catch(e){} try{window.scrollTo(0,0)}catch(e){}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>vaiPara(b.dataset.p));
 document.querySelectorAll('[data-form]').forEach(a=>a.addEventListener('click',()=>ga('abrir_formulario',{origem:a.dataset.form})));
-$('folh').addEventListener('click',()=>ga('abrir_folheto'));$('lit').addEventListener('click',e=>{if(e.target.closest('[data-ev]'))ga('abrir_evangelho')});
+$('folh').addEventListener('click',()=>ga('abrir_folheto'));document.querySelectorAll('[data-apoio]').forEach(a=>a.addEventListener('click',()=>ga('abrir_apoiador',{apoiador:'Agenda Católica',origem:a.dataset.apoio})));$('lit').addEventListener('click',e=>{if(e.target.closest('[data-ev]'))ga('abrir_evangelho')});
 document.querySelector('.brand').onclick=e=>{e.preventDefault();vaiPara('agora')};
 document.querySelectorAll('#cards .card').forEach(c=>c.onclick=()=>{st.tipo=+c.dataset.t;st.all=false;renderAgora();ga('selecionar_tipo',{tipo:TIPOS[st.tipo]})});
 $('q').oninput=e=>{st.q=e.target.value;renderAgora();gaBusca(e.target.value,'agora')};
@@ -658,7 +734,7 @@ $('moreBtn').onclick=()=>{st.all=!st.all;renderAgora();if(st.all)ga('ver_todos',
 (()=>{const m=['thaysoaresilva0','gmail.com'].join('@');document.querySelectorAll('a.mail').forEach(a=>{a.href='mailto:'+m+'?subject='+encodeURIComponent('Onde tem missa? · horário');a.textContent=m;a.addEventListener('click',()=>ga('contato_email'))})})();
 (()=>{const {d}=agoraSP();const md=(d.getMonth()+1)*100+d.getDate();if(md>=1101&&md<=1226)document.querySelectorAll('[data-natal]').forEach(x=>x.hidden=false)})();
 renderAgora();renderNum();
-let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp'].includes(h0))vaiPara(h0);else gaPage('agora');
+let h0='';try{h0=location.hash.slice(1)}catch(e){}if(['conf','num','esp','quem'].includes(h0))vaiPara(h0);else gaPage('agora');
 setInterval(()=>{if($('pg-agora').classList.contains('on'))renderAgora()},60000);
 </script>
 </body>

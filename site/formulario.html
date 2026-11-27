@@ -29,6 +29,13 @@ header{background:var(--blue);color:#fff}
 main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
 h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1.05;margin:4px 0 6px}
 .lead{color:var(--ink2);margin:0 0 18px}
+.apoio{background:#FBF7EF;border-bottom:1px solid #EADBC8}
+.apoioin{max-width:1280px;margin:0 auto;padding:8px 36px;display:flex;align-items:center;gap:10px;font-size:13.5px;color:#5B6476;box-sizing:border-box}
+.apoioin img{width:28px;height:28px;border-radius:6px;display:block;flex:none}
+.apoioin .k{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A6A1F}
+.apoioin b{color:#0B2F42;font-weight:600}
+.apoioin a{margin-left:auto;font-weight:600;color:#084D6E;white-space:nowrap}
+@media (max-width:760px){.apoioin{padding:8px 16px;gap:8px}.apoioin .k{font-size:9.5px}.apoioin .fr{display:none}}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:0 0 14px}
 .card[hidden],[hidden]{display:none!important}
 .num{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;color:var(--faint);margin:0 0 4px}
@@ -109,6 +116,7 @@ label.f span{font-weight:400;color:var(--faint)}
 </head>
 <body>
 <header><div class="hin"><img src="data:image/png;base64,/*ICON*/" alt=""><div><b>Onde tem missa?</b><small>DISTRITO FEDERAL</small></div></div></header>
+<div class="apoio"><div class="apoioin"><img src="/apoio/agenda-catolica.jpg" alt="" width="28" height="28"><span class="k">Apoio oficial</span><b>Agenda Católica</b><span class="fr">ajuda a manter os horários em dia</span><a href="https://www.instagram.com/agendacatolicabsb" target="_blank" rel="noopener" data-apoio="faixa">Conheça →</a></div></div>
 <main id="form">
   <h1>Os horários da sua paróquia</h1>
   <p class="lead">Leva uns 2 minutinhos. Com isso, quem procura missa, confissão ou adoração no <a href="https://missanodf.com.br/" target="_blank" rel="noopener">missanodf.com.br</a> encontra a sua paróquia com o horário certo, inclusive no Natal. 🙏</p>
